@@ -78,8 +78,8 @@ class WalletQuotesViewController: UIViewController, WalletQuotesDisplayLogic {
         setupLayout()
         testeExtracao { response in
             DispatchQueue.main.async {
-                self.tableMyFiis.reloadData()
                 self.loading.isHidden = true
+                self.tableMyFiis.reloadData()
             }
         }
         
@@ -185,7 +185,7 @@ extension WalletQuotesViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return result.count > 0 ? NSLocalizedString("not_realtime", comment: "") : NSLocalizedString("no_fiis", comment: "")
+        return result.count > 0 ? NSLocalizedString("not_realtime", comment: "") : (self.loading.isHidden ? NSLocalizedString("no_fiis", comment: "") : NSLocalizedString("searching", comment: ""))
     }
     
 }

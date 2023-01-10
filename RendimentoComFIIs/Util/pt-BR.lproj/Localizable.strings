@@ -139,7 +139,6 @@
 /*HomeViewController*/
 "high" = "Maior Alta";
 "low" = "Maior Baixa";
-"searching" = "Procurando...";
 "loading_news" = "Carregando as notícias...";
 "loading_fiis" = "Carregando os FIIs...";
 "error_ifix" = "Nao foi possivel baixar os dados. Verifique sua internet ou reinicie o aplicativo.";

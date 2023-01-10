@@ -124,7 +124,6 @@
 /*HomeViewController*/
 "high" = "Highest High";
 "low" = "Largest Low";
-"searching" = "Searching...";
 "loading_news" = "Loading news...";
 "loading_fiis" = "Loading the FIIs...";
 "error_ifix" = "Could not download data. Please check your internet or restart the application.";
