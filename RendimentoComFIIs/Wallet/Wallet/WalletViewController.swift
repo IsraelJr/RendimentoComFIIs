@@ -184,6 +184,7 @@ extension WalletViewController: UITableViewDelegate {
 
 extension WalletViewController: ActionButtonEditDelegate {
     func didTapEditQuotas(_ sender: UIButton) {
+        sender.pulseEffectInClick()
         let cell = tableMyFiis.cellForRow(at: IndexPath.init(row: sender.tag, section: 0)) as! WalletTableViewCell
         dataEdit = .init(title: NSLocalizedString("title_config_wallet_edit", comment: ""), code: (cell.img.subviews[0] as! UILabel).text!, quotas: cell.lbQuotas.text?.replacingOccurrences(of: NSLocalizedString("quota", comment: ""), with: "") ?? "")
         presentConfigureFii()
