@@ -53,7 +53,7 @@ class ChartViewController: UIViewController {
         chartView.xAxis.labelFont = .boldSystemFont(ofSize: 12)
         //        chartView.xAxis.setLabelCount(12, force: false)
         chartView.xAxis.labelTextColor = .white
-//        chartView.xAxis.axisLineColor = .systemBlue
+        chartView.xAxis.axisLineColor = .systemBlue
         
         chartView.animate(xAxisDuration: 1.5)
         
