@@ -193,7 +193,7 @@ extension WalletHistoricViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if !listMonth.isEmpty, UserDefaultKeys.vip.getValue() as! Bool {
+        if !listMonth.isEmpty, UserDefaultKeys.vip.getValue() as! Bool, listMonth.count != 12 {
             btnAddMonth.isEnabled = true
             viewBanner.isHidden = btnAddMonth.isEnabled
         } else {
