@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Settings App View Controller-->
+        <scene sceneID="hXf-zv-Fh8">
+            <objects>
+                <viewController storyboardIdentifier="settingsapp" id="9Tw-27-2FN" customClass="SettingsAppViewController" customModule="Rendimento_com_FIIs" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1dA-IH-3Xa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZjJ-iU-fRJ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="956"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hqk-Qz-Idz">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="600"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1XN-YO-aBl" customClass="NavigationBarHeaderView" customModule="Rendimento_com_FIIs" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="70" id="A3s-IF-ay4"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wallet Public" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DiL-Jq-jnq">
+                                                <rect key="frame" x="16" y="94" width="317" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TmD-bA-Qdg">
+                                                <rect key="frame" x="349" y="89" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="didTapSwitch:" destination="9Tw-27-2FN" eventType="valueChanged" id="bWb-iZ-fB8"/>
+                                                </connections>
+                                            </switch>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total News In Archive" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1XF-Fk-sls">
+                                                <rect key="frame" x="16" y="131" width="317" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O5Z-EL-8Xo">
+                                                <rect key="frame" x="16" y="168" width="40" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="R1"/>
+                                                <connections>
+                                                    <action selector="didTapRadio:" destination="9Tw-27-2FN" eventType="touchUpInside" id="YRA-ya-qbH"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CR6-yd-noX">
+                                                <rect key="frame" x="187" y="168" width="40" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="R1"/>
+                                                <connections>
+                                                    <action selector="didTapRadio:" destination="9Tw-27-2FN" eventType="touchUpInside" id="R7l-4L-0FO"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1QH-Yh-NOc">
+                                                <rect key="frame" x="358" y="168" width="40" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="R1"/>
+                                                <connections>
+                                                    <action selector="didTapRadio:" destination="9Tw-27-2FN" eventType="touchUpInside" id="bj8-Fl-bae"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                        <constraints>
+                                            <constraint firstItem="1QH-Yh-NOc" firstAttribute="centerY" secondItem="CR6-yd-noX" secondAttribute="centerY" id="15n-rT-yKx"/>
+                                            <constraint firstAttribute="trailing" secondItem="1XN-YO-aBl" secondAttribute="trailing" id="44X-bz-z6V"/>
+                                            <constraint firstItem="1XN-YO-aBl" firstAttribute="top" secondItem="hqk-Qz-Idz" secondAttribute="top" id="4VY-KS-oFo"/>
+                                            <constraint firstItem="1XF-Fk-sls" firstAttribute="top" secondItem="DiL-Jq-jnq" secondAttribute="bottom" constant="16" id="6F6-Ah-yI1"/>
+                                            <constraint firstItem="TmD-bA-Qdg" firstAttribute="centerY" secondItem="DiL-Jq-jnq" secondAttribute="centerY" id="Bh8-FO-ovS"/>
+                                            <constraint firstItem="CR6-yd-noX" firstAttribute="top" secondItem="1XF-Fk-sls" secondAttribute="bottom" constant="16" id="CQa-Ty-PQt"/>
+                                            <constraint firstItem="1XF-Fk-sls" firstAttribute="leading" secondItem="DiL-Jq-jnq" secondAttribute="leading" id="CqJ-Bn-YGE"/>
+                                            <constraint firstItem="DiL-Jq-jnq" firstAttribute="top" secondItem="1XN-YO-aBl" secondAttribute="bottom" constant="24" id="M5s-Wl-qMm"/>
+                                            <constraint firstItem="1QH-Yh-NOc" firstAttribute="trailing" secondItem="TmD-bA-Qdg" secondAttribute="trailing" id="Mic-tY-jXB"/>
+                                            <constraint firstAttribute="trailing" secondItem="TmD-bA-Qdg" secondAttribute="trailing" constant="16" id="Pfw-8W-xbd"/>
+                                            <constraint firstItem="O5Z-EL-8Xo" firstAttribute="centerY" secondItem="CR6-yd-noX" secondAttribute="centerY" id="QQn-8u-XD2"/>
+                                            <constraint firstItem="1XF-Fk-sls" firstAttribute="trailing" secondItem="DiL-Jq-jnq" secondAttribute="trailing" id="YbN-br-6j9"/>
+                                            <constraint firstAttribute="height" constant="600" id="be1-cK-0w9"/>
+                                            <constraint firstItem="1XN-YO-aBl" firstAttribute="leading" secondItem="hqk-Qz-Idz" secondAttribute="leading" id="d2S-lC-MmJ"/>
+                                            <constraint firstItem="TmD-bA-Qdg" firstAttribute="leading" secondItem="DiL-Jq-jnq" secondAttribute="trailing" constant="16" id="evz-ZO-JUb"/>
+                                            <constraint firstItem="CR6-yd-noX" firstAttribute="centerX" secondItem="hqk-Qz-Idz" secondAttribute="centerX" id="kCi-fZ-05h"/>
+                                            <constraint firstItem="DiL-Jq-jnq" firstAttribute="leading" secondItem="hqk-Qz-Idz" secondAttribute="leading" constant="16" id="sCm-gG-tNs"/>
+                                            <constraint firstItem="O5Z-EL-8Xo" firstAttribute="leading" secondItem="DiL-Jq-jnq" secondAttribute="leading" id="u8V-3d-9Dm"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="hqk-Qz-Idz" firstAttribute="leading" secondItem="ZjJ-iU-fRJ" secondAttribute="leading" id="W7f-el-62T"/>
+                                    <constraint firstAttribute="bottom" secondItem="hqk-Qz-Idz" secondAttribute="bottom" id="kyP-h7-XR1"/>
+                                    <constraint firstAttribute="trailing" secondItem="hqk-Qz-Idz" secondAttribute="trailing" id="uAJ-t4-Qef"/>
+                                    <constraint firstItem="hqk-Qz-Idz" firstAttribute="top" secondItem="ZjJ-iU-fRJ" secondAttribute="top" id="z8S-Qz-nhX"/>
+                                </constraints>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KSW-cX-f2h">
+                                <rect key="frame" x="173.5" y="919" width="67" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <connections>
+                                    <action selector="didTapSave:" destination="9Tw-27-2FN" eventType="touchUpInside" id="Qjr-Fq-nMJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="BwP-uY-sz9"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <constraints>
+                            <constraint firstItem="ZjJ-iU-fRJ" firstAttribute="top" secondItem="BwP-uY-sz9" secondAttribute="top" id="5G0-ra-E3V"/>
+                            <constraint firstAttribute="bottom" secondItem="ZjJ-iU-fRJ" secondAttribute="bottom" id="VEJ-Iy-Vvf"/>
+                            <constraint firstItem="BwP-uY-sz9" firstAttribute="bottom" secondItem="KSW-cX-f2h" secondAttribute="bottom" constant="16" id="dDN-Tw-tD7"/>
+                            <constraint firstItem="ZjJ-iU-fRJ" firstAttribute="trailing" secondItem="1dA-IH-3Xa" secondAttribute="trailing" id="hdG-hr-1NH"/>
+                            <constraint firstItem="ZjJ-iU-fRJ" firstAttribute="leading" secondItem="1dA-IH-3Xa" secondAttribute="leading" id="iNK-ag-tPd"/>
+                            <constraint firstItem="hqk-Qz-Idz" firstAttribute="width" secondItem="1dA-IH-3Xa" secondAttribute="width" id="sQg-6y-Cn9"/>
+                            <constraint firstItem="KSW-cX-f2h" firstAttribute="centerX" secondItem="BwP-uY-sz9" secondAttribute="centerX" id="vJc-Ie-gA4"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="414" height="1000"/>
+                    <connections>
+                        <outlet property="btnSave" destination="KSW-cX-f2h" id="NWZ-Hk-3m4"/>
+                        <outlet property="switchWalletPublic" destination="TmD-bA-Qdg" id="mtl-B8-NPl"/>
+                        <outlet property="viewHeader" destination="1XN-YO-aBl" id="cy5-wo-y2G"/>
+                        <outletCollection property="collectionLabel" destination="DiL-Jq-jnq" collectionClass="NSMutableArray" id="FPU-bi-DY8"/>
+                        <outletCollection property="collectionRadio" destination="O5Z-EL-8Xo" collectionClass="NSMutableArray" id="Mtl-5K-h8D"/>
+                        <outletCollection property="collectionRadio" destination="CR6-yd-noX" collectionClass="NSMutableArray" id="e46-vt-c27"/>
+                        <outletCollection property="collectionRadio" destination="1QH-Yh-NOc" collectionClass="NSMutableArray" id="kVT-DA-BTR"/>
+                        <outletCollection property="collectionLabel" destination="1XF-Fk-sls" collectionClass="NSMutableArray" id="vyp-Uc-tOP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cWH-mF-WBi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2075" y="1224"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

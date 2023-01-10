@@ -1,0 +1,390 @@
+/* 
+  Localizable.strings
+  RendimentoComFII
+
+  Created by Israel Alves on 30/03/22.
+  
+*/
+
+/*chave api*/
+//"AIzaSyC0wRnHtrQyi26c5sSEXbnBGLLnzywgd14"
+
+/*KeysUserDefault*/
+"inthewallet" = "codeinthewallet";
+"totalquotas" = "codetotalquotas";
+
+/*UTIL*/
+"save" = "Salvar";
+"exit" = "Sair";
+"undefined" = "Indefinido";
+"search" = "Pesquisar";
+"quota" = "Cotas";
+"source" = "Fonte";
+"msg_maintenance" = "Estamos passando por manutenção em nossos servidores!\nTente novamente dentro de alguns minutos.\nPedimos desculpas pelo transtorno causado e agradecemos por utilizar nossos serviços!";
+"da_news" = "Você será direcionado para a página da Notícia!";
+"paid" = "Pago";
+"clear" = "Limpar";
+"send" = "Enviar";
+"name" = "Nome";
+"email" = "E-Mail";
+"message" = "Escreva aqui sua mensagem";
+"compliment" = "Elogio";
+"review" = "Crítica";
+"suggestion" = "Sugestão";
+"other" = "Outro";
+"error_info_empty" = "Todos os campos precisam ser preenchidos!";
+"error_email" = "O e-mail informado é inválido!";
+"version" = "Versão";
+"done" = "Concluir";
+"coming_soon" = "Em Breve";
+"unavailable" = "Indisponível";
+"administrator" = "Administradora";
+"searching" = "Pesquisando...";
+"invalid_data" = "Dados Inválidos!";
+"critical_error" = "Ocorreu um erro durante a sua última operação! Tente novamente mais tarde ou entre em contato conosco informando o problema.";
+"success_msg1" = "Sua operação foi realizada com sucesso!";
+"details" = "Detalhes";
+"historic" = "Histórico";
+"calculate" = "Calcular";
+"error_connection" = "Não foi identificada uma conexão com a Internet.";
+"follow" = "Seguir";
+"in" = "em";
+"days" = "dias";
+"dividend" = "Dividendos";
+
+/*Months*/
+"1"  = "January";
+"2"  = "February";
+"3"  = "March";
+"4"  = "April";
+"5"  = "May";
+"6"  = "June";
+"7"  = "July";
+"8"  = "August";
+"9"  = "September";
+"10" = "October";
+"11" = "November";
+"12" = "December";
+
+"January" = "Janeiro";
+"February" = "Fevereiro";
+"March" = "Março";
+"April" = "Abril";
+"May" = "Maio";
+"June" = "Junho";
+"July" = "Julho";
+"August" = "Agosto";
+"September" = "Setembro";
+"October" = "Outubro";
+"November" = "Novembro";
+"December" = "Dezembro";
+
+"Janeiro" = "January";
+"Fevereiro" = "February";
+"Março" = "March";
+"Abril" = "April";
+"Maio" = "May";
+"Junho" = "June";
+"Julho" = "July";
+"Agosto" = "August";
+"Setembro" = "September";
+"Outubro" = "October";
+"Novembro" = "November";
+"Dezembro" = "December";
+
+"real_estate_fund" = "Fundo Imobiliário";
+
+/*MoreViewController*/
+"explore" = "Explorar";
+"bePro" = "Seja PRO";
+/*Enum MoreOptions*/
+"archive" = "Arquivo de Notícias";
+"Arquivo de Notícias" = "archive";
+"library" = "Biblioteca";
+"Biblioteca" = "library";
+"aboutfii" = "Sobre FII";
+"aboutapp" = "Sobre o App";
+"Sobre FII" = "aboutfii";
+"Sobre o App" = "aboutapp";
+"contactus" = "Fale Conosco";
+"Fale Conosco" = "contactus";
+"settings" = "Definições";
+"Definições" = "settings";
+"male" = "Perfil do Usuário";
+"female" = "Perfil do Usuário";
+"neutral" = "Perfil do Usuário";
+"Perfil do Usuário" = "male";
+"Perfil do Usuário" = "female";
+"Perfil do Usuário" = "neutral";
+
+/*AboutFII*/
+"title_about_fii" = "Fundos de Investimento Imobiliário (FII)";
+"what_are" = "O que são?";
+"management" = "Administração";
+"quotas" = "Cotas";
+"public_distribution_offer" = "Oferta Pública de Distribuição";
+"redemption_and_trading" = "Resgate e Negociação";
+"investment_policy" = "Política de Investimento";
+"distribution" = "Retorno";
+"risks" = "Riscos";
+"other_information" = "Outras Informações";
+
+/*AlertView*/
+"error" = "ERRO";
+"warning" = "AVISO";
+"info" = "INFORMAÇÃO";
+"success" = "SUCESSO";
+"close" = "Fechar";
+
+/*HomeViewController*/
+"high" = "Maior Alta";
+"low" = "Maior Baixa";
+"searching" = "Procurando...";
+"loading_news" = "Carregando as notícias...";
+"loading_fiis" = "Carregando os FIIs...";
+"error_ifix" = "Nao foi possivel baixar os dados. Verifique sua internet ou reinicie o aplicativo.";
+"thought" = "Pensamento do dia";
+"vip_finished" = "Seu período VIP terminou e em breve as funções VIP serão desativadas!\nMas não se preocupe, pois seus dados estão salvos, e assim que você voltar a ser VIP tudo voltará ao normal.";
+"vip_will_finish" = "Seu VIP irá encerrar";
+"new_message" = "Existe mensagem não lida";
+
+/*WalletViewController*/
+"title_wallet" = "Minha Carteira";
+"add_new_fii" = "Incluir Novo FII";
+"title_table" = "Proventos a receber em";
+
+/*WalletHistoricViewController*/
+"title_wallet_historic" = "Histórico de Dividendos";
+"add_month" = "Adicionar Mês";
+
+"accumulated" = "Total Acumulado:";
+"failure_month1" = "Não foi possível salvar o mês de [month], pois ele já existe na sua carteira!";
+"success_month1" = "A inclusão do mês de [month], na sua carteira, foi realizada com sucesso!\nA efetivação ocorrerá após reiniciar o aplicativo.";
+
+/*ConfigureWalletFIIViewController*/
+"title_config_wallet_add" = "Adicionar FII";
+"title_config_wallet_edit" = "Atualizar Cotas";
+"select_fii" = "Selecionar o FII";
+"select_month" = "Informe o mês que deseja incluir";
+"total_quotas" = "Total de Cotas";
+"total_earnings" = "Total de proventos recebido no mês informado";
+"enter_fii_code" = "Digite o código do FII que deseja incluir";
+"enter_month" = "Digite o mês";
+"enter_total_quotas" = "Digite a quantidade total de cotas";
+"enter_total_earnings" = "Digite o total de proventos";
+"note1" = "* Campo Total de Cotas com valor vazio ou igual a zero, somente será válido com o campo abaixo selecionado.";  //"* Somente valor maior que zero será efetivado";
+"month_invalid" = "O mês informado é inválido!";
+
+/*FIIViewController*/
+"opening" = "Abertura";
+"variation" = "Variação %";
+"minimum" = "Mínima";
+"maximum" = "Máxima";
+"segment" = "Segmento";
+"dy" = "DY";
+"current_price" = "Preço Atual";
+"agio" = "Ágio";
+"discount" = "Deságio";
+"earnings" = "Provento";
+"income" = "Rendimento";
+"date_with" = "Data Com";
+"pay_day" = "Data de Pagamento";
+"phone" = "Telefone";
+"report" = "Último Relatório";
+"historic_btn" = "Histórico de Proventos";
+"comment" = "Comentários sobre o ";
+"simulations" = "Fazer outras simulações";
+"Shoppings" = "Shoppings";
+"Malls" = "Shoppings";
+"Logística" = "Logística";
+"Híbrido" = "Híbrido";
+"Lajes Corporativas" = "Lajes Corporativas";
+"Residencial" = "Residencial";
+"Hotel" = "Hotel";
+"Hospital" = "Hospital";
+"Indefinido" = "Indefinido";
+"Títulos e Val. Mob." = "Títulos e Val. Mob.";
+"Agronegócio" = "Agronegócio";
+"Agribusiness" = "Agronegócio";
+"Educacional" = "Educacional";
+"Educational" = "Educacional";
+"Outros" = "Outros";
+"Todos" = "Todos";
+"target_value" = "Para receber um salário mínimo (R$) em proventos do fii, considerando o último provento informado:";
+"quantity_quotas" = "Você precisaria de 9999 cotas.";
+"estimated_value" = "Para adquirir essas cotas você precisaria investir R$ .";
+"magic_number" = "Número Mágico: Para que seja possível comprar hoje uma cota do FII apenas com seus dividendos, você precisaria de 9999 cotas que daria um investimento de R$ .";
+"uninformed" = "Não Informado";
+"waiting_announcement" = "Aguardando Anúncio";
+"awaiting_payment" = "Aguardando Pagamento";
+"add_wallet" = "Adicionar à Carteira  ";
+"remove_wallet" = "Retirar da Carteira  ";
+"selic_title" = "Selic para";
+
+/*SimulatorViewController*/
+"simulator" = "Simulador";
+"fii_not_found" = "O FII xxx não foi encontrato.";
+
+/*CommentsViewController*/
+"comments" = "Comentários";
+"see_more" = "Veja mais em:";
+"do_comment" = "Você será direcionado para a página do Comentário!";
+"no_comments" = "Nenhum comentário encontrado.";
+
+/*ConfigureNewsViewController*/
+"config_news" = "Ajustes de Notícias";
+"change_news" = "Trocar notícias automaticamente";
+"download_news" = "Baixar notícias automaticamente";
+"download_news_manually" = "Você optou por não baixar as notícias automaticamente. Para vê-las novamente, vá até as configurações de Notícias, altere para Baixar Automaticamente, clique em Salvar, navegue até outra tela e depois volte para a Home.";
+"total_news" = "Máximo de notícias exibidas";
+"news_sites" = "Deseja ver as notícias de qual site";
+
+/*IndexIFIXView*/
+"load" = "Carregando dados do Indíce IFIX...";
+"updated" = "Atualizado";
+
+/*SearchViewController*/
+"segments" = "Segmentos";
+
+/*PROViewController*/
+"titlePRO_1" = "Vantagens de ser PRO";
+"titlePRO_2" = "SURPRESA";
+"explain_vip" = "•Sem anúncios\n•Veja a evolução e a proporção da sua carteira\n•Consulte as cotações dos seus FIIs\n•Tenha um relatório de sua carteira\n•Veja as notícias passadas e não perca novas emissões dos seus FIIs\n•Acesso a novas funcionalidades e muito mais...\n\nSeja PRO 1 mês por apenas R$ 3,00 reais!";
+"descriptionPRO" = "Todo o aplicativo é de uso ilimitado e sem cobranças.\nNo entanto, deixamos aqui nossa chave PIX para que seja feita uma doação de qualquer valor, caso assim deseje.";
+"keypixPRO" = "\n939f53c5-2089-4d1b-8e8f-d317563fc4b4";
+"copykeypixPRO" = "Copiar Chave PIX";
+"keycopied" = "Chave Copiada";
+"send_proof" = "Enviar Comprovante";
+
+/*DetailViewController*/
+"glossary" = "Glossário";
+"books" = "Livros";
+"courses" = "Cursos";
+"brokers" = "Corretoras";
+"tax" = "Imposto de Renda";
+"blended" = "Semi Presencial";
+"online" = "Online";
+"inperson" = "Presencial";
+"live" = "Live";
+
+/*DetailDescriptionBooksViewController*/
+"author" = "Autor";
+"pages" = "Páginas";
+"language" = "Idioma";
+"about" = "Sobre";
+
+/*DetailDescriptionCoursesViewController*/
+"seemore" = "Visitar o Site";
+"modality" = "Modalidade";
+"workload" = "Carga Horária";
+"course_is" = "Curso é";
+"free" = "Gratuito";
+
+/*ContactUsViewController*/
+"contact_us" = "Fale Conosco";
+"Elogio" = "compliment";
+"Crítica" = "review";
+"Sugestão" = "suggestion";
+"Outro" = "other";
+"send_success" = "Mensagem enviada com sucesso!\nAgradecemos pela sua colaboração.";
+"send_erros" = "Não foi possível enviar sua mensagem!\nPor favor, tente mais tarde.";
+"send_pix" = "É necessário nos enviar o comprovante do PIX realizado.";
+"attach_image" = "Anexar Imagem";
+"attach_success" = "Anexado com sucesso";
+"attach_error" = "Tente novamente";
+"pix" = "PIX";
+"PIX" = "pix";
+
+/*LoginViewController*/
+"signin" = "Entrar";
+"login_description" = "Para criar uma nova conta, ou acessar com uma já existente, clique no botão do Google, se já concordou com os nossos termos.";
+"login_link_terms" = "Ao selecionar Concordo e continuar abaixo,\nConcordo com os Termos de Serviço e a Política de Privacidade";
+"login_btn_accept" = "Concordar e continuar";
+"terms_title" = "Termos e Política de Privacidade";
+"error_authenticate_user" = "Acorreu um erro ao realizar a sua autenticação com os dados informados. Pedimos desculpas pelo ocorrido e solicitamos que seja efetuada uma nova tentativa dentro de alguns minutos.\nCaso o erro persista, envie um e-mail para rendimentocomfiis@gmail.com com o print dessa mensagem.\n\n";
+
+/*UserProfileViewController*/
+"title_user_profile" = "Perfil do Usuário";
+"clean_wallet" = "Limpar Minha Carteira de FIIs";
+"clean_desc" = "Deseja realmente apagar TODOS os FIIs de sua carteira?";
+"clean_no" = "Não quero apagar";
+"clean_yes" = "Sim, pode apagar";
+"clean_success" = "Os FIIs foram excluídos de sua carteira!";
+"clean_error" = "No momento, não foi possível excluir os FIIs de sua carteira!\nTente novamente daqui um instante.";
+"delete_account" = "Excluir Minha Conta";
+"delete_desc" = "Deseja realmente excluir sua conta permanentemente?";
+"delete_no" = "Não quero excluir";
+"delete_yes" = "Sim, pode excluir";
+"delete_success" = "Sua conta foi excluída e o aplicativo será encerrado.\nAgradecemos por ter utilizado nossos serviços!";
+"delete_error" = "No momento, não foi possível excluir a sua conta!\nTente novamente daqui um instante.";
+"gender_male" = "Masculino";
+"gender_female" = "Feminino";
+
+/*MoreOptionsWalletViewController*/
+"line_chart" = "Evolução";
+"time" = "Histórico";
+"quotes" = "Cotações";
+"pie_chart" = "Proporção";
+"report" = "Relatório";
+"logout_question" = "Deseja realmente sair e desconectar da sua conta?";
+"logout_yes" = "Sair e Desconectar";
+"see_quotes" = "Ver Cotações";
+"wallet" = "Sobre Carteira";
+
+/*NewsletterViewController*/
+"title_newsletter" = "Arquivo de Notícias";
+
+/*WalletQuotesViewController*/
+"not_realtime" = "As cotações não são em Tempo Real.";
+"last_update" = "Última Atualização: ";
+"no_fiis" = "Sem FIIs na carteira";
+
+/*AttachViewController*/
+"title_document" = "Documento";
+"attach" = "Anexar";
+
+/*UserInboxViewController*/
+"inbox" = "Caixa de Entrada";
+"sent" = "Enviadas";
+"today" = "hoje";
+"ask_delete_message" = "Apagar permanentemente essa mensagem?";
+"delete_message_success" = "A mensagem foi apagada com sucesso!";
+"delete_message_error" = "Não foi possível apagar a mensagem!";
+"total_message" = "Total de xXx mensagens";
+"delete_message" = "Apagar todas as mensagens";
+"ask_delete_all_message" = "Deseja apagar permanentemente todas as mensagens?";
+
+/*ProportionViewController*/
+"text_chart" = "Proporção em %";    //\nde cada FII";
+
+/*ReportViewController*/
+"patrimony" = "Patrimônio";
+"report_patrimony" = "Sobre o Patrimônio";
+"report_dividend" = "Sobre dividendos";
+"report_fiis" = "Sobre seus FIIs";
+"best" = "Melhor Mês de ";
+"best_fii" = "Maior DY Anual";
+"worst" = "Pior Mês de ";
+"worst_fii" = "Menor DY Anual";
+"best_historic" = "Melhor Mês de Todos";
+"worst_historic" = "Pior Mês de Todos";
+"performance_equity" = "Desempenho do seu Patrimônio";
+"variation_year" = "Variação em";
+"historic_variation" = "Variação Histórica";
+
+/*AboutViewController*/
+"about_first_title" = "Sua Carteira";
+"about_first_description" = "Aqui é você quem manda! Na sua carteira você pode adicionar ou excluir seus FIIs à vontade, mas para que os dados de sua carteira não fique divergente da sua conta da correta, seguem algumas dicas...  →";
+"about_add_title" = "Adicionar um FII";
+"about_add_description" = "Certifique-se de que os dividendos desse fundo será pago na sua corretora no mesmo mês em que está adicionando ele aqui na sua carteira. Se acontecer de você adquirir esse fundo após sua Data Com, adicione ele na sua carteira assim que iniciar o mês seguinte.";
+"about_delete_title" = "Excluir um FII";
+"about_delete_description" = "Não exclua um fundo da sua carteira se nesse mês você já recebeu os seus dividendos. Nesse caso, exclua o fundo assim que iniciar o mês seguinte.";
+"about_last_title" = "O céu é o limite";
+"about_last_description" = "Aqui buscamos formas de facilitar a análise de sua carteira, e esperamos contribuir de alguma forma para facilitar o seu dia-a-dia no controle dos seus dividendos. Siga firme nessa caminhada que você será recompensado!";
+
+/*SettingsWalletViewController*/
+"btn_save" = "Salvar Alterações";
+"question_wallet_public" = "Tornar carteira pública";
+"total_news_archive" = "Notícias no arquivo de até quantos dias";
+"save_success" = "As novas definições foram salvas com sucesso!";
+"save_error" = "Erro ao salvar as novas definições!\nTente mais tarde ou entre em contato conosco reportando essa falha.";

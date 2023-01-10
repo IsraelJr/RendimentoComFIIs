@@ -1,0 +1,384 @@
+/* 
+  Localizable.strings
+  RendimentoComFII
+
+  Created by Israel Alves on 30/03/22.
+  
+*/
+
+/*KeysUserDefault*/
+"inthewallet" = "codeinthewallet";
+"totalquotas" = "codetotalquotas";
+
+/*UTIL*/
+"save" = "Save";
+"exit" = "Exit";
+"undefined" = "Undefined";
+"search" = "Search";
+"quota" = "Quotas";
+"source" = "Source";
+"msg_maintenance" = "We are undergoing maintenance on our servers!\nPlease try again in a few minutes.\nWe apologize for the inconvenience caused and thank you for using our services!";
+"da_news" = "You will be directed to the News page!";
+"paid" = "Paid";
+"clear" = "Clear";
+"send" = "Send";
+"name" = "Name";
+"email" = "Email";
+"message" = "Write your message here";
+"compliment" = "Compliment";
+"review" = "Review";
+"suggestion" = "Suggestion";
+"other" = "Other";
+"error_info_empty" = "All fields must be filled!";
+"error_email" = "The email provided is invalid!";
+"version" = "Version";
+"done" = "Done";
+"coming_soon" = "Coming Soon";
+"unavailable" = "Unavailable";
+"administrator" = "Administrator";
+"searching" = "Searching...";
+"invalid_data" = "Invalid Data";
+"critical_error" = "An error occurred during your last operation! Please try again later or contact us with the problem.";
+"success_msg1" = "Your operation was successful!";
+"details" = "Details";
+"historic" = "Historic";
+"calculate" = "Calculate";
+"error_connection" = "An internet connection was not identified.";
+"follow" = "Follow";
+"in" = "in";
+"days" = "days";
+"dividend" = "Dividends";
+
+/*Months*/
+"1"  = "January";
+"2"  = "February";
+"3"  = "March";
+"4"  = "April";
+"5"  = "May";
+"6"  = "June";
+"7"  = "July";
+"8"  = "August";
+"9"  = "September";
+"10" = "October";
+"11" = "November";
+"12" = "December";
+
+"JanuaryToPt" = "Janeiro";
+"FebruaryToPt" = "Fevereiro";
+"MarchToPt" = "Março";
+"AprilToPt" = "Abril";
+"MayToPt" = "Maio";
+"JuneToPt" = "Junho";
+"JulyToPt" = "Julho";
+"AugustToPt" = "Agosto";
+"SeptemberToPt" = "Setembro";
+"OctoberToPt" = "Outubro";
+"NovemberToPt" = "Novembro";
+"DecemberToPt" = "Dezembro";
+
+
+"real_estate_fund" = "Real Estate Fund";
+
+/*MoreViewController*/
+"explore" = "Explore";
+"bePro" = "Be PRO";
+/*Enum MoreOptions*/
+"archive" = "News Archive";
+"News Archive" = "archive";
+"library" = "Library";
+"Library" = "library";
+"aboutfii" = "About FII";
+"aboutapp" = "About the App";
+"About FII" = "aboutfii";
+"About the App" = "aboutapp";
+"contactus" = "Contact Us";
+"Contact Us" = "contactus";
+"settings" = "Settings";
+"Settings" = "settings";
+"male" = "User Profile";
+"female" = "User Profile";
+"neutral" = "User Profile";
+"User Profile" = "male";
+"User Profile" = "female";
+"User Profile" = "neutral";
+
+/*AboutFII*/
+"title_about_fii" = "Real Estate Investment Funds";
+"what_are" = "What are they?";
+"management" = "Administration";
+"quotas" = "Quotas";
+"public_distribution_offer" = "Public Distribution Offer";
+"redemption_and_trading" = "Redemption and Trading";
+"investment_policy" = "Investment Policy";
+"distribution" = "Return";
+"risks" = "Risks";
+"other_information" = "Other Information";
+
+/*AlertView*/
+"error" = "ERROR";
+"warning" = "WARNING";
+"info" = "INFORMATION";
+"success" = "SUCCESS";
+"close" = "Close";
+
+/*HomeViewController*/
+"high" = "Highest High";
+"low" = "Largest Low";
+"searching" = "Searching...";
+"loading_news" = "Loading news...";
+"loading_fiis" = "Loading the FIIs...";
+"error_ifix" = "Could not download data. Please check your internet or restart the application.";
+"thought" = "Thought of the day";
+"vip_finished" = "Your VIP period has ended and the VIP functions will soon be disabled!\nBut don't worry, your data is saved, and once you become a VIP everything will be back to normal.";
+"vip_will_finish" = "Your VIP will terminate";
+"new_message" = "There is an unread message";
+
+/*WalletViewController*/
+"title_wallet" = "My Wallet";
+"add_new_fii" = "Add New FII";
+"title_table" = "Income receivable on";
+
+/*WalletHistoricViewController*/
+"title_wallet_historic" = "Dividend History";
+"add_month" = "Add Month";
+"accumulated" = "Accumulated Total:";
+"failure_month1" = "Could not save the month of [month] because it already exists in your wallet!";
+"success_month1" = "The inclusion of the month of [month] in your portfolio was successful!\nEffectiveness will occur after restarting the application.";
+
+/*ConfigureWalletFIIViewController*/
+"title_config_wallet_add" = "Add FII";
+"title_config_wallet_edit" = "Update Quotas";
+"select_fii" = "Select the FII";
+"select_month" = "Enter the month you want to include";
+"total_quotas" = "Total Quotas";
+"total_earnings" = "Total earnings received in the given month";
+"enter_fii_code" = "Enter the code of the FII you want to include";
+"enter_month" = "Enter the month";
+"enter_total_quotas" = "Enter the total amount of quotas";
+"enter_total_earnings" = "Enter the total earnings";
+"note1" = "* Total Quotas field with an empty value or equal to zero, it will only be valid with the field below selected.";  //"* Only value greater than zero will be effective";
+"month_invalid" = "The month entered is invalid!";
+
+/*FIIViewController*/
+"opening" = "Opening";
+"variation" = "Variation %";
+"minimum" = "Minimum";
+"maximum" = "Maximum";
+"segment" = "Segment";
+"dy" = "DY";
+"current_price" = "Current Price";
+"agio" = "Agio";
+"discount" = "Discount";
+"earnings" = "Earnings";
+"income" = "Yield";
+"date_with" = "Date With";
+"pay_day" = "Payment Date";
+"phone" = "Phone";
+"report" = "Last Report";
+"historic_btn" = "Income Historic";
+"comment" = "Comments about ";
+"simulations" = "Do other simulations";
+"Shoppings" = "Malls";
+"Malls" = "Shoppings";
+"Logística" = "Logistics";
+"Logistics" = "Logística";
+"Híbrido" = "Hybrid";
+"Hybrid" = "Híbrido";
+"Lajes Corporativas" = "Corporate Slabs";
+"Corporate Slabs" = "Lajes Corporativas";
+"Residencial" = "Residential";
+"Residential" = "Residencial";
+"Hotel" = "Hotel";
+"Hospital" = "Hospital";
+"Indefinido" = "Undefined";
+"Undefined" = "Indefinido";
+"Títulos e Val. Mob." = "Marketable Securities";
+"Marketable Securities" = "Títulos e Val. Mob.";
+"Agronegócio" = "Agribusiness";
+"Agribusiness" = "Agronegócio";
+"Educacional" = "Educational";
+"Educational" = "Educacional";
+"Outros" = "Others";
+"Others" = "Outros";
+"Todos" = "All";
+"All" = "Todos";
+"target_value" = "To receive a minimum wage (R$) in fii earnings, considering the last reported earnings:";
+"quantity_quotas" = "You would need 9999 quotas.";
+"estimated_value" = "To acquire these shares you would need to invest R$ .";
+"magic_number" = "Magic Number: To be able to buy a share of the FII today with just its dividends, you would need 9999 shares that would give an investment of R$ .";
+"uninformed" = "Uninformed";
+"waiting_announcement" = "Awaiting Announcement";
+"awaiting_payment" = "Awaiting Payment";
+"add_wallet" = "Add to Wallet  ";
+"remove_wallet" = "Remove from Wallet  ";
+"selic_title" = "Selic for";
+
+/*SimulatorViewController*/
+"simulator" = "Simulador";
+"fii_not_found" = "FII xxx was not found.";
+
+/*CommentsViewController*/
+"comments" = "Comments";
+"see_more" = "See more at:";
+"do_comment" = "You will be directed to the Comment page!";
+"no_comments" = "No comments found.";
+
+/*ConfigureNewsViewController*/
+"config_news" = "News Settings";
+"change_news" = "Change news automatically";
+"download_news" = "Download news automatically";
+"download_news_manually" = "You have chosen not to download news automatically. To view it again, go to the News settings, change it to Automatically Download, click Save, navigate to another screen, then return to Home.";
+"total_news" = "Maximum displayed news";
+"news_sites" = "Would you like to see news from which site";
+
+/*IndexIFIXView*/
+"load" = "Loading IFIX Index data...";
+"updated" = "Updated";
+
+/*SearchViewController*/
+"segments" = "Segments";
+
+/*PROViewController*/
+"titlePRO_1" = "Advantages of being PRO";
+"titlePRO_2" = "SURPRISE";
+"explain_vip" = "•No ads\n•See the evolution and proportion of your portfolio\n•Consult the quotes of your FIIs\n•Have a report on your portfolio\n•View past news and don't miss new issues of your FIIs\n•Access to new features and much more...\n\nBe a PRO 1 month for only R$ 3.00 reais!";
+"descriptionPRO" = "The entire application has unlimited use and is free of charge.\nHowever, we leave here our PIX key so that a donation of any amount can be made, if you wish.";
+"keypixPRO" = "\n939f53c5-2089-4d1b-8e8f-d317563fc4b4";
+"copykeypixPRO" = "Copy Key PIX";
+"keycopied" = "Key Copied";
+"send_proof" = "Send Proof";
+
+/*DetailViewController*/
+"glossary" = "Glossary";
+"books" = "Books";
+"courses" = "Courses";
+"brokers" = "Brokers";
+"tax" = "Income Tax";
+"blended" = "Blended";
+"online" = "Online";
+"inperson" = "In Person";
+"live" = "Live";
+
+/*DetailDescriptionBooksViewController*/
+"author" = "Author";
+"pages" = "Pages";
+"language" = "Language";
+"about" = "About";
+
+/*DetailDescription Courses ViewController*/
+"seemore" = "Visit the Website";
+"modality" = "Modality";
+"workload" = "Workload";
+"course_is" = "Course is";
+"free" = "Free";
+
+/*ContactUsViewController*/
+"contact_us" = "Contact Us";
+"Compliment" = "compliment";
+"Review" = "review";
+"Suggestion" = "suggestion";
+"Other" = "other";
+"send_success" = "Message sent successfully!\nThanks for your cooperation.";
+"send error" = "Unable to send your message!\Please try again later.";
+"send_pix" = "It is necessary to send us proof of the PIX performed.";
+"attach_image" = "Attach Image";
+"attach_success" = "Successfully attached";
+"attach_error" = "Try again";
+"pix" = "PIX";
+"PIX" = "pix";
+
+/*LoginViewController*/
+"signin" = "Sign in";
+"login_description" = "To create a new account, or login with an existing one, click the Google button if you have already agreed to our terms.";
+"login_link_terms" = "By selecting Agree and continue below,\nI agree to Terms of Service and Privacy Policy";
+"login_btn_accept" = "Agreee and continue";
+"terms_title" = "Terms and Privacy Policy";
+"error_authenticate_user" = "An error occurred when performing your authentication with the entered data. We apologize for what happened and ask that a new attempt be made within a few minutes.\nIf the error persists, send an email to enviocomfiis@gmail.com with the print of this message.\n\n";
+
+/*UserProfileViewController*/
+"title_user_profile" = "User Profile";
+"clean_wallet" = "Clean My FII Wallet";
+"clean_desc" = "Do you really want to delete ALL FIIs from your wallet?";
+"clean_no" = "I don't want to erase";
+"clean_yes" = "Yes, you can erase";
+"clean_success" = "The FIIs have been deleted from your wallet!";
+"clean_error" = "It is currently not possible to delete FIIs from your wallet!\nPlease try again in a moment.";
+"delete_account" = "Delete My Account";
+"delete_desc" = "Do you really want to permanently delete your account?";
+"delete_no" = "I don't want to delete";
+"delete_yes" = "Yes, you can delete";
+"delete_success" = "Your account has been deleted and the application will be closed.\nThank you for using our services!";
+"delete_error" = "Your account could not be deleted at the moment!\nPlease try again in a moment.";
+"gender_male" = "Male";
+"gender_female" = "Female";
+"inbox" = "Inbox";
+
+/*MoreOptionsWalletViewController*/
+"line_chart" = "Evolution";
+"time" = "Historic";
+"quotes" = "Quotes";
+"pie_chart" = "Proportion";
+"report" = "Report";
+"logout_question" = "Do you really want to log out and log out of your account?";
+"logout_yes" = "Logout and Disconnect";
+"see_quotes" = "See Quotes";
+"wallet" = "About Wallet";
+"settings" = "Settings";
+
+/*NewsletterViewController*/
+"title_newsletter" = "News Archive";
+
+/*WalletQuotesViewController*/
+"not_realtime" = "Quotes are not in Real Time.";
+"last_update" = "Last Update: ";
+"no_fiis" = "No FIIs in the portfolio";
+
+/*AttachViewController*/
+"title_document" = "Document";
+"attach" = "Attach";
+
+/*UserInboxViewController*/
+"inbox" = "Inbox";
+"sent" = "Sent";
+"today" = "today";
+"ask_delete_message" = "Permanently delete this message?";
+"delete_message_success" = "The message was successfully deleted!";
+"delete_message_error" = "It was not possible to delete the message!";
+"total_message" = "Total xXx messages";
+"delete_message" = "Delete all messages";
+"ask_delete_all_message" = "Do you want to permanently delete all messages?";
+
+/*ProportionViewController*/
+"text_chart" = "Proportion in %";   //\nof each FII";
+
+/*ReportViewController*/
+"patrimony" = "Patrimony";
+"report_patrimony" = "About the Patrimony";
+"report_dividend" = "About Dividends";
+"report_fiis" = "About your FIIs";
+"best" = "Best Month of ";
+"best_fii" = "Highest Annual DY";
+"worst" = "Worst Month of ";
+"worst_fii" = "Lowest Annual DY";
+"best_historic" = "Best Month Ever";
+"worst_historic" = "Worst Month Ever";
+"performance_equity" = "Your Equity Performance";
+"variation_year" = "Variation in";
+"historic_variation" = "Historical Variation";
+
+/*AboutViewController*/
+"about_first_title" = "Your Wallet";
+"about_first_description" = "You are in charge here! In your wallet you can add or delete your FIIs at will, but so that your wallet data does not differ from your account in the correct one, here are some tips... →";
+"about_add_title" = "Add an FII";
+"about_add_description" = "Make sure that this fund's dividends will be paid to your brokerage in the same month you are adding it here to your wallet. If you happen to acquire this fund after your Com Date, add it to your wallet like this to start the following month.";
+"about_delete_title" = "Delete an FII";
+"about_delete_description" = "Do not delete a fund from your portfolio if you have already received your dividends that month. In that case, delete the fund as soon as the next month starts.";
+"about_last_title" = "The sky is the limit";
+"about_last_description" = "Here we look for ways to facilitate the analysis of your portfolio, and we hope to contribute in some way to facilitate your day-to-day control of your dividends. Follow this path and you will be rewarded!";
+
+/*SettingsWalletViewController*/
+"btn_save" = "Save Changes";
+"question_wallet_public" = "Make wallet public";
+"total_news_archive" = "News in the archive for how many days";
+"save_success" = "The new settings were successfully saved!";
+"save_error" = "Error saving new settings!\nPlease try again later or contact us with a report of this failure.";
