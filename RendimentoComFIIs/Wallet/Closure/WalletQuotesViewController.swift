@@ -145,8 +145,8 @@ class WalletQuotesViewController: UIViewController, WalletQuotesDisplayLogic {
                         let features = try doc.getElementById("quote-header-info")
                         let one = try features?.getElementsByClass("Whs(nw)").first()?.getElementsByClass("Trsdu(0.3s) Fw(b) Fz(36px) Mb(-4px) D(b)").text() ?? "0"
                         let two = try features?.select("span")
-                        let news1 = try two?[1].text() ?? "0"
-                        let news2 = try two?[2].text() ?? "0"
+                        let news1 = try two?[3].text() ?? "0"
+                        let news2 = try two?[4].text() ?? "0"
                         let date = try features?.getElementById("quote-market-notice")?.select("span").text().split(separator: " ")[2].description ?? ""
                         self.result.append(.init(code: item, price: Double(one)?.convertToCurrency(true) ?? "R$ 0,0", variacao: news1.description, percent: news2.description, dateLastUpdate: date))
                         
