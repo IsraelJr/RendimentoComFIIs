@@ -51,6 +51,13 @@
 		DD87CEC62938243F00C3C70E /* SettingsAppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD87CEC52938243F00C3C70E /* SettingsAppRouter.swift */; };
 		DD87CEC82938244400C3C70E /* SettingsAppPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD87CEC72938244400C3C70E /* SettingsAppPresenter.swift */; };
 		DD87CECA2938247600C3C70E /* SettingsAppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD87CEC92938247600C3C70E /* SettingsAppModel.swift */; };
+		DDA36C422971371F0066FECC /* PublicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA36C412971371F0066FECC /* PublicViewController.swift */; };
+		DDA36C44297137270066FECC /* PublicInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA36C43297137270066FECC /* PublicInteractor.swift */; };
+		DDA36C462971372C0066FECC /* PublicWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA36C452971372C0066FECC /* PublicWorker.swift */; };
+		DDA36C48297137320066FECC /* PublicRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA36C47297137320066FECC /* PublicRouter.swift */; };
+		DDA36C4A297137380066FECC /* PublicPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA36C49297137380066FECC /* PublicPresenter.swift */; };
+		DDA36C4C297137460066FECC /* PublicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA36C4B297137460066FECC /* PublicModel.swift */; };
+		DDA36C4F2971445C0066FECC /* UITextView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA36C4E2971445C0066FECC /* UITextView + Extension.swift */; };
 		DDB02105283317FF00099155 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB02104283317FF00099155 /* AppDelegate.swift */; };
 		DDB02107283317FF00099155 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB02106283317FF00099155 /* SceneDelegate.swift */; };
 		DDB02109283317FF00099155 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB02108283317FF00099155 /* ViewController.swift */; };
@@ -267,6 +274,13 @@
 		DD87CEC52938243F00C3C70E /* SettingsAppRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsAppRouter.swift; sourceTree = "<group>"; };
 		DD87CEC72938244400C3C70E /* SettingsAppPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsAppPresenter.swift; sourceTree = "<group>"; };
 		DD87CEC92938247600C3C70E /* SettingsAppModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsAppModel.swift; sourceTree = "<group>"; };
+		DDA36C412971371F0066FECC /* PublicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicViewController.swift; sourceTree = "<group>"; };
+		DDA36C43297137270066FECC /* PublicInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicInteractor.swift; sourceTree = "<group>"; };
+		DDA36C452971372C0066FECC /* PublicWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicWorker.swift; sourceTree = "<group>"; };
+		DDA36C47297137320066FECC /* PublicRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicRouter.swift; sourceTree = "<group>"; };
+		DDA36C49297137380066FECC /* PublicPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicPresenter.swift; sourceTree = "<group>"; };
+		DDA36C4B297137460066FECC /* PublicModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicModel.swift; sourceTree = "<group>"; };
+		DDA36C4E2971445C0066FECC /* UITextView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView + Extension.swift"; sourceTree = "<group>"; };
 		DDB02101283317FF00099155 /* Rendimento com FIIs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rendimento com FIIs.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB02104283317FF00099155 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDB02106283317FF00099155 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -595,6 +609,19 @@
 			path = MoreOptions;
 			sourceTree = "<group>";
 		};
+		DDA36C4D2971375A0066FECC /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				DDA36C43297137270066FECC /* PublicInteractor.swift */,
+				DDA36C452971372C0066FECC /* PublicWorker.swift */,
+				DDA36C47297137320066FECC /* PublicRouter.swift */,
+				DDA36C49297137380066FECC /* PublicPresenter.swift */,
+				DDA36C412971371F0066FECC /* PublicViewController.swift */,
+				DDA36C4B297137460066FECC /* PublicModel.swift */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
 		DDB020F8283317FF00099155 = {
 			isa = PBXGroup;
 			children = (
@@ -689,6 +716,7 @@
 				DDB021762833278500099155 /* Array+Extension.swift */,
 				DD7C740729249F900025CA58 /* Date+Extension.swift */,
 				DDBE3EB6294810B500C0DB96 /* UISegmentedControl+Extension.swift */,
+				DDA36C4E2971445C0066FECC /* UITextView + Extension.swift */,
 				DDE3A78029498D5100937C10 /* NumberFormatter+Extension.swift */,
 				DD08A77C2951429800C62D59 /* Calendar+Extension.swift */,
 			);
@@ -794,6 +822,7 @@
 				DD7E2E74284292D70053D6EB /* Historic */,
 				DDFB4923292D6B2700C85F21 /* Report */,
 				DD87CEB92936978E00C3C70E /* About */,
+				DDA36C4D2971375A0066FECC /* Public */,
 			);
 			path = Wallet;
 			sourceTree = "<group>";
@@ -1142,6 +1171,7 @@
 				DDB02154283326F400099155 /* TopicCollectionViewCell.swift in Sources */,
 				DDB0219C283327B200099155 /* GradientCircularProgressBar.swift in Sources */,
 				DD87CEC62938243F00C3C70E /* SettingsAppRouter.swift in Sources */,
+				DDA36C462971372C0066FECC /* PublicWorker.swift in Sources */,
 				DDD2B3C9283D843D0087A113 /* UserProfileViewController.swift in Sources */,
 				DDB022522833284A00099155 /* SearchWorker.swift in Sources */,
 				DDB022102833284A00099155 /* CommentsViewController.swift in Sources */,
@@ -1182,6 +1212,7 @@
 				DDB02156283326F400099155 /* TopDYCollectionViewCell.swift in Sources */,
 				DDC25FC0287002A000E11CD4 /* NewsletterRouter.swift in Sources */,
 				DDB022092833284A00099155 /* FIIViewController.swift in Sources */,
+				DDA36C44297137270066FECC /* PublicInteractor.swift in Sources */,
 				DDB0221E2833284A00099155 /* WalletTableViewCell.swift in Sources */,
 				DD7C740829249F900025CA58 /* Date+Extension.swift in Sources */,
 				DDB022282833284A00099155 /* LoginPresenter.swift in Sources */,
@@ -1199,6 +1230,7 @@
 				DDB021A2283327B200099155 /* ConfigureDataBase.swift in Sources */,
 				DD87CEB82936969700C3C70E /* AboutViewController.swift in Sources */,
 				DDC56924284D5C2600069BCD /* FIIHistoricPresenter.swift in Sources */,
+				DDA36C4A297137380066FECC /* PublicPresenter.swift in Sources */,
 				DDB022492833284A00099155 /* InitializationPresenter.swift in Sources */,
 				DD7C7400291F61660025CA58 /* UserInboxWorker.swift in Sources */,
 				DDC56920284D5C1D00069BCD /* FIIHistoricWorker.swift in Sources */,
@@ -1206,6 +1238,7 @@
 				DDB022422833284A00099155 /* ContactUsInteractor.swift in Sources */,
 				DDB021A0283327B200099155 /* ListFii.swift in Sources */,
 				DD41D375294416150025D963 /* ReportWorker.swift in Sources */,
+				DDA36C48297137320066FECC /* PublicRouter.swift in Sources */,
 				DD46E02C284D55C500A7BD41 /* FIIHistoricViewController.swift in Sources */,
 				DDB022472833284A00099155 /* InitializationInteractor.swift in Sources */,
 				DDB0217A2833278500099155 /* UIView+Extension.swift in Sources */,
@@ -1243,16 +1276,19 @@
 				DDB022272833284A00099155 /* LoginViewController.swift in Sources */,
 				DD41D379294416250025D963 /* ReportPresenter.swift in Sources */,
 				DDB0223E2833284A00099155 /* ContactUsWorker.swift in Sources */,
+				DDA36C4F2971445C0066FECC /* UITextView + Extension.swift in Sources */,
 				DDB0222E2833284A00099155 /* MoreOptionsCollectionViewCell.swift in Sources */,
 				DDD2B3C1283D84260087A113 /* UserProfileInteractor.swift in Sources */,
 				DDED2EF029163F0F00BC2AB8 /* UserInboxModel.swift in Sources */,
 				DDB022352833284A00099155 /* DetailInteractor.swift in Sources */,
+				DDA36C4C297137460066FECC /* PublicModel.swift in Sources */,
 				DDB022432833284A00099155 /* MoreOptionsModel.swift in Sources */,
 				DD0881282840044F009B80A6 /* AboutAppModel.swift in Sources */,
 				DD1CF3362910DD75007156C5 /* UserInboxViewController.swift in Sources */,
 				DD5405D82929801700D0FFEC /* ProportionViewController.swift in Sources */,
 				DD7C73FE291F615F0025CA58 /* UserInboxInteractor.swift in Sources */,
 				DD08811B283FF739009B80A6 /* AboutAppViewController.swift in Sources */,
+				DDA36C422971371F0066FECC /* PublicViewController.swift in Sources */,
 				DDB0217D2833278500099155 /* UIViewController+Extension.swift in Sources */,
 				DDB022372833284A00099155 /* DetailRouter.swift in Sources */,
 				DDB0217F2833278500099155 /* UITableViewCell+Extension.swift in Sources */,

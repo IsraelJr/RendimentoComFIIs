@@ -317,6 +317,7 @@
 "time" = "Historic";
 "quotes" = "Quotes";
 "pie_chart" = "Proportion";
+"public_wallet" = "Public Wallet";
 "report" = "Report";
 "logout_question" = "Do you really want to log out and log out of your account?";
 "logout_yes" = "Logout and Disconnect";
@@ -381,3 +382,7 @@
 "total_news_archive" = "News in the archive for how many days";
 "save_success" = "The new settings were successfully saved!";
 "save_error" = "Error saving new settings!\nPlease try again later or contact us with a report of this failure.";
+
+/*PublicViewController*/
+"placeholder_publicwallet" = "Describe about your wallet strategy";
+

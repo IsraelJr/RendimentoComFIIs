@@ -324,6 +324,7 @@
 "time" = "Histórico";
 "quotes" = "Cotações";
 "pie_chart" = "Proporção";
+"public_wallet" = "Carteira Pública";
 "report" = "Relatório";
 "logout_question" = "Deseja realmente sair e desconectar da sua conta?";
 "logout_yes" = "Sair e Desconectar";
@@ -387,3 +388,6 @@
 "total_news_archive" = "Notícias no arquivo de até quantos dias";
 "save_success" = "As novas definições foram salvas com sucesso!";
 "save_error" = "Erro ao salvar as novas definições!\nTente mais tarde ou entre em contato conosco reportando essa falha.";
+
+/*PublicViewController*/
+"placeholder_publicwallet" = "Descreva sobre a estratégia da sua carteira";

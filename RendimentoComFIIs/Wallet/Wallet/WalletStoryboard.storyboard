@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -27,17 +28,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qvj-OI-2m1" customClass="NavigationBarHeaderView" customModule="Rendimento_com_FIIs" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="414" height="70"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="cdT-em-hML"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="1OD-xo-Di8">
-                                <rect key="frame" x="0.0" y="114" width="414" height="613"/>
+                                <rect key="frame" x="0.0" y="118" width="414" height="605.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="150" id="L6h-kQ-TSo" customClass="WalletTableViewCell" customModule="Rendimento_com_FIIs" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="150"/>
+                                        <rect key="frame" x="0.0" y="50" width="414" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="L6h-kQ-TSo" id="YMp-yz-YZe">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
@@ -112,7 +113,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WEk-AM-YqG">
-                                <rect key="frame" x="107" y="751" width="200" height="31"/>
+                                <rect key="frame" x="107" y="747.5" width="200" height="34.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="aCd-zk-Ic9"/>
                                 </constraints>
@@ -123,7 +124,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZFM-po-1QP">
-                                <rect key="frame" x="358" y="746.5" width="40" height="40"/>
+                                <rect key="frame" x="358" y="745" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Itf-v3-yJ5"/>
                                     <constraint firstAttribute="width" constant="40" id="LmZ-nB-IJc"/>
@@ -252,7 +253,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="twK-fg-ism">
-                                        <rect key="frame" x="16" y="281" width="118" height="31"/>
+                                        <rect key="frame" x="16" y="281" width="134.5" height="34.5"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Apenas Seguir"/>
                                         <connections>
@@ -325,17 +326,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8y3-WY-Jng" customClass="NavigationBarHeaderView" customModule="Rendimento_com_FIIs" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="414" height="70"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="H21-CD-h4D"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="EYw-3F-xds">
-                                <rect key="frame" x="0.0" y="114" width="414" height="677"/>
+                                <rect key="frame" x="0.0" y="118" width="414" height="669.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="150" id="uwm-cR-6uo" customClass="WalletTableViewCell" customModule="Rendimento_com_FIIs" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="150"/>
+                                        <rect key="frame" x="0.0" y="50" width="414" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uwm-cR-6uo" id="YCs-UC-zMK">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
@@ -400,7 +401,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9kL-QB-z57">
-                                <rect key="frame" x="82" y="815" width="250" height="31"/>
+                                <rect key="frame" x="82" y="811.5" width="250" height="34.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="gHO-4k-dgP"/>
                                 </constraints>
@@ -411,7 +412,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="urt-ud-oWv" customClass="GADBannerView">
-                                <rect key="frame" x="0.0" y="795" width="414" height="71"/>
+                                <rect key="frame" x="0.0" y="791.5" width="414" height="74.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
@@ -454,24 +455,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bwy-Q4-G1c" customClass="NavigationBarHeaderView" customModule="Rendimento_com_FIIs" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="414" height="70"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="70"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="Lnd-oV-8u9"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Day-VT-Xug">
-                                <rect key="frame" x="0.0" y="114" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="118" width="414" height="60"/>
                                 <color key="backgroundColor" name="Font"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="q7k-58-OPo"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eMi-21-nJg">
-                                <rect key="frame" x="0.0" y="130" width="414" height="772"/>
+                                <rect key="frame" x="0.0" y="134" width="414" height="768"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Dg8-CZ-iC8">
-                                        <rect key="frame" x="0.0" y="16" width="414" height="649"/>
+                                        <rect key="frame" x="0.0" y="16" width="414" height="645"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="30" minimumInteritemSpacing="30" id="BDl-LD-53D">
                                             <size key="itemSize" width="130" height="130"/>
@@ -544,7 +545,7 @@
                                         </cells>
                                     </collectionView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qyX-CN-nbh">
-                                        <rect key="frame" x="135" y="689" width="144" height="35"/>
+                                        <rect key="frame" x="124.5" y="685" width="165.5" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="Pwo-5J-sMD"/>
                                         </constraints>
@@ -601,17 +602,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jPI-fG-m5g" customClass="NavigationBarHeaderView" customModule="Rendimento_com_FIIs" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="414" height="70"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="u3C-bg-mUC"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JWN-PQ-enR">
-                                <rect key="frame" x="4" y="246" width="406" height="616"/>
+                                <rect key="frame" x="4" y="250" width="406" height="612"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1s2-wY-C6g">
-                                <rect key="frame" x="0.0" y="166" width="414" height="80"/>
+                                <rect key="frame" x="0.0" y="170" width="414" height="80"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="xft-Pz-Vak"/>
@@ -664,7 +665,7 @@
                                 </cells>
                             </collectionView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vIM-2J-N5R">
-                                <rect key="frame" x="64" y="126" width="286" height="41"/>
+                                <rect key="frame" x="64" y="130" width="286" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="7eI-tX-uxX"/>
                                 </constraints>
@@ -715,13 +716,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rjs-IM-sFu" customClass="NavigationBarHeaderView" customModule="Rendimento_com_FIIs" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="414" height="70"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="7nj-rt-2NH"/>
                                 </constraints>
                             </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="R6j-OE-ppm">
-                                <rect key="frame" x="64" y="126" width="286" height="41"/>
+                                <rect key="frame" x="64" y="130" width="286" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="0UX-Fm-lz2"/>
                                 </constraints>
@@ -735,7 +736,7 @@
                                 </connections>
                             </segmentedControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aqT-NP-5LR">
-                                <rect key="frame" x="168.5" y="182" width="77" height="30"/>
+                                <rect key="frame" x="168.5" y="186" width="77" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Q6-hM-2h8">
                                         <rect key="frame" x="20" y="8" width="37" height="14"/>
@@ -754,7 +755,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oYz-LT-siG" customClass="PieChartView" customModule="Charts">
-                                <rect key="frame" x="20" y="228" width="374" height="618"/>
+                                <rect key="frame" x="20" y="232" width="374" height="614"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
@@ -787,6 +788,69 @@
             </objects>
             <point key="canvasLocation" x="2934.7826086956525" y="456.69642857142856"/>
         </scene>
+        <!--Public View Controller-->
+        <scene sceneID="ffd-nb-Mqt">
+            <objects>
+                <viewController storyboardIdentifier="public" id="U9e-Ix-CYI" customClass="PublicViewController" customModule="Rendimento_com_FIIs" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="t9K-fe-mT6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hG1-hM-5Zv" customClass="NavigationBarHeaderView" customModule="Rendimento_com_FIIs" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="48" width="414" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="qKQ-gU-tbb"/>
+                                </constraints>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fyS-c5-UsZ">
+                                <rect key="frame" x="16" y="142" width="382" height="135"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="135" id="FYt-lI-JxP"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSS-Hb-OSN">
+                                <rect key="frame" x="24" y="293" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sz1-al-Ea1">
+                                <rect key="frame" x="348" y="293" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cMc-4V-p5e"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <constraints>
+                            <constraint firstItem="Sz1-al-Ea1" firstAttribute="centerY" secondItem="rSS-Hb-OSN" secondAttribute="centerY" id="1f5-KB-bWu"/>
+                            <constraint firstItem="rSS-Hb-OSN" firstAttribute="leading" secondItem="fyS-c5-UsZ" secondAttribute="leading" constant="8" id="ARW-Es-j5S"/>
+                            <constraint firstItem="cMc-4V-p5e" firstAttribute="trailing" secondItem="fyS-c5-UsZ" secondAttribute="trailing" constant="16" id="ECe-pu-fcK"/>
+                            <constraint firstItem="rSS-Hb-OSN" firstAttribute="top" secondItem="fyS-c5-UsZ" secondAttribute="bottom" constant="16" id="EPb-Te-URR"/>
+                            <constraint firstItem="Sz1-al-Ea1" firstAttribute="trailing" secondItem="fyS-c5-UsZ" secondAttribute="trailing" constant="-8" id="Ebw-FB-MTA"/>
+                            <constraint firstItem="fyS-c5-UsZ" firstAttribute="leading" secondItem="cMc-4V-p5e" secondAttribute="leading" constant="16" id="TFx-eb-9Yv"/>
+                            <constraint firstItem="hG1-hM-5Zv" firstAttribute="leading" secondItem="t9K-fe-mT6" secondAttribute="leading" id="Xe8-iW-sev"/>
+                            <constraint firstItem="fyS-c5-UsZ" firstAttribute="top" secondItem="hG1-hM-5Zv" secondAttribute="bottom" constant="24" id="m6Z-pi-meC"/>
+                            <constraint firstAttribute="trailing" secondItem="hG1-hM-5Zv" secondAttribute="trailing" id="t2d-3c-Bxq"/>
+                            <constraint firstItem="hG1-hM-5Zv" firstAttribute="top" secondItem="cMc-4V-p5e" secondAttribute="top" id="uXp-12-2fx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textviewDescription" destination="fyS-c5-UsZ" id="j1W-BX-jPC"/>
+                        <outlet property="viewHeader" destination="hG1-hM-5Zv" id="mZr-JB-ugw"/>
+                        <outletCollection property="collectionLabel" destination="rSS-Hb-OSN" collectionClass="NSMutableArray" id="r2i-lV-hgP"/>
+                        <outletCollection property="collectionLabel" destination="Sz1-al-Ea1" collectionClass="NSMutableArray" id="pbp-fZ-VLA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ejm-aC-VAV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3760.8695652173915" y="456.69642857142856"/>
+        </scene>
         <!--About View Controller-->
         <scene sceneID="Fis-cB-J4o">
             <objects>
@@ -796,13 +860,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nu8-YN-2Yy" customClass="NavigationBarHeaderView" customModule="Rendimento_com_FIIs" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="414" height="70"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="lS8-Rv-xAX"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CdQ-AM-NUh">
-                                <rect key="frame" x="0.0" y="122" width="414" height="732"/>
+                                <rect key="frame" x="0.0" y="126" width="414" height="728"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="7D1-Ja-TzD">
                                     <size key="itemSize" width="406" height="732"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -811,7 +875,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="k7D-Ny-dcF" customClass="AboutCollectionViewCell" customModule="Rendimento_com_FIIs" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="406" height="732"/>
+                                        <rect key="frame" x="0.0" y="-2" width="406" height="732"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="QfP-Dq-9rE">
                                             <rect key="frame" x="0.0" y="0.0" width="406" height="732"/>
@@ -898,7 +962,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rCm-BV-38c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3837.68115942029" y="456.69642857142856"/>
+            <point key="canvasLocation" x="3762" y="-323"/>
         </scene>
         <!--Wallet Quotes View Controller-->
         <scene sceneID="jd9-nY-jUi">
@@ -909,17 +973,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wc0-Fa-chQ" customClass="NavigationBarHeaderView" customModule="Rendimento_com_FIIs" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="414" height="70"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="djl-FC-70U"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="aHZ-JU-FCR">
-                                <rect key="frame" x="0.0" y="114" width="414" height="732"/>
+                                <rect key="frame" x="0.0" y="118" width="414" height="728"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellQuotes" rowHeight="150" id="4GU-eN-qpW" customClass="WalletTableViewCell" customModule="Rendimento_com_FIIs" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="150"/>
+                                        <rect key="frame" x="0.0" y="50" width="414" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4GU-eN-qpW" id="GKa-g7-HUK">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
@@ -1025,7 +1089,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAt-hd-VaN">
-                                <rect key="frame" x="0.0" y="44" width="414" height="1440"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="1436"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h5P-c2-tNS">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
@@ -1870,6 +1934,9 @@
         <namedColor name="Font">
             <color red="0.17254901960784313" green="0.32941176470588235" blue="0.59607843137254901" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

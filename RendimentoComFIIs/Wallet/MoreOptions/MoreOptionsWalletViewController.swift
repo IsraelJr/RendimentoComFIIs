@@ -24,6 +24,7 @@ class MoreOptionsWalletViewController: UIViewController {
         case pie_chart
         case report
         case wallet
+        case public_wallet
     }
     
     override func viewDidLoad() {
@@ -134,6 +135,9 @@ extension MoreOptionsWalletViewController: UICollectionViewDelegate {
             
         case NSLocalizedString(MoreOptionsWallet.wallet.rawValue, comment: ""):
             segueTo(destination: storyboard?.instantiateViewController(withIdentifier: "about_wallet") as! AboutViewController)
+            
+        case NSLocalizedString(MoreOptionsWallet.public_wallet.rawValue, comment: ""):
+            segueTo(destination: storyboard?.instantiateViewController(withIdentifier: "public") as! PublicViewController)
             
         default:
             break
