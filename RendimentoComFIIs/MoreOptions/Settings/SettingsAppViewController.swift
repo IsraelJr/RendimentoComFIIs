@@ -109,7 +109,7 @@ class SettingsAppViewController: UIViewController, SettingsAppDisplayLogic {
         }
         
         switchWalletPublic.isOn = UserDefaultKeys.wallet_public.getValue() as! Bool
-        switchWalletPublic.isEnabled = false
+        switchWalletPublic.isEnabled = true
         collectionLabel.first?.isEnabled = switchWalletPublic.isEnabled
         btnSave.isEnabled = switchWalletPublic.isEnabled
         
