@@ -25,6 +25,7 @@ class PublicViewController: UIViewController, PublicDisplayLogic {
     let placeholderText = NSLocalizedString("placeholder_publicwallet", comment: "")
     let limitLetters = 300
     var listRatings = [String]()
+    var dataPublicWallet = (rating: "", description: "")
     
     var interactor: PublicBusinessLogic?
     var router: (NSObjectProtocol & PublicRoutingLogic & PublicDataPassing)?
@@ -111,7 +112,9 @@ class PublicViewController: UIViewController, PublicDisplayLogic {
         }
         
         buttonPreview.setTitle("\(NSLocalizedString("preview", comment: "")) \(viewHeader.lbTitle.text!)", for: .normal)
+        buttonPreview.isEnabled = false
         buttonPublish.setTitle("\(NSLocalizedString("publish", comment: "")) \(viewHeader.lbTitle.text!)", for: .normal)
+        buttonPublish.isEnabled = false
     }
     
     private func addDoneButtonOnKeyboard() {
@@ -130,7 +133,16 @@ class PublicViewController: UIViewController, PublicDisplayLogic {
         
     }
     
+    private func checkData() {
+        if !dataPublicWallet.rating.isEmpty && !dataPublicWallet.description.isEmpty {
+            buttonPreview.isEnabled = true
+            buttonPublish.isEnabled = buttonPreview.isEnabled
+        }
+    }
+    
     @objc func doneKeyboardNumber() {
+        dataPublicWallet.description = textviewDescription.text
+        checkData()
         view.closeKeyboard()
     }
     
@@ -157,7 +169,7 @@ extension PublicViewController: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         _ = textViewShouldBeginEditing(textView)
         let currentText = textView.text ?? ""
-        guard let stringRange = Range(range, in: currentText) else { return false }
+        guard let stringRange = Range(range, in: currentText) else { return true }
         let updatedText = currentText.replacingCharacters(in: stringRange, with: text)
         
         if updatedText.isEmpty {
@@ -165,7 +177,7 @@ extension PublicViewController: UITextViewDelegate {
             DispatchQueue.main.async {
                 self.collectionLabel.first?.text = "Total: 0"
             }
-            return true
+            return false
         } else {
             DispatchQueue.main.async {
                 self.collectionLabel.first?.text = "Total: \(updatedText.count)"
@@ -214,6 +226,8 @@ extension PublicViewController: UICollectionViewDelegate {
         let color: UIColor = indexPath.row == 0 ? .systemGreen : (indexPath.row == 1 ? .systemYellow : .systemRed)
         cell.title.textColor = color
         cell.viewMain.layer.borderColor = color.cgColor
+        dataPublicWallet.rating = cell.title.text!
+        checkData()
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {

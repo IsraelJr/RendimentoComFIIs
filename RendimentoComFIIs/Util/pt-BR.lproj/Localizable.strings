@@ -392,8 +392,8 @@
 /*PublicViewController*/
 "placeholder_publicwallet" = "Descreva sobre a estratégia da sua carteira";
 "title_rating" = "Como você classificaria sua carteira?";
-"rating_0" = "Conservador";
-"rating_1" = "Moderado";
-"rating_2" = "Arrojado";
+"rating_0" = "Conservadora";
+"rating_1" = "Moderada";
+"rating_2" = "Agressiva";
 "preview" = "Visualizar";
 "publish" = "Publicar";

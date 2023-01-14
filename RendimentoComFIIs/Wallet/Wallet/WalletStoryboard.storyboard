@@ -1878,7 +1878,7 @@
                                 <rect key="frame" x="0.0" y="48" width="415" height="1602"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nk5-tS-Um6" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="415" height="1387"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="415" height="800"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yJA-J0-Stc" customClass="NavigationBarHeaderView" customModule="Rendimento_com_FIIs" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="415" height="70"/>
@@ -1915,11 +1915,8 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QqF-Te-uN2">
-                                                <rect key="frame" x="16" y="302" width="383" height="350"/>
+                                                <rect key="frame" x="0.0" y="302" width="415" height="349"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="350" id="GWk-2t-jT2"/>
-                                                </constraints>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="30" minimumInteritemSpacing="30" id="AWB-Yi-EZt">
                                                     <size key="itemSize" width="130" height="130"/>
                                                     <size key="estimatedItemSize" width="130" height="130"/>
@@ -1971,14 +1968,14 @@
                                                 </cells>
                                             </collectionView>
                                             <view hidden="YES" contentMode="scaleToFill" restorationIdentifier="fii" translatesAutoresizingMaskIntoConstraints="NO" id="Bac-Iz-4RN">
-                                                <rect key="frame" x="0.0" y="1379" width="415" height="8"/>
+                                                <rect key="frame" x="0.0" y="792" width="415" height="8"/>
                                                 <color key="backgroundColor" systemColor="systemTealColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="8" id="807-NT-ueb"/>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I80-Q4-yvG">
-                                                <rect key="frame" x="32" y="676" width="351" height="34.5"/>
+                                                <rect key="frame" x="24" y="675" width="367" height="34.5"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="tinted" title="FII nas Redes"/>
                                                 <connections>
@@ -1986,7 +1983,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXP-mG-jGR">
-                                                <rect key="frame" x="32" y="734.5" width="351" height="34.5"/>
+                                                <rect key="frame" x="24" y="733.5" width="367" height="34.5"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Histórico de Proventos"/>
                                                 <connections>
@@ -1996,14 +1993,13 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                         <constraints>
-                                            <constraint firstItem="I80-Q4-yvG" firstAttribute="leading" secondItem="QqF-Te-uN2" secondAttribute="leading" constant="16" id="1cr-bG-yJK"/>
-                                            <constraint firstItem="I80-Q4-yvG" firstAttribute="trailing" secondItem="QqF-Te-uN2" secondAttribute="trailing" constant="-16" id="4j3-Bd-52m"/>
-                                            <constraint firstItem="QqF-Te-uN2" firstAttribute="leading" secondItem="fyS-c5-UsZ" secondAttribute="leading" id="4jw-vR-8fL"/>
                                             <constraint firstAttribute="trailing" secondItem="fyS-c5-UsZ" secondAttribute="trailing" constant="16" id="7AO-Gr-NYS"/>
                                             <constraint firstItem="Sz1-al-Ea1" firstAttribute="trailing" secondItem="fyS-c5-UsZ" secondAttribute="trailing" constant="-8" id="Cie-p9-sDh"/>
                                             <constraint firstItem="hXP-mG-jGR" firstAttribute="leading" secondItem="I80-Q4-yvG" secondAttribute="leading" id="Db3-vQ-Mh1"/>
                                             <constraint firstItem="rSS-Hb-OSN" firstAttribute="leading" secondItem="fyS-c5-UsZ" secondAttribute="leading" constant="8" id="Ges-st-WNm"/>
+                                            <constraint firstItem="I80-Q4-yvG" firstAttribute="trailing" secondItem="QqF-Te-uN2" secondAttribute="trailing" constant="-24" id="IBF-I7-cIh"/>
                                             <constraint firstItem="fyS-c5-UsZ" firstAttribute="top" secondItem="yJA-J0-Stc" secondAttribute="bottom" constant="24" id="KRT-C5-sMB"/>
+                                            <constraint firstItem="QqF-Te-uN2" firstAttribute="leading" secondItem="nk5-tS-Um6" secondAttribute="leading" id="MYP-zJ-AIB"/>
                                             <constraint firstItem="HmI-2w-sxa" firstAttribute="leading" secondItem="fyS-c5-UsZ" secondAttribute="leading" id="NTs-Hi-l20"/>
                                             <constraint firstItem="yJA-J0-Stc" firstAttribute="leading" secondItem="nk5-tS-Um6" secondAttribute="leading" id="O8j-jI-K9j"/>
                                             <constraint firstItem="Sz1-al-Ea1" firstAttribute="centerY" secondItem="rSS-Hb-OSN" secondAttribute="centerY" id="Pwo-o1-eCj"/>
@@ -2011,16 +2007,18 @@
                                             <constraint firstItem="HmI-2w-sxa" firstAttribute="trailing" secondItem="fyS-c5-UsZ" secondAttribute="trailing" id="ZDj-kp-FSJ"/>
                                             <constraint firstItem="Bac-Iz-4RN" firstAttribute="leading" secondItem="nk5-tS-Um6" secondAttribute="leading" id="b1q-q3-G9H"/>
                                             <constraint firstItem="rSS-Hb-OSN" firstAttribute="top" secondItem="fyS-c5-UsZ" secondAttribute="bottom" constant="8" id="bDf-GU-sCz"/>
-                                            <constraint firstAttribute="height" constant="1387" id="dkY-Pf-TXV"/>
+                                            <constraint firstItem="Bac-Iz-4RN" firstAttribute="top" secondItem="hXP-mG-jGR" secondAttribute="bottom" constant="24" id="dDq-Ja-fc0"/>
+                                            <constraint firstAttribute="height" constant="800" id="dkY-Pf-TXV"/>
                                             <constraint firstItem="QqF-Te-uN2" firstAttribute="top" secondItem="HmI-2w-sxa" secondAttribute="bottom" id="fRk-82-UO1"/>
                                             <constraint firstAttribute="trailing" secondItem="Bac-Iz-4RN" secondAttribute="trailing" id="hdL-az-Y2S"/>
                                             <constraint firstItem="hXP-mG-jGR" firstAttribute="trailing" secondItem="I80-Q4-yvG" secondAttribute="trailing" id="ism-7d-lDe"/>
+                                            <constraint firstItem="I80-Q4-yvG" firstAttribute="leading" secondItem="QqF-Te-uN2" secondAttribute="leading" constant="24" id="nlP-Hk-Nwh"/>
                                             <constraint firstItem="I80-Q4-yvG" firstAttribute="top" secondItem="QqF-Te-uN2" secondAttribute="bottom" constant="24" id="oV9-Ae-7JS"/>
                                             <constraint firstItem="HmI-2w-sxa" firstAttribute="top" secondItem="Sz1-al-Ea1" secondAttribute="bottom" constant="24" id="pdc-h5-22W"/>
                                             <constraint firstItem="yJA-J0-Stc" firstAttribute="top" secondItem="nk5-tS-Um6" secondAttribute="top" id="pzN-43-fwY"/>
-                                            <constraint firstItem="QqF-Te-uN2" firstAttribute="trailing" secondItem="fyS-c5-UsZ" secondAttribute="trailing" id="sjf-mQ-amy"/>
                                             <constraint firstAttribute="trailing" secondItem="yJA-J0-Stc" secondAttribute="trailing" id="tLI-bh-inW"/>
                                             <constraint firstItem="fyS-c5-UsZ" firstAttribute="leading" secondItem="nk5-tS-Um6" secondAttribute="leading" constant="16" id="wGD-gr-aDi"/>
+                                            <constraint firstAttribute="trailing" secondItem="QqF-Te-uN2" secondAttribute="trailing" id="xg1-a7-Rm5"/>
                                             <constraint firstAttribute="bottom" secondItem="Bac-Iz-4RN" secondAttribute="bottom" id="y74-FZ-8WX"/>
                                         </constraints>
                                     </view>
