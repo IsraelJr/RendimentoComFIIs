@@ -27,8 +27,8 @@ class PublicRouter: NSObject, PublicRoutingLogic, PublicDataPassing {
 //            var destinationDS = destinationVC.router!.dataStore!
 //            passDataToHome(source: dataStore!, destination: &destinationDS)
 //        } else {
-            let storyboard = UIStoryboard(name: "PublicStoryboard", bundle: nil)
-            let destinationVC = storyboard.instantiateViewController(withIdentifier: "home") as! PublicViewController
+            let storyboard = UIStoryboard(name: "WalletStoryboard", bundle: nil)
+            let destinationVC = storyboard.instantiateViewController(withIdentifier: "public") as! PublicViewController
             var destinationDS = destinationVC.router!.dataStore!
             passDataToPublic(source: dataStore!, destination: &destinationDS)
             navigateToPublic(source: viewController!, destination: destinationVC)

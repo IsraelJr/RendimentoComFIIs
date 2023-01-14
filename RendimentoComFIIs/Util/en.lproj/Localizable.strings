@@ -385,4 +385,9 @@
 
 /*PublicViewController*/
 "placeholder_publicwallet" = "Describe about your wallet strategy";
-
+"title_rating" = "How would you rate your portfolio?";
+"rating_0" = "Conservative";
+"rating_1" = "Moderated";
+"rating_2" = "Bold";
+"preview" = "Preview";
+"publish" = "Publish";

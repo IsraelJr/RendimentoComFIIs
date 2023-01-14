@@ -58,6 +58,7 @@
 		DDA36C4A297137380066FECC /* PublicPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA36C49297137380066FECC /* PublicPresenter.swift */; };
 		DDA36C4C297137460066FECC /* PublicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA36C4B297137460066FECC /* PublicModel.swift */; };
 		DDA36C4F2971445C0066FECC /* UITextView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA36C4E2971445C0066FECC /* UITextView + Extension.swift */; };
+		DDA36C51297265CE0066FECC /* RatingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA36C50297265CE0066FECC /* RatingCollectionViewCell.swift */; };
 		DDB02105283317FF00099155 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB02104283317FF00099155 /* AppDelegate.swift */; };
 		DDB02107283317FF00099155 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB02106283317FF00099155 /* SceneDelegate.swift */; };
 		DDB02109283317FF00099155 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB02108283317FF00099155 /* ViewController.swift */; };
@@ -281,6 +282,7 @@
 		DDA36C49297137380066FECC /* PublicPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicPresenter.swift; sourceTree = "<group>"; };
 		DDA36C4B297137460066FECC /* PublicModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicModel.swift; sourceTree = "<group>"; };
 		DDA36C4E2971445C0066FECC /* UITextView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView + Extension.swift"; sourceTree = "<group>"; };
+		DDA36C50297265CE0066FECC /* RatingCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingCollectionViewCell.swift; sourceTree = "<group>"; };
 		DDB02101283317FF00099155 /* Rendimento com FIIs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rendimento com FIIs.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB02104283317FF00099155 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDB02106283317FF00099155 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -618,6 +620,7 @@
 				DDA36C49297137380066FECC /* PublicPresenter.swift */,
 				DDA36C412971371F0066FECC /* PublicViewController.swift */,
 				DDA36C4B297137460066FECC /* PublicModel.swift */,
+				DDA36C50297265CE0066FECC /* RatingCollectionViewCell.swift */,
 			);
 			path = Public;
 			sourceTree = "<group>";
@@ -1229,6 +1232,7 @@
 				DD08812628400444009B80A6 /* AboutAppPresenter.swift in Sources */,
 				DDB021A2283327B200099155 /* ConfigureDataBase.swift in Sources */,
 				DD87CEB82936969700C3C70E /* AboutViewController.swift in Sources */,
+				DDA36C51297265CE0066FECC /* RatingCollectionViewCell.swift in Sources */,
 				DDC56924284D5C2600069BCD /* FIIHistoricPresenter.swift in Sources */,
 				DDA36C4A297137380066FECC /* PublicPresenter.swift in Sources */,
 				DDB022492833284A00099155 /* InitializationPresenter.swift in Sources */,

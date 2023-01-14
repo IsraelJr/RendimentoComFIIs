@@ -19,5 +19,6 @@ extension UITextView {
         self.font = UIFont.boldSystemFont(ofSize: 16)
         self.tag = 0
         self.layer.cornerRadius = 16
+        self.textAlignment = .natural
     }
 }

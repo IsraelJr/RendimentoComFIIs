@@ -14,12 +14,17 @@ protocol PublicDisplayLogic {
 
 class PublicViewController: UIViewController, PublicDisplayLogic {
     
+    @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var viewHeader: NavigationBarHeaderView!
     @IBOutlet weak var textviewDescription: UITextView!
     @IBOutlet var collectionLabel: [UILabel]!
+    @IBOutlet weak var collectionRating: UICollectionView!
+    @IBOutlet weak var buttonPreview: UIButton!
+    @IBOutlet weak var buttonPublish: UIButton!
     
     let placeholderText = NSLocalizedString("placeholder_publicwallet", comment: "")
     let limitLetters = 300
+    var listRatings = [String]()
     
     var interactor: PublicBusinessLogic?
     var router: (NSObjectProtocol & PublicRoutingLogic & PublicDataPassing)?
@@ -90,11 +95,23 @@ class PublicViewController: UIViewController, PublicDisplayLogic {
         textviewDescription.setup(placeholderText)
         
         collectionLabel.forEach {
-            $0.font = UIFont.boldSystemFont(ofSize: 12)
-            $0.textColor = $0.isEqual(collectionLabel.first) ? .label : .systemRed
-            $0.textAlignment = $0.isEqual(collectionLabel.first) ? .right : .left
+            $0.font = $0.isEqual(collectionLabel.last) ? UIFont.boldSystemFont(ofSize: 20) : UIFont.boldSystemFont(ofSize: 12)
+            $0.textColor = $0.isEqual(collectionLabel.first) ? .lightGray : ($0.isEqual(collectionLabel.last) ? .darkGray : .systemRed)
+            $0.textAlignment = ($0.isEqual(collectionLabel.first) || $0.isEqual(collectionLabel.last)) ? .left : .right
             $0.text = $0.isEqual(collectionLabel.first) ? "Total: 0" : "Max: \(limitLetters)"
+            $0.text = $0.isEqual(collectionLabel.last) ? NSLocalizedString("title_rating", comment: "") : $0.text
         }
+        
+        collectionRating.delegate = self
+        collectionRating.dataSource = self
+        collectionRating.backgroundColor = .clear
+        
+        for i in 0...2 {
+            listRatings.append(NSLocalizedString("rating_\(i)", comment: ""))
+        }
+        
+        buttonPreview.setTitle("\(NSLocalizedString("preview", comment: "")) \(viewHeader.lbTitle.text!)", for: .normal)
+        buttonPublish.setTitle("\(NSLocalizedString("publish", comment: "")) \(viewHeader.lbTitle.text!)", for: .normal)
     }
     
     private func addDoneButtonOnKeyboard() {
@@ -115,6 +132,11 @@ class PublicViewController: UIViewController, PublicDisplayLogic {
     
     @objc func doneKeyboardNumber() {
         view.closeKeyboard()
+    }
+    
+    
+    @IBAction func didTapButton(_ sender: UIButton) {
+        
     }
     
     func showSomething(_ object: PublicModel.Fetch.Public) {
@@ -168,4 +190,37 @@ extension PublicViewController: UITextViewDelegate {
     
     
 }
+
+
+extension PublicViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return listRatings.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! RatingCollectionViewCell
+        cell.setData(listRatings[indexPath.row])
+        
+        return cell
+    }
+    
+    
+}
+
+
+extension PublicViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! RatingCollectionViewCell
+        let color: UIColor = indexPath.row == 0 ? .systemGreen : (indexPath.row == 1 ? .systemYellow : .systemRed)
+        cell.title.textColor = color
+        cell.viewMain.layer.borderColor = color.cgColor
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! RatingCollectionViewCell
+        cell.title.textColor = .lightGray
+        cell.viewMain.layer.borderColor = UIColor.clear.cgColor
+    }
+}
+
 
