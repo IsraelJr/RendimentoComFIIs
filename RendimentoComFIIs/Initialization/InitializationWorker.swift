@@ -342,7 +342,7 @@ class InitializationWorker {
     }
     
     func fetchNewsletter() {
-        ConfigureDataBase.instance.collection(ConfigureDataBase.schemeNewsletter).getDocuments { querySnapshot, error in
+        ConfigureDataBase.instance.collection(ConfigureDataBase.collectionNewsletter).getDocuments { querySnapshot, error in
             if error == nil {
                 for document in querySnapshot!.documents {
                     let data = document.data()

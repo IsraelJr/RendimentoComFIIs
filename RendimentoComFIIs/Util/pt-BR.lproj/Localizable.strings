@@ -51,6 +51,7 @@
 "in" = "em";
 "days" = "dias";
 "dividend" = "Dividendos";
+"wallet" = "Carteira";
 
 /*Months*/
 "1"  = "January";
@@ -329,7 +330,7 @@
 "logout_question" = "Deseja realmente sair e desconectar da sua conta?";
 "logout_yes" = "Sair e Desconectar";
 "see_quotes" = "Ver Cotações";
-"wallet" = "Sobre Carteira";
+"about_wallet" = "Sobre Carteira";
 
 /*NewsletterViewController*/
 "title_newsletter" = "Arquivo de Notícias";
@@ -392,8 +393,11 @@
 /*PublicViewController*/
 "placeholder_publicwallet" = "Descreva sobre a estratégia da sua carteira";
 "title_rating" = "Como você classificaria sua carteira?";
-"rating_0" = "Conservadora";
-"rating_1" = "Moderada";
-"rating_2" = "Agressiva";
+"conservative" = "Conservadora";
+"moderate" = "Moderada";
+"aggressive" = "Agressiva";
 "preview" = "Visualizar";
 "publish" = "Publicar";
+"owner" = "Dono";
+"create_success" = "Sua carteira foi publica com sucesso e logo estará disponível para que outros usuários a vejam!";
+"create_error" = "Não foi possível publicar a sua carteira!\nTente novamente mais tarde ou entre em contato conosco informando o problema.";

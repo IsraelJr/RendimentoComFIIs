@@ -1,5 +1,5 @@
 //
-//  ProportionViewController.swift
+//  PreviewViewController.swift
 //  RendimentoComFIIs
 //
 //  Created by Israel Alves on 19/11/22.
@@ -8,16 +8,17 @@
 import UIKit
 import Charts
 
-class ProportionViewController: UIViewController {
+class PreviewViewController: UIViewController {
     
     @IBOutlet weak var viewHeader: NavigationBarHeaderView!
+    @IBOutlet weak var viewData: UIView!
     @IBOutlet weak var pieChart: PieChartView!
     @IBOutlet weak var segmentOptions: UISegmentedControl!
     @IBOutlet weak var viewTotalItems: UIView!
-    @IBOutlet weak var labelTotalItems: UILabel!
-    
+    @IBOutlet var collectionLabel: [UILabel]!
     
     var listValues = [(String,String)]()
+    var dataPublicWallet = (rating: "", description: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,26 +31,21 @@ class ProportionViewController: UIViewController {
         pieChart.entryLabelColor = .white
         pieChart.entryLabelFont = .systemFont(ofSize: 12, weight: .light)
         
-        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture))
-        swipeRight.direction = .right
-        self.view.addGestureRecognizer(swipeRight)
-        
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        if let delegate = UIApplication.shared.delegate as? AppDelegate {
-//            delegate.orientationLock = UIInterfaceOrientationMask.all
-//        }
-//        
-//    }
-//    
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(animated)
-//        if let delegate = UIApplication.shared.delegate as? AppDelegate {
-//            delegate.orientationLock = UIInterfaceOrientationMask.portrait
-//        }
-//    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let delegate = UIApplication.shared.delegate as? AppDelegate {
+            delegate.orientationLock = UIInterfaceOrientationMask.portrait
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if let delegate = UIApplication.shared.delegate as? AppDelegate {
+            delegate.orientationLock = UIInterfaceOrientationMask.all
+        }
+    }
     
     /*
      // MARK: - Navigation
@@ -62,35 +58,35 @@ class ProportionViewController: UIViewController {
      */
     
     private func setupLayout() {
-        viewHeader.setTitleHeader(name: NSLocalizedString("pie_chart", comment: ""))
-        viewHeader.delegate = self
+        viewHeader.setTitleHeader(name: title ?? NSLocalizedString("preview", comment: ""))
+        viewHeader.btnReturn.isHidden = true
+        
+        viewData.backgroundColor = .systemBackground
+        viewData.layer.cornerRadius = 16
         
         segmentOptions.customizeAppearance()
         segmentOptions.setTitleList(["FIIs", NSLocalizedString("segment", comment: "")])
         
+        collectionLabel.forEach {
+            $0.textColor = $0.isEqual(collectionLabel[3]) ? .label : .lightGray
+            $0.font = $0.isEqual(collectionLabel[3]) ? UIFont.systemFont(ofSize: 12) : UIFont.boldSystemFont(ofSize: 20)
+            $0.textAlignment = .center
+            $0.adjustsFontSizeToFitWidth = true
+            $0.numberOfLines = $0.isEqual(collectionLabel[2]) ? 8 : 1
+            $0.minimumScaleFactor = 0.1
+        }
+        
         viewTotalItems.backgroundColor = .systemBackground
         viewTotalItems.layer.cornerRadius = 14
         
-        labelTotalItems.font = UIFont.systemFont(ofSize: 12)
-        labelTotalItems.textAlignment = .center
-        
+        collectionLabel.first?.text = "\(NSLocalizedString("owner", comment: "")): \(DataUser.email!)"
+        collectionLabel[1].text = "\(NSLocalizedString("wallet", comment: "")): \(NSLocalizedString(dataPublicWallet.rating, comment: ""))"
+        collectionLabel[2].text = dataPublicWallet.description
     }
     
     private func showData() {
         self.setup(pieChartView: pieChart)
         self.setDataCount(listValues.count, range: UInt32(listValues.count))
-    }
-    
-    @objc func respondToSwipeGesture(gesture: UIGestureRecognizer) {
-        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
-
-            switch swipeGesture.direction {
-            case .right:
-                self.dismissWith()
-            default:
-                break
-            }
-        }
     }
     
     func setup(pieChartView chartView: PieChartView) {
@@ -177,19 +173,12 @@ class ProportionViewController: UIViewController {
     @IBAction func didTapSegment(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
             listValues = Util.calculatePortfolioRatioByFii()
-            labelTotalItems.text = "\(listValues.count)   \(listValues.count > 1 ? "FIIs": "FII")"
+            collectionLabel[3].text = "\(listValues.count)   \(listValues.count > 1 ? "FIIs": "FII")"
         } else {
             listValues = Util.calculatePortfolioRatioBySegment()
-            labelTotalItems.text = "\(listValues.count)   \(NSLocalizedString("segment", comment: ""))\(listValues.count > 1 ? "s": "")"
+            collectionLabel[3].text = "\(listValues.count)   \(NSLocalizedString("segment", comment: ""))\(listValues.count > 1 ? "s": "")"
         }
         showData()
     }
     
-}
-
-
-extension ProportionViewController: NavigationBarHeaderDelegate {
-    func didTapButtonBack(_ sender: UIButton) {
-        dismissWith()
-    }
 }

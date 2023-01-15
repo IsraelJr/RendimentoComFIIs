@@ -8,7 +8,7 @@
 import UIKit
 
 protocol PublicDisplayLogic {
-    func showSomething(_ object: PublicModel.Fetch.Public)
+    func showResultCRUD(_ message: String, _ result: Bool)
 }
 
 
@@ -24,7 +24,6 @@ class PublicViewController: UIViewController, PublicDisplayLogic {
     
     let placeholderText = NSLocalizedString("placeholder_publicwallet", comment: "")
     let limitLetters = 300
-    var listRatings = [String]()
     var dataPublicWallet = (rating: "", description: "")
     
     var interactor: PublicBusinessLogic?
@@ -107,10 +106,6 @@ class PublicViewController: UIViewController, PublicDisplayLogic {
         collectionRating.dataSource = self
         collectionRating.backgroundColor = .clear
         
-        for i in 0...2 {
-            listRatings.append(NSLocalizedString("rating_\(i)", comment: ""))
-        }
-        
         buttonPreview.setTitle("\(NSLocalizedString("preview", comment: "")) \(viewHeader.lbTitle.text!)", for: .normal)
         buttonPreview.isEnabled = false
         buttonPublish.setTitle("\(NSLocalizedString("publish", comment: "")) \(viewHeader.lbTitle.text!)", for: .normal)
@@ -134,8 +129,10 @@ class PublicViewController: UIViewController, PublicDisplayLogic {
     }
     
     private func checkData() {
-        if !dataPublicWallet.rating.isEmpty && !dataPublicWallet.description.isEmpty {
+        if !dataPublicWallet.rating.isEmpty && !dataPublicWallet.description.isEmpty && !dataPublicWallet.description.elementsEqual(placeholderText){
             buttonPreview.isEnabled = true
+        } else {
+            buttonPreview.isEnabled = false
             buttonPublish.isEnabled = buttonPreview.isEnabled
         }
     }
@@ -148,11 +145,19 @@ class PublicViewController: UIViewController, PublicDisplayLogic {
     
     
     @IBAction func didTapButton(_ sender: UIButton) {
-        
+        if sender.isEqual(buttonPreview) {
+            let vc = storyboard?.instantiateViewController(withIdentifier: "preview") as! PreviewViewController
+            vc.title = buttonPreview.currentTitle
+            vc.dataPublicWallet = dataPublicWallet
+            buttonPublish.isEnabled = true
+            present(vc, animated: true)
+        } else {
+            interactor?.accessDataBase(action: .create, PublicModel.Fetch.Request(object: .init(id: DataUser.email!, rating: WalletRating(rawValue: dataPublicWallet.rating), description: dataPublicWallet.description, fiis: Util.calculatePortfolioRatioByFii(), segments: Util.calculatePortfolioRatioBySegment())))
+        }
     }
     
-    func showSomething(_ object: PublicModel.Fetch.Public) {
-        
+    func showResultCRUD(_ message: String, _ result: Bool) {
+        alertView(type: result ? .success : .error, message: message).delegate = self
     }
     
 }
@@ -170,7 +175,7 @@ extension PublicViewController: UITextViewDelegate {
         _ = textViewShouldBeginEditing(textView)
         let currentText = textView.text ?? ""
         guard let stringRange = Range(range, in: currentText) else { return true }
-        let updatedText = currentText.replacingCharacters(in: stringRange, with: text)
+        var updatedText = currentText.replacingCharacters(in: stringRange, with: text)
         
         if updatedText.isEmpty {
             textviewDescription.setup(placeholderText)
@@ -179,6 +184,7 @@ extension PublicViewController: UITextViewDelegate {
             }
             return false
         } else {
+            updatedText = updatedText.count > limitLetters ? String(updatedText.prefix(limitLetters)) : updatedText
             DispatchQueue.main.async {
                 self.collectionLabel.first?.text = "Total: \(updatedText.count)"
             }
@@ -195,23 +201,21 @@ extension PublicViewController: UITextViewDelegate {
         return true
     }
     
-    //    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
-    //        view.closeKeyboard()
-    //        return true
-    //    }
-    
-    
+    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
+        textView.text.isEmpty ? textviewDescription.setup(placeholderText) : nil
+        return true
+    }
 }
 
 
 extension PublicViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return listRatings.count
+        return WalletRating.allCases.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! RatingCollectionViewCell
-        cell.setData(listRatings[indexPath.row])
+        cell.setData(WalletRating.allCases[indexPath.row])
         
         return cell
     }
@@ -226,7 +230,7 @@ extension PublicViewController: UICollectionViewDelegate {
         let color: UIColor = indexPath.row == 0 ? .systemGreen : (indexPath.row == 1 ? .systemYellow : .systemRed)
         cell.title.textColor = color
         cell.viewMain.layer.borderColor = color.cgColor
-        dataPublicWallet.rating = cell.title.text!
+        dataPublicWallet.rating = cell.title.restorationIdentifier!
         checkData()
     }
     
@@ -238,3 +242,8 @@ extension PublicViewController: UICollectionViewDelegate {
 }
 
 
+extension PublicViewController: ActionButtonAlertDelegate {
+    func close() {
+        dismiss(animated: true)
+    }
+}

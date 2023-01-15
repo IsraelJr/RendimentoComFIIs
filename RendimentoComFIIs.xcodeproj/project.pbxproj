@@ -216,6 +216,7 @@
 		DDD2B3CB283D84420087A113 /* UserProfileStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDD2B3CA283D84420087A113 /* UserProfileStoryboard.storyboard */; };
 		DDD2B3CD283D84480087A113 /* UserProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD2B3CC283D84480087A113 /* UserProfileModel.swift */; };
 		DDDF1CDC287BF40400A8EE0F /* DetailDescriptionBrokersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDF1CDB287BF40300A8EE0F /* DetailDescriptionBrokersViewController.swift */; };
+		DDE218DD2973B395004B63F2 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE218DC2973B395004B63F2 /* PreviewViewController.swift */; };
 		DDE23F4228485F0D000AA17C /* WalletHistoricInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE23F4128485F0D000AA17C /* WalletHistoricInteractor.swift */; };
 		DDE23F4428485F12000AA17C /* WalletHistoricWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE23F4328485F12000AA17C /* WalletHistoricWorker.swift */; };
 		DDE23F4628485F16000AA17C /* WalletHistoricRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE23F4528485F16000AA17C /* WalletHistoricRouter.swift */; };
@@ -443,6 +444,7 @@
 		DDD2B3CA283D84420087A113 /* UserProfileStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserProfileStoryboard.storyboard; sourceTree = "<group>"; };
 		DDD2B3CC283D84480087A113 /* UserProfileModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileModel.swift; sourceTree = "<group>"; };
 		DDDF1CDB287BF40300A8EE0F /* DetailDescriptionBrokersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailDescriptionBrokersViewController.swift; sourceTree = "<group>"; };
+		DDE218DC2973B395004B63F2 /* PreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 		DDE23F4128485F0D000AA17C /* WalletHistoricInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletHistoricInteractor.swift; sourceTree = "<group>"; };
 		DDE23F4328485F12000AA17C /* WalletHistoricWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletHistoricWorker.swift; sourceTree = "<group>"; };
 		DDE23F4528485F16000AA17C /* WalletHistoricRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletHistoricRouter.swift; sourceTree = "<group>"; };
@@ -621,6 +623,7 @@
 				DDA36C412971371F0066FECC /* PublicViewController.swift */,
 				DDA36C4B297137460066FECC /* PublicModel.swift */,
 				DDA36C50297265CE0066FECC /* RatingCollectionViewCell.swift */,
+				DDE218DC2973B395004B63F2 /* PreviewViewController.swift */,
 			);
 			path = Public;
 			sourceTree = "<group>";
@@ -1153,6 +1156,7 @@
 				DD02AB7428E968410074A847 /* AttachViewController.swift in Sources */,
 				DDC25FC4287002B600E11CD4 /* NewsletterModel.swift in Sources */,
 				DDB0215A283326F400099155 /* HomeModel.swift in Sources */,
+				DDE218DD2973B395004B63F2 /* PreviewViewController.swift in Sources */,
 				DDB0219D283327B200099155 /* PlainCircularProgressBar.swift in Sources */,
 				DDB021792833278500099155 /* UIButton+Extension.swift in Sources */,
 				DDB0224F2833284A00099155 /* SearchPresenter.swift in Sources */,

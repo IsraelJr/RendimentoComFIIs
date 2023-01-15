@@ -18,7 +18,11 @@ struct PublicModel: Decodable {
             var message: String?
         }
         struct Public {
-            var id: String?
+            var id: String!
+            var rating: WalletRating!
+            var description: String!
+            var fiis: [(String,String)]?
+            var segments: [(String,String)]?
         }
     }
 }

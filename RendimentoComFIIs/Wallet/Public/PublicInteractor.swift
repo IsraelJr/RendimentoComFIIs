@@ -8,7 +8,7 @@
 import UIKit
 
 protocol PublicBusinessLogic {
-    func doSomething(request: PublicModel.Fetch.Request)
+    func accessDataBase(action: CRUD, _ request: PublicModel.Fetch.Request?)
 }
 
 protocol PublicDataStore {
@@ -20,13 +20,26 @@ class PublicInteractor: PublicBusinessLogic, PublicDataStore {
     var worker: PublicWorker?
     var presenter: PublicPresentationLogic?
     
-    func doSomething(request: PublicModel.Fetch.Request) {
+    func accessDataBase(action: CRUD, _ request: PublicModel.Fetch.Request?) {
         worker = PublicWorker()
-        worker?.doSomething(request: request, success: { response in
-            self.presenter?.presentSomething(response: response)
-        }, fail: { response in
-            self.presenter?.presentSomething(response: response)
-        })
+        switch action {
+        case .create:
+            worker?.create(request: request!, complete: { response in
+                self.presenter?.presentResult(action, response)
+            })
+        case .read:
+            worker?.read(complete: { response in
+                self.presenter?.presentResult(action, response)
+            })
+        case .updtate:
+            worker?.update(complete: { response in
+                self.presenter?.presentResult(action, response)
+            })
+        case .delete:
+            worker?.delete(complete: { response in
+                self.presenter?.presentResult(action, response)
+            })
+        }
     }
     
 }

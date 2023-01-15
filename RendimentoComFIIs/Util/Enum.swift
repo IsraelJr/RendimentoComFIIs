@@ -134,7 +134,7 @@ enum Month: Int, CaseIterable {
     }
 }
 
-enum CRUD {
+enum CRUD: String {
     case create
     case read
     case updtate
@@ -199,7 +199,7 @@ enum UserDefaultKeys: String {
             let key = (self == .lifetime || self == .vip) ? "\(DataUser.email!)\(self.rawValue)" : self.rawValue
             UserDefaults.standard.set(value, forKey: key)
             self == .lifetime && value as! Bool == true ? UserDefaultKeys.vip.setValue(value: true) : nil
-        
+            
         case .basicSalary:
             if let salary = (value as! [String:Int]).first(where: { $0.key.elementsEqual(Util.currentYear) }) {
                 UserDefaults.standard.setPersistentDomain([salary.key:salary.value], forName: "\(self.rawValue):\(salary.key)")
@@ -270,5 +270,15 @@ enum UserDefaultKeys: String {
             result = UserDefaults.standard.string(forKey: self.rawValue) ?? ""
         }
         return result!
+    }
+}
+
+enum WalletRating: String, CaseIterable {
+    case conservative
+    case moderate
+    case aggressive
+    
+    func description() -> String {
+        return NSLocalizedString(self.rawValue, comment: "")
     }
 }

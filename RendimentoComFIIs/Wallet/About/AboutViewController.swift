@@ -86,7 +86,7 @@ class AboutViewController: UIViewController, AboutDisplayLogic {
     }
     
     private func setupLayout() {
-        viewHeader.setTitleHeader(name: NSLocalizedString("wallet", comment: ""))
+        viewHeader.setTitleHeader(name: NSLocalizedString("about_wallet", comment: ""))
         viewHeader.delegate = self
         
         collectionAboutWallet.delegate = self

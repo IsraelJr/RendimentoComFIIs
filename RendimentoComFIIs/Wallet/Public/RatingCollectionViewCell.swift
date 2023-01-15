@@ -30,8 +30,9 @@ class RatingCollectionViewCell: UICollectionViewCell {
         
     }
     
-    func setData(_ name: String) {
-        title.text = name
+    func setData(_ rating: WalletRating) {
+        title.text = rating.description()
+        title.restorationIdentifier = rating.rawValue
     }
     
 }
