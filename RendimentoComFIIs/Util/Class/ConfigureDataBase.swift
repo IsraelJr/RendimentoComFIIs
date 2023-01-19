@@ -35,7 +35,6 @@ class ConfigureDataBase {
     static let fieldActiveDatabase = "active_database"
     static let fieldUserWallet = "wallet"
     static let fieldUserMessage = "message"
-    static let fieldWalletPublic = "wallet_public"
     static let fieldTypeMessage = "typeMessage"
     static let fieldTypeTitle = "typeTitle"
     static let fieldPatrimony = "patrimony"

@@ -374,6 +374,8 @@
 "about_add_description" = "Make sure that this fund's dividends will be paid to your brokerage in the same month you are adding it here to your wallet. If you happen to acquire this fund after your Com Date, add it to your wallet like this to start the following month.";
 "about_delete_title" = "Delete an FII";
 "about_delete_description" = "Do not delete a fund from your portfolio if you have already received your dividends that month. In that case, delete the fund as soon as the next month starts.";
+"public_title" = "Public Wallet";
+"public_description" = "Do you want to demonstrate your portfolio and encourage other investors? Make your wallet public by creating it here in Wallet options and configure its visibility in app settings.";
 "about_last_title" = "The sky is the limit";
 "about_last_description" = "Here we look for ways to facilitate the analysis of your portfolio, and we hope to contribute in some way to facilitate your day-to-day control of your dividends. Follow this path and you will be rewarded!";
 
@@ -393,5 +395,7 @@
 "preview" = "Preview";
 "publish" = "Publish";
 "owner" = "Owner";
-"create_success" = "Your wallet has been published successfully and will soon be available for other users to see!";
+"create_success" = "Your wallet has been successfully published and will soon be available for other users to see!";
 "create_error" = "We were unable to publish your wallet!\nTry again later or contact us with the problem.";
+"read_success" = "Wallet read successfully!";
+"read_error" = "Could not identify public wallet already created!\nYou can try again later or set up a new public wallet.";

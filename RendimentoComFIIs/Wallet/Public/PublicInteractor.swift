@@ -25,12 +25,16 @@ class PublicInteractor: PublicBusinessLogic, PublicDataStore {
         switch action {
         case .create:
             worker?.create(request: request!, complete: { response in
+                UserDefaultKeys.wallet_public_has.setValue(value: response)
+                UserDefaultKeys.wallet_public_isVisible.setValue(value: response)
                 self.presenter?.presentResult(action, response)
             })
         case .read:
-            worker?.read(complete: { response in
-                self.presenter?.presentResult(action, response)
-            })
+            if UserDefaultKeys.wallet_public_has.getValue() as! Bool {
+                worker?.read(complete: { response in
+                    response ? self.presenter?.presentWalletPublic(self.worker?.getWalletPublic()) : self.presenter?.presentResult(action, response)
+                })
+            }
         case .updtate:
             worker?.update(complete: { response in
                 self.presenter?.presentResult(action, response)

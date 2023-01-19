@@ -9,6 +9,7 @@ import UIKit
 
 protocol PublicDisplayLogic {
     func showResultCRUD(_ message: String, _ result: Bool)
+    func publicWalletDataShow(_ wp: PublicModel.Fetch.Public?)
 }
 
 
@@ -37,6 +38,7 @@ class PublicViewController: UIViewController, PublicDisplayLogic {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
+        interactor?.accessDataBase(action: .read, nil)
     }
     
     // MARK: Setup
@@ -157,9 +159,21 @@ class PublicViewController: UIViewController, PublicDisplayLogic {
     }
     
     func showResultCRUD(_ message: String, _ result: Bool) {
-        alertView(type: result ? .success : .error, message: message).delegate = self
+        if result, message.elementsEqual(NSLocalizedString("read_success", comment: "")) {
+            
+        } else {
+            alertView(type: result ? .success : .error, message: message).delegate = self
+        }
     }
     
+    func publicWalletDataShow(_ wp: PublicModel.Fetch.Public?) {
+        textviewDescription.text = wp?.description
+        collectionLabel.first?.text = "Total: \(textviewDescription.text.count)"
+        let index = WalletRating.allCases.firstIndex(where: { $0.rawValue.elementsEqual(wp?.rating.rawValue ?? "") } ) ?? 0
+        self.collectionView(collectionRating, didSelectItemAt: IndexPath(item: index, section: 0))
+        dataPublicWallet = (rating: wp?.rating.rawValue ?? "", description: textviewDescription.text)
+        checkData()
+    }
 }
 
 
@@ -194,7 +208,7 @@ extension PublicViewController: UITextViewDelegate {
     
     func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
         if textviewDescription.tag == 0 {
-            textviewDescription.text.removeAll()
+            textView.text.elementsEqual(placeholderText) ? textviewDescription.text.removeAll() : nil
             textviewDescription.tag = 1
             textView.textColor = .label
         }
@@ -232,13 +246,22 @@ extension PublicViewController: UICollectionViewDelegate {
         cell.viewMain.layer.borderColor = color.cgColor
         dataPublicWallet.rating = cell.title.restorationIdentifier!
         checkData()
+        
+        for i in 0..<WalletRating.allCases.count {
+            if i != indexPath.row {
+                let index = IndexPath(item: i, section: 0)
+                let cell = collectionView.cellForItem(at: index) as! RatingCollectionViewCell
+                cell.title.textColor = .lightGray
+                cell.viewMain.layer.borderColor = UIColor.clear.cgColor
+            }
+        }
     }
     
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as! RatingCollectionViewCell
-        cell.title.textColor = .lightGray
-        cell.viewMain.layer.borderColor = UIColor.clear.cgColor
-    }
+//    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+//        let cell = collectionView.cellForItem(at: indexPath) as! RatingCollectionViewCell
+//        cell.title.textColor = .lightGray
+//        cell.viewMain.layer.borderColor = UIColor.clear.cgColor
+//    }
 }
 
 

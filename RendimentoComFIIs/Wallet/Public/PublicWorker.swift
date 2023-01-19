@@ -9,6 +9,9 @@ import Foundation
 import UIKit
 
 class PublicWorker {
+    
+    var wp: PublicModel.Fetch.Response?
+    
     init() {
         ConfigureDataBase.instance.clearPersistence()
     }
@@ -31,19 +34,32 @@ class PublicWorker {
                 "description":request.object.description!,
                 "fiis":fiis,
                 "segments":segments,
+                "visible":true
             ]
         ) { error in
-                error == nil ? complete(true) : complete(false)
-            }
+            error == nil ? complete(true) : complete(false)
+        }
     }
     
     func read(complete:@escaping(responseDone)) {
-//        ConfigureDataBase.instance.collection(ConfigureDataBase.collectionPublicWallet).document(DataUser.email!).delete()
-        complete(true)
+        ConfigureDataBase.instance.collection(ConfigureDataBase.collectionPublicWallet).document(DataUser.email!).getDocument { document, error in
+            if let document = document, document.exists {
+                self.wp = PublicModel.Fetch.Response(object: PublicModel.Fetch.Public(
+                    id: DataUser.email,
+                    rating: WalletRating(rawValue: document.data()?["rating"] as? String ?? "conservative"),
+                    description: document.data()?["description"] as? String,
+                    fiis: document.data()?["fiis"] as? [(String, String)] ?? [("","")],
+                    segments: document.data()?["segments"] as? [(String, String)] ?? [("","")]), isError: false, message: nil)
+                complete(true)
+            } else {
+                complete(false)
+            }
+        }
+        
     }
     
     func update(complete:@escaping(responseDone)) {
-//        ConfigureDataBase.instance.collection(ConfigureDataBase.collectionPublicWallet).document(DataUser.email!).delete()
+        //        ConfigureDataBase.instance.collection(ConfigureDataBase.collectionPublicWallet).document(DataUser.email!).delete()
         complete(true)
     }
     
@@ -51,4 +67,7 @@ class PublicWorker {
         ConfigureDataBase.instance.collection(ConfigureDataBase.collectionPublicWallet).document(DataUser.email!).delete()
     }
     
+    func getWalletPublic() -> PublicModel.Fetch.Response? {
+        return wp
+    }
 }
