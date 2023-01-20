@@ -8,12 +8,17 @@
 import UIKit
 
 extension UISegmentedControl {
-    func customizeAppearance() { 
+    func customizeAppearance(quantidadeItems: Int = 2) {
         self.selectedSegmentTintColor = UIColor(named: "Font")
         self.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white
                                                , NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 16)
                                               ], for: .selected)
         self.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .normal)
+        
+        for i in 2..<quantidadeItems {
+            self.insertSegment(withTitle: "", at: i, animated: true)
+            
+        }
         self.backgroundColor = .lightGray
         
     }

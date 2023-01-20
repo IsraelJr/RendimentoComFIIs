@@ -24,9 +24,11 @@ class MoreOptionsViewController: UIViewController, MoreOptionsDisplayLogic {
     @IBOutlet weak var viewHeader: NavigationBarHeaderView!
     @IBOutlet weak var stackViewPro: UIStackView!
     @IBOutlet weak var viewPro: UIView!
-    @IBOutlet weak var lbTitlePro: UILabel!
     //    @IBOutlet weak var lbSubTitlePro: UILabel!
+    @IBOutlet var collectionLabel: [UILabel]!
     @IBOutlet weak var btnPro: UIButton!
+    @IBOutlet weak var viewWalletPublic: UIView!
+    @IBOutlet weak var btnWalletPublic: UIButton!
     @IBOutlet weak var collectionOptions: UICollectionView!
     
     var arrayCell = [String]()
@@ -78,23 +80,6 @@ class MoreOptionsViewController: UIViewController, MoreOptionsDisplayLogic {
         setupLayout()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        if let delegate = UIApplication.shared.delegate as? AppDelegate {
-            delegate.orientationLock = UIInterfaceOrientationMask.all
-        }
-        
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        if let delegate = UIApplication.shared.delegate as? AppDelegate {
-            delegate.orientationLock = UIInterfaceOrientationMask.portrait
-        }
-    }
-    
-    
-    
     private func setupLayout() {
         viewHeader.setTitleHeader(name: NSLocalizedString("explore", comment: ""))
         viewHeader.btnReturn.isHidden = true
@@ -109,20 +94,30 @@ class MoreOptionsViewController: UIViewController, MoreOptionsDisplayLogic {
         viewPro.layer.cornerRadius = 16
         viewPro.backgroundColor = UIColor(named: "Font")
         
+        viewWalletPublic.layer.cornerRadius = viewPro.layer.cornerRadius
+        viewWalletPublic.backgroundColor = viewPro.backgroundColor
+        
         if let vip = DataUser.vip, vip < -2 {
             viewPro.removeFromSuperview()
         }
         
-        lbTitlePro.font = UIFont.boldSystemFont(ofSize: 25)
-        lbTitlePro.text = InitializationModel.systemName
-        lbTitlePro.numberOfLines = 2
-        lbTitlePro.textAlignment = .center
-        lbTitlePro.adjustsFontSizeToFitWidth = true
-        lbTitlePro.minimumScaleFactor = 0.1
-        lbTitlePro.textColor = .white
+        collectionLabel.forEach {
+            $0.font = UIFont.boldSystemFont(ofSize: 25)
+            $0.text = $0.isEqual(collectionLabel.first) ? InitializationModel.systemName : NSLocalizedString("public_wallet", comment: "")
+            $0.numberOfLines = 2
+            $0.textAlignment = .center
+            $0.adjustsFontSizeToFitWidth = true
+            $0.minimumScaleFactor = 0.1
+            $0.textColor = .white
+            $0.textAlignment = .left
+            
+        }
         
         btnPro.setupDefault(45, "", NSLocalizedString("bePro", comment: ""))
         btnPro.tintColor = .white
+        
+        btnWalletPublic.setupDefault(35, "arrow.forward.circle.fill")
+        btnWalletPublic.tintColor = .white
         
         for value in MoreOptions.allCases {
             if !value.rawValue.elementsEqual(MoreOptions.exit.rawValue), !value.rawValue.elementsEqual(MoreOptions.male.rawValue), !value.rawValue.elementsEqual(MoreOptions.female.rawValue), !value.rawValue.elementsEqual(MoreOptions.neutral.rawValue) {
@@ -137,6 +132,12 @@ class MoreOptionsViewController: UIViewController, MoreOptionsDisplayLogic {
         
     }
     
+    @IBAction func didTapButtons(_ sender: UIButton) {
+        if sender.isEqual(btnWalletPublic) {
+            let vc = storyboard?.instantiateViewController(withIdentifier: "listWP") as! ListWalletPublicViewController
+            segueTo(destination: vc)
+        }
+    }
 }
 
 

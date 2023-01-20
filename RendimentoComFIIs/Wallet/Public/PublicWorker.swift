@@ -45,11 +45,12 @@ class PublicWorker {
         ConfigureDataBase.instance.collection(ConfigureDataBase.collectionPublicWallet).document(DataUser.email!).getDocument { document, error in
             if let document = document, document.exists {
                 self.wp = PublicModel.Fetch.Response(object: PublicModel.Fetch.Public(
-                    id: DataUser.email,
-                    rating: WalletRating(rawValue: document.data()?["rating"] as? String ?? "conservative"),
-                    description: document.data()?["description"] as? String,
-                    fiis: document.data()?["fiis"] as? [(String, String)] ?? [("","")],
-                    segments: document.data()?["segments"] as? [(String, String)] ?? [("","")]), isError: false, message: nil)
+                    id: DataUser.email
+                    ,rating: WalletRating(rawValue: document.data()?["rating"] as? String ?? "conservative")
+                    ,description: document.data()?["description"] as? String
+//                    ,fiis: document.data()?["fiis"] as? [(String, String)] ?? [("","")]
+//                    ,segments: document.data()?["segments"] as? [(String, String)] ?? [("","")]
+                ), isError: false, message: nil)
                 complete(true)
             } else {
                 complete(false)
