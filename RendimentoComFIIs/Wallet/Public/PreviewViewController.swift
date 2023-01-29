@@ -17,8 +17,8 @@ class PreviewViewController: UIViewController {
     @IBOutlet weak var viewTotalItems: UIView!
     @IBOutlet var collectionLabel: [UILabel]!
     
-    var listValues = [(String,String)]()
-    var dataPublicWallet = (rating: "", description: "")
+    var valuesFiis, valuesSegment, listValues: [(String,String)]?
+    var dataPublicWallet = (owner: "", rating: "", description: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,14 +79,14 @@ class PreviewViewController: UIViewController {
         viewTotalItems.backgroundColor = .systemBackground
         viewTotalItems.layer.cornerRadius = 14
         
-        collectionLabel.first?.text = "\(NSLocalizedString("owner", comment: "")): \(DataUser.email!)"
+        collectionLabel.first?.text = "\(NSLocalizedString("owner", comment: "")): \(dataPublicWallet.owner)"
         collectionLabel[1].text = "\(NSLocalizedString("wallet", comment: "")): \(NSLocalizedString(dataPublicWallet.rating, comment: ""))"
         collectionLabel[2].text = dataPublicWallet.description
     }
     
     private func showData() {
         self.setup(pieChartView: pieChart)
-        self.setDataCount(listValues.count, range: UInt32(listValues.count))
+        self.setDataCount(listValues?.count ?? 0, range: UInt32(listValues?.count ?? 0))
     }
     
     func setup(pieChartView chartView: PieChartView) {
@@ -135,8 +135,8 @@ class PreviewViewController: UIViewController {
         var entries = [PieChartDataEntry]()
         entries = (0..<count).map { (i) -> PieChartDataEntry in
             // IMPORTANT: In a PieChart, no values (Entry) should have the same xIndex (even if from different DataSets), since no values can be drawn above each other.
-            return PieChartDataEntry(value: Double(listValues[i].1.replacingOccurrences(of: ",", with: ".").replacingOccurrences(of: "%", with: ""))! / 5, //Double(arc4random_uniform(range) + range / 5),
-                                     label: listValues[i].0,
+            return PieChartDataEntry(value: (Double(listValues?[i].1.replacingOccurrences(of: ",", with: ".").replacingOccurrences(of: "%", with: "") ?? "0") ?? 0.0) / 5, //Double(arc4random_uniform(range) + range / 5),
+                                     label: listValues?[i].0,
                                      icon: UIImage(named: "pie_chart"))
         }
         
@@ -172,11 +172,11 @@ class PreviewViewController: UIViewController {
     
     @IBAction func didTapSegment(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
-            listValues = Util.calculatePortfolioRatioByFii()
-            collectionLabel[3].text = "\(listValues.count)   \(listValues.count > 1 ? "FIIs": "FII")"
+            listValues = valuesFiis == nil ? Util.calculatePortfolioRatioByFii() : valuesFiis!
+            collectionLabel[3].text = "\(listValues?.count ?? 0)   \(listValues?.count ?? 0 > 1 ? "FIIs": "FII")"
         } else {
-            listValues = Util.calculatePortfolioRatioBySegment()
-            collectionLabel[3].text = "\(listValues.count)   \(NSLocalizedString("segment", comment: ""))\(listValues.count > 1 ? "s": "")"
+            listValues = valuesSegment == nil ? Util.calculatePortfolioRatioBySegment() : valuesSegment!
+            collectionLabel[3].text = "\(listValues?.count ?? 0)   \(NSLocalizedString("segment", comment: ""))\(listValues?.count ?? 0 > 1 ? "s": "")"
         }
         showData()
     }

@@ -282,4 +282,17 @@ enum WalletRating: String, CaseIterable {
     func description() -> String {
         return NSLocalizedString(self.rawValue, comment: "")
     }
+    
+    func getColor() -> CGColor {
+        switch self {
+        case .conservative:
+            return UIColor.systemGreen.cgColor
+            
+        case .moderate:
+            return UIColor.systemYellow.cgColor
+            
+        case .aggressive:
+            return UIColor.systemRed.cgColor
+        }
+    }
 }

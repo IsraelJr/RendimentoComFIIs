@@ -163,7 +163,7 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="HaH-Ba-kqA"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
                             <constraint firstItem="HaH-Ba-kqA" firstAttribute="trailing" secondItem="bDG-Yc-WmF" secondAttribute="trailing" id="5Ko-5h-j1S"/>
                             <constraint firstItem="Hay-hF-UrP" firstAttribute="top" secondItem="HaH-Ba-kqA" secondAttribute="top" id="7rC-va-IoZ"/>
@@ -217,6 +217,9 @@
                                     <segment title="First"/>
                                     <segment title="Second"/>
                                 </segments>
+                                <connections>
+                                    <action selector="didTapSegment:" destination="2Ib-0i-HGd" eventType="valueChanged" id="kCR-og-3Pm"/>
+                                </connections>
                             </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bnU-mu-kda">
                                 <rect key="frame" x="0.0" y="190" width="414" height="664"/>
@@ -283,7 +286,7 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ldK-Sz-57j"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
                             <constraint firstItem="c7W-Sc-9EB" firstAttribute="leading" secondItem="ldK-Sz-57j" secondAttribute="leading" constant="16" id="0Ro-Zj-Y4U"/>
                             <constraint firstItem="ldK-Sz-57j" firstAttribute="trailing" secondItem="bnU-mu-kda" secondAttribute="trailing" id="54Y-g8-SJh"/>
@@ -306,6 +309,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kid-6O-j6W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4479.7101449275369" y="1177.2321428571429"/>
+        </scene>
+        <!--preview-->
+        <scene sceneID="xlZ-iS-Aua">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nXj-2b-ehv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardIdentifier="preview" storyboardName="WalletStoryboard" referencedIdentifier="preview" id="Bc5-Vw-Mlq" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Yby-RE-BOa"/>
+                </viewControllerPlaceholder>
+            </objects>
+            <point key="canvasLocation" x="5035" y="1095"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Nwa-hO-mxk">
@@ -362,7 +375,7 @@
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lJW-fa-cnj">
-                                        <rect key="frame" x="16" y="30" width="35" height="35"/>
+                                        <rect key="frame" x="16" y="29.5" width="35" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="4o3-i7-azl"/>
                                             <constraint firstAttribute="width" constant="35" id="UIt-dV-V77"/>

@@ -18,7 +18,7 @@ class ListWalletPublicViewController: UIViewController, ListWalletPublicDisplayL
     @IBOutlet weak var segmentOptions: UISegmentedControl!
     @IBOutlet weak var collectionOptions: UICollectionView!
     
-    var listOptions: [ListWalletPublicModel.Fetch.ListWalletPublic]?
+    var listOptions, temp: [ListWalletPublicModel.Fetch.ListWalletPublic]?
     
     var interactor: ListWalletPublicBusinessLogic?
     var router: (NSObjectProtocol & ListWalletPublicRoutingLogic & ListWalletPublicDataPassing)?
@@ -104,6 +104,18 @@ class ListWalletPublicViewController: UIViewController, ListWalletPublicDisplayL
         collectionOptions.backgroundColor = .clear
     }
     
+    private func sendData(_ index: Int) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "preview") as! PreviewViewController
+        vc.dataPublicWallet.self = (owner: temp?[index].id ?? "", rating: temp?[index].rating.description() ?? "", description: temp?[index].description ?? "")
+        var tempList = [(String,String)]()
+        temp![index].fiis.forEach({ tempList.append(($0.key, $0.value)) })
+        vc.valuesFiis = tempList
+        tempList = [(String,String)]()
+        temp![index].segments.forEach({ tempList.append(($0.key, $0.value)) })
+        vc.valuesSegment = tempList
+        present(vc, animated: true)
+    }
+    
     @objc func respondToSwipeGesture(gesture: UIGestureRecognizer) {
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
             
@@ -116,9 +128,15 @@ class ListWalletPublicViewController: UIViewController, ListWalletPublicDisplayL
         }
     }
     
+    @IBAction func didTapSegment(_ sender: UISegmentedControl) {
+        temp = listOptions?.filter( { $0.rating.rawValue.elementsEqual(WalletRating.allCases[segmentOptions.selectedSegmentIndex].rawValue) } )
+        collectionOptions.reloadData()
+    }
+    
+    
     func showWalletPublic(_ list: [ListWalletPublicModel.Fetch.ListWalletPublic]) {
         listOptions = list
-        collectionOptions.reloadData()
+        didTapSegment(segmentOptions)
     }
     
 }
@@ -133,12 +151,17 @@ extension ListWalletPublicViewController: NavigationBarHeaderDelegate {
 
 extension ListWalletPublicViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return listOptions?.count ?? 0
+        return temp?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ListWalletPublicCollectionViewCell
-        cell.setData((fii: listOptions?[indexPath.row].fiis.first?.key ?? "", segment: listOptions?[indexPath.row].fiis.first?.value ?? ""))
+        
+        let s = temp?[indexPath.row].segments.sorted(by: { Double($0.value.replacingOccurrences(of: ",", with: ".").replacingOccurrences(of: "%", with: ""))! > Double($1.value.replacingOccurrences(of: ",", with: ".").replacingOccurrences(of: "%", with: ""))! }).first
+        
+        let f = temp?[indexPath.row].fiis.sorted(by: { Double($0.value.replacingOccurrences(of: ",", with: ".").replacingOccurrences(of: "%", with: ""))! > Double($1.value.replacingOccurrences(of: ",", with: ".").replacingOccurrences(of: "%", with: ""))! }).first
+        
+        cell.setData((fii: s?.key ?? "", segment: f?.key ?? ""))
         return cell
     }
     
@@ -148,13 +171,16 @@ extension ListWalletPublicViewController: UICollectionViewDataSource {
 
 extension ListWalletPublicViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as! RatingCollectionViewCell
-        
+        let cell = collectionView.cellForItem(at: indexPath) as! ListWalletPublicCollectionViewCell
+        cell.collectionLabel.forEach( {$0.textColor = UIColor(cgColor: WalletRating.allCases[segmentOptions.selectedSegmentIndex].getColor())} )
+        cell.viewMain.layer.borderColor = WalletRating.allCases[segmentOptions.selectedSegmentIndex].getColor()
+        sendData(indexPath.row)
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as! RatingCollectionViewCell
-        
+        let cell = collectionView.cellForItem(at: indexPath) as! ListWalletPublicCollectionViewCell
+        cell.collectionLabel.forEach( {$0.textColor = .lightGray} )
+        cell.viewMain.layer.borderColor = UIColor.clear.cgColor
     }
     
 }

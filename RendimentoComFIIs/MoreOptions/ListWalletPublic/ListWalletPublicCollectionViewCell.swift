@@ -16,13 +16,11 @@ class ListWalletPublicCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         self.backgroundColor = .clear
         
-        viewMain.backgroundColor = .white
+        viewMain.backgroundColor = .systemBackground
         viewMain.layer.cornerRadius = 16
         viewMain.layer.borderWidth = 3
-        viewMain.layer.borderColor = UIColor.clear.cgColor
         
         collectionLabel.forEach {
-            $0.textColor = .lightGray
             $0.font = UIFont.boldSystemFont(ofSize: 18)
             $0.adjustsFontSizeToFitWidth = true
             $0.minimumScaleFactor = 0.1
@@ -35,6 +33,8 @@ class ListWalletPublicCollectionViewCell: UICollectionViewCell {
     func setData(_ data: (fii: String, segment: String)) {
         collectionLabel.first?.text = data.fii
         collectionLabel.last?.text = data.segment
+        collectionLabel.forEach( {$0.textColor = .lightGray} )
+        viewMain.layer.borderColor = UIColor.clear.cgColor
     }
     
 }

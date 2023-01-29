@@ -26,6 +26,7 @@ extension UISegmentedControl {
     func setTitleList(_ titleList: [String]) {
         for i in 0..<titleList.count {
             self.setTitle(NSLocalizedString(titleList[i], comment: ""), forSegmentAt: i)
+            self.restorationIdentifier = titleList[i]
         }
     }
 }

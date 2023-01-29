@@ -25,7 +25,7 @@ class PublicViewController: UIViewController, PublicDisplayLogic {
     
     let placeholderText = NSLocalizedString("placeholder_publicwallet", comment: "")
     let limitLetters = 300
-    var dataPublicWallet = (rating: "", description: "")
+    var dataPublicWallet = (owner: DataUser.email!, rating: "", description: "")
     
     var interactor: PublicBusinessLogic?
     var router: (NSObjectProtocol & PublicRoutingLogic & PublicDataPassing)?
@@ -73,6 +73,10 @@ class PublicViewController: UIViewController, PublicDisplayLogic {
         // Do any additional setup after loading the view.
         setupLayout()
         addDoneButtonOnKeyboard()
+        
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture))
+        swipeRight.direction = .right
+        self.view.addGestureRecognizer(swipeRight)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -86,6 +90,18 @@ class PublicViewController: UIViewController, PublicDisplayLogic {
         super.viewWillDisappear(animated)
         if let delegate = UIApplication.shared.delegate as? AppDelegate {
             delegate.orientationLock = UIInterfaceOrientationMask.portrait
+        }
+    }
+    
+    @objc func respondToSwipeGesture(gesture: UIGestureRecognizer) {
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+            
+            switch swipeGesture.direction {
+            case .right:
+                self.dismissWith()
+            default:
+                break
+            }
         }
     }
     
@@ -171,7 +187,7 @@ class PublicViewController: UIViewController, PublicDisplayLogic {
         collectionLabel.first?.text = "Total: \(textviewDescription.text.count)"
         let index = WalletRating.allCases.firstIndex(where: { $0.rawValue.elementsEqual(wp?.rating.rawValue ?? "") } ) ?? 0
         self.collectionView(collectionRating, didSelectItemAt: IndexPath(item: index, section: 0))
-        dataPublicWallet = (rating: wp?.rating.rawValue ?? "", description: textviewDescription.text)
+        dataPublicWallet.self = (owner: wp?.id ?? "", rating: wp?.rating.rawValue ?? "", description: textviewDescription.text)
         checkData()
     }
 }
@@ -241,9 +257,8 @@ extension PublicViewController: UICollectionViewDataSource {
 extension PublicViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! RatingCollectionViewCell
-        let color: UIColor = indexPath.row == 0 ? .systemGreen : (indexPath.row == 1 ? .systemYellow : .systemRed)
-        cell.title.textColor = color
-        cell.viewMain.layer.borderColor = color.cgColor
+        cell.title.textColor = UIColor(cgColor: WalletRating.allCases[indexPath.row].getColor())
+        cell.viewMain.layer.borderColor = cell.title.textColor.cgColor
         dataPublicWallet.rating = cell.title.restorationIdentifier!
         checkData()
         
