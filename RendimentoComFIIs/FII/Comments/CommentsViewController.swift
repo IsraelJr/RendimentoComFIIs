@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftSoup
+import Lottie
 
 protocol CommentsDisplayLogic {
     func getCodeFii(_ code: String)
@@ -20,7 +21,7 @@ class CommentsViewController: UIViewController, CommentsDisplayLogic {
     @IBOutlet weak var lbTitleCollection: UILabel!
     @IBOutlet weak var collectionSites: UICollectionView!
     
-    var loading: UIView?
+    var loading: LottieAnimationView?
     var codeFii = ""
     var newsUrl: String?
     var listComments = [Comments]()
@@ -82,7 +83,7 @@ class CommentsViewController: UIViewController, CommentsDisplayLogic {
     }
     
     private func setupLayout() {
-        loading = view.loading()
+        loading = view.loadingLottie("search_comments")
         self.view.backgroundColor = .systemGray6
         
         viewHeader.delegate = self
@@ -128,10 +129,10 @@ class CommentsViewController: UIViewController, CommentsDisplayLogic {
                 for _ in 0..<(listTemp.count >= 5 ? 5 : listTemp.count) {
                     self.listComments.append(listTemp.remove(at: Int(arc4random_uniform(UInt32(listTemp.count)))))
                 }
-                self.loading?.isHidden = true
+                self.loading?.removeFromSuperview()
             } else {
                 self.listComments.append(.init(author: "", comments: NSLocalizedString("no_comments", comment: ""), date: "", site: ""))
-                self.loading?.isHidden = true
+                self.loading?.removeFromSuperview()
             }
             self.tableComments.reloadData()
         }

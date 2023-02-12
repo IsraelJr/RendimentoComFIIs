@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 extension UIView {
     func createNavigationBarFooter(position: Int!) -> NavigationBarFooterView {
@@ -56,11 +57,35 @@ extension UIView {
             ,viewLoadingBar.centerYAnchor.constraint(equalTo: viewBackground.centerYAnchor, constant: 0)
         ])
         
-       return viewMain
+        return viewMain
     }
     
     func closeKeyboard() {
         self.endEditing(true)
         self.resignFirstResponder()
+    }
+    
+    func loadingLottie(_ animationName: String = "loading_rcf", _ speed: CGFloat = 2) -> LottieAnimationView {
+        // 1. Create the LottieAnimationView
+        var animationView: LottieAnimationView!
+        
+        // 2. Start LottieAnimationView with animation name (without extension)
+        animationView = .init(name: animationName)
+        animationView!.frame = self.bounds
+        
+        // 3. Set animation content mode
+        animationView!.contentMode = .scaleAspectFit
+        
+        // 4. Set animation loop mode
+        animationView!.loopMode = .loop
+        
+        // 5. Adjust animation speed
+        animationView!.animationSpeed = speed
+        self.addSubview(animationView!)
+        
+        // 6. Play animation
+        animationView!.play()
+        
+        return animationView
     }
 }

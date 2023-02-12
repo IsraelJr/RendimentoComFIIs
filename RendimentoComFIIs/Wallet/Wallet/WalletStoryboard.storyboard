@@ -123,38 +123,33 @@
                                     <action selector="didTapAddNewFii:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Hil-Z4-6Kv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZFM-po-1QP">
-                                <rect key="frame" x="358" y="745" width="40" height="40"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jTp-ET-XWQ" customClass="LottieAnimationView" customModule="Lottie">
+                                <rect key="frame" x="363" y="735" width="35" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Itf-v3-yJ5"/>
-                                    <constraint firstAttribute="width" constant="40" id="LmZ-nB-IJc"/>
+                                    <constraint firstAttribute="width" constant="35" id="arI-Xr-nWO"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="..."/>
-                                <connections>
-                                    <action selector="didTapHistoric:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Ycq-if-boW"/>
-                                </connections>
-                            </button>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
                             <constraint firstItem="1OD-xo-Di8" firstAttribute="leading" secondItem="qvj-OI-2m1" secondAttribute="leading" id="4i2-uK-prn"/>
                             <constraint firstItem="1OD-xo-Di8" firstAttribute="top" secondItem="qvj-OI-2m1" secondAttribute="bottom" id="71n-GP-GNz"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ZFM-po-1QP" secondAttribute="trailing" constant="16" id="Avf-xJ-E4X"/>
                             <constraint firstItem="1OD-xo-Di8" firstAttribute="trailing" secondItem="qvj-OI-2m1" secondAttribute="trailing" id="E6g-6W-I0x"/>
                             <constraint firstItem="WEk-AM-YqG" firstAttribute="centerX" secondItem="1OD-xo-Di8" secondAttribute="centerX" id="MFa-Pj-Pqy"/>
+                            <constraint firstItem="jTp-ET-XWQ" firstAttribute="centerY" secondItem="WEk-AM-YqG" secondAttribute="centerY" id="N5V-RA-aLb"/>
                             <constraint firstItem="qvj-OI-2m1" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="Nzu-oX-ozu"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="jTp-ET-XWQ" secondAttribute="trailing" constant="16" id="PFH-qG-VSq"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="WEk-AM-YqG" secondAttribute="bottom" constant="80" id="Rhx-RI-swW"/>
                             <constraint firstItem="qvj-OI-2m1" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Vz4-j6-Ekp"/>
-                            <constraint firstItem="ZFM-po-1QP" firstAttribute="centerY" secondItem="WEk-AM-YqG" secondAttribute="centerY" id="dfi-h9-u7b"/>
                             <constraint firstItem="WEk-AM-YqG" firstAttribute="top" secondItem="1OD-xo-Di8" secondAttribute="bottom" constant="24" id="h7U-Kf-p68"/>
                             <constraint firstAttribute="trailing" secondItem="qvj-OI-2m1" secondAttribute="trailing" id="yqu-I4-NAV"/>
+                            <constraint firstItem="jTp-ET-XWQ" firstAttribute="height" secondItem="WEk-AM-YqG" secondAttribute="height" multiplier="1.73913" id="zt0-vk-AVS"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="btnAddNewFii" destination="WEk-AM-YqG" id="iEI-Sw-D8m"/>
-                        <outlet property="btnMoreOptions" destination="ZFM-po-1QP" id="m32-tv-Wc3"/>
+                        <outlet property="moreOptions" destination="jTp-ET-XWQ" id="puM-Ch-Nfe"/>
                         <outlet property="tableMyFiis" destination="1OD-xo-Di8" id="gGS-ad-Rsl"/>
                         <outlet property="viewHeader" destination="qvj-OI-2m1" id="WRJ-5T-cys"/>
                     </connections>

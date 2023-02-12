@@ -17,8 +17,6 @@ class InitializationViewController: UIViewController, InitializationDisplayLogic
     
     static var showOpenAd = true
     
-    var loading: UIView?
-    
     var interactor: InitializationBusinessLogic?
     var router: (NSObjectProtocol & InitializationRoutingLogic & InitializationDataPassing)?
     
@@ -71,8 +69,7 @@ class InitializationViewController: UIViewController, InitializationDisplayLogic
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        loading = view.loading()
+        _ = view.loadingLottie()
         setupLayout()
         //        DispatchQueue.main.async {
         //            self.segueTo(destination: self.storyboard?.instantiateViewController(withIdentifier: "home") as! HomeViewController)
@@ -111,7 +108,6 @@ class InitializationViewController: UIViewController, InitializationDisplayLogic
     
     func callHomeViewController() {
         HomeViewController().showTopics(.init())
-        loading = nil
         Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
             self.segueTo(destination: self.storyboard?.instantiateViewController(withIdentifier: "home") as! HomeViewController)
         }

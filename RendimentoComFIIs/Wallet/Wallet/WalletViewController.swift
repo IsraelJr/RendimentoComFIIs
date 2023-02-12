@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 protocol WalletDisplayLogic {
     func successWallet(_ wallet: WalletModel.Fetch.Wallet)
@@ -18,7 +19,7 @@ class WalletViewController: UIViewController, WalletDisplayLogic {
     @IBOutlet weak var viewHeader: NavigationBarHeaderView!
     @IBOutlet weak var tableMyFiis: UITableView!
     @IBOutlet weak var btnAddNewFii: UIButton!
-    @IBOutlet weak var btnMoreOptions: UIButton!
+    @IBOutlet weak var moreOptions: LottieAnimationView!
     
     static var wallet: WalletModel.Fetch.Wallet?
     
@@ -95,12 +96,19 @@ class WalletViewController: UIViewController, WalletDisplayLogic {
         let viewFooter = view.createNavigationBarFooter(position: 1)
         viewFooter.delegate = self
         
-        //btnMoreOptions.transform = btnMoreOptions.transform.rotated(by: .pi/2)
-        btnMoreOptions.setupDefault(btnMoreOptions.frame.width)
-        btnMoreOptions.setImage(UIImage(named: "more20"), for: .normal)
-        btnMoreOptions.backgroundColor = .white
+        _ = moreOptions.loadingLottie("more", 1)
+        moreOptions.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(respondToTapGesture))
+        self.moreOptions.addGestureRecognizer(tap)
         
     }
+    
+    @objc func respondToTapGesture(gesture: UITapGestureRecognizer) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "moreOptionsWallet") as! MoreOptionsWalletViewController
+        segueTo(destination: vc)
+    }
+    
+    
     
     private func presentConfigureFii() {
         let vc = storyboard?.instantiateViewController(withIdentifier: "configureFii") as! ConfigureWalletFIIViewController
@@ -145,10 +153,6 @@ class WalletViewController: UIViewController, WalletDisplayLogic {
         presentConfigureFii()
     }
     
-    @IBAction func didTapHistoric(_ sender: UIButton) {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "moreOptionsWallet") as! MoreOptionsWalletViewController
-        segueTo(destination: vc)
-    }
 }
 
 

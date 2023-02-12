@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftSoup
+import Lottie
 
 protocol WalletQuotesDisplayLogic {
     //    func successSaveMonth(_ msg: String)
@@ -19,7 +20,7 @@ class WalletQuotesViewController: UIViewController, WalletQuotesDisplayLogic {
     @IBOutlet weak var viewHeader: NavigationBarHeaderView!
     @IBOutlet weak var tableMyFiis: UITableView!
     
-    var loading: UIView!
+    var loading: LottieAnimationView?
     
     struct FIIs {
         var code: String
@@ -69,16 +70,16 @@ class WalletQuotesViewController: UIViewController, WalletQuotesDisplayLogic {
         //        vc.code = dataEdit?.code ?? ""
         //        vc.quotas = dataEdit?.quotas ?? ""
         //        vc.vcWallet = self
-        //        present(vc, animated: false, completion: nil)
+        //  /Users/israelalves/Downloads/more.json      present(vc, animated: false, completion: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loading = view.loading()
+        loading = view.loadingLottie("bar_graph")
         setupLayout()
         testeExtracao { response in
             DispatchQueue.main.async {
-                self.loading.isHidden = true
+                self.loading?.removeFromSuperview()
                 self.tableMyFiis.reloadData()
             }
         }
@@ -145,8 +146,8 @@ class WalletQuotesViewController: UIViewController, WalletQuotesDisplayLogic {
                         let features = try doc.getElementById("quote-header-info")
                         let one = try features?.getElementsByClass("Whs(nw)").first()?.getElementsByClass("Trsdu(0.3s) Fw(b) Fz(36px) Mb(-4px) D(b)").text() ?? "0"
                         let two = try features?.select("span")
-                        let news1 = try two?[3].text() ?? "0"
-                        let news2 = try two?[4].text() ?? "0"
+                        let news1 = try two?[3].text() ?? "+0.00"
+                        let news2 = try two?[4].text() ?? "(+0.00%)"
                         let date = try features?.getElementById("quote-market-notice")?.select("span").text().split(separator: " ")[2].description ?? ""
                         self.result.append(.init(code: item, price: Double(one)?.convertToCurrency(true) ?? "R$ 0,0", variacao: news1.description, percent: news2.description, dateLastUpdate: date))
                         
@@ -185,7 +186,7 @@ extension WalletQuotesViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return result.count > 0 ? NSLocalizedString("not_realtime", comment: "") : (self.loading.isHidden ? NSLocalizedString("no_fiis", comment: "") : NSLocalizedString("searching", comment: ""))
+        return result.count > 0 ? NSLocalizedString("not_realtime", comment: "") : (self.loading == nil ? NSLocalizedString("no_fiis", comment: "") : "")
     }
     
 }

@@ -799,6 +799,7 @@ PODS:
   - Libuv-gRPC/Implementation (0.0.10):
     - Libuv-gRPC/Interface (= 0.0.10)
   - Libuv-gRPC/Interface (0.0.10)
+  - lottie-ios (4.1.2)
   - nanopb (2.30908.0):
     - nanopb/decode (= 2.30908.0)
     - nanopb/encode (= 2.30908.0)
@@ -821,6 +822,7 @@ DEPENDENCIES:
   - FirebaseFirestoreSwift
   - Google-Mobile-Ads-SDK
   - GoogleSignIn
+  - lottie-ios
   - SpreadsheetView
   - SwiftSoup
   - TinyConstraints
@@ -853,6 +855,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - leveldb-library
     - Libuv-gRPC
+    - lottie-ios
     - nanopb
     - PromisesObjC
     - SpreadsheetView
@@ -887,6 +890,7 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 5595ec75acf5be50814f81e9189490412bad82ba
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   Libuv-gRPC: 55e51798e14ef436ad9bc45d12d43b77b49df378
+  lottie-ios: b3846a9fa8ca1a1a3bebfa256ebe8b6fd4aaaaad
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
   SpreadsheetView: 688dbd19f2b355df0eb09e486266fd913a013449
@@ -894,6 +898,6 @@ SPEC CHECKSUMS:
   SwiftSoup: 7589ceac3b38cef742a96981cfe2b14ba55ce1e3
   TinyConstraints: 7b7ccc0c485bb3bb47082138ff28bc33cd49897f
 
-PODFILE CHECKSUM: 3e1a5accd10302d4023e5519f4d77b87d3012bdb
+PODFILE CHECKSUM: c3a5ec90320264d4a46b5b683e7d50f05d072d7d
 
 COCOAPODS: 1.11.2

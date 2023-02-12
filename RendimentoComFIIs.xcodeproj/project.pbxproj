@@ -58,6 +58,10 @@
 		DD87CEC62938243F00C3C70E /* SettingsAppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD87CEC52938243F00C3C70E /* SettingsAppRouter.swift */; };
 		DD87CEC82938244400C3C70E /* SettingsAppPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD87CEC72938244400C3C70E /* SettingsAppPresenter.swift */; };
 		DD87CECA2938247600C3C70E /* SettingsAppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD87CEC92938247600C3C70E /* SettingsAppModel.swift */; };
+		DD94F86529906C7500A5EDF3 /* loading_rcf.json in Resources */ = {isa = PBXBuildFile; fileRef = DD94F86429906C7500A5EDF3 /* loading_rcf.json */; };
+		DD94F86A29907BA900A5EDF3 /* bar_graph.json in Resources */ = {isa = PBXBuildFile; fileRef = DD94F86929907BA900A5EDF3 /* bar_graph.json */; };
+		DD94F86C29907D3900A5EDF3 /* search_comments.json in Resources */ = {isa = PBXBuildFile; fileRef = DD94F86B29907D3900A5EDF3 /* search_comments.json */; };
+		DD94F86E2990816500A5EDF3 /* more.json in Resources */ = {isa = PBXBuildFile; fileRef = DD94F86D2990816500A5EDF3 /* more.json */; };
 		DDA36C422971371F0066FECC /* PublicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA36C412971371F0066FECC /* PublicViewController.swift */; };
 		DDA36C44297137270066FECC /* PublicInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA36C43297137270066FECC /* PublicInteractor.swift */; };
 		DDA36C462971372C0066FECC /* PublicWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA36C452971372C0066FECC /* PublicWorker.swift */; };
@@ -290,6 +294,10 @@
 		DD87CEC52938243F00C3C70E /* SettingsAppRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsAppRouter.swift; sourceTree = "<group>"; };
 		DD87CEC72938244400C3C70E /* SettingsAppPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsAppPresenter.swift; sourceTree = "<group>"; };
 		DD87CEC92938247600C3C70E /* SettingsAppModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsAppModel.swift; sourceTree = "<group>"; };
+		DD94F86429906C7500A5EDF3 /* loading_rcf.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading_rcf.json; sourceTree = "<group>"; };
+		DD94F86929907BA900A5EDF3 /* bar_graph.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bar_graph.json; sourceTree = "<group>"; };
+		DD94F86B29907D3900A5EDF3 /* search_comments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = search_comments.json; sourceTree = "<group>"; };
+		DD94F86D2990816500A5EDF3 /* more.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = more.json; sourceTree = "<group>"; };
 		DDA36C412971371F0066FECC /* PublicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicViewController.swift; sourceTree = "<group>"; };
 		DDA36C43297137270066FECC /* PublicInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicInteractor.swift; sourceTree = "<group>"; };
 		DDA36C452971372C0066FECC /* PublicWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicWorker.swift; sourceTree = "<group>"; };
@@ -641,6 +649,17 @@
 			path = MoreOptions;
 			sourceTree = "<group>";
 		};
+		DD94F86629906C7C00A5EDF3 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				DD94F86429906C7500A5EDF3 /* loading_rcf.json */,
+				DD94F86929907BA900A5EDF3 /* bar_graph.json */,
+				DD94F86B29907D3900A5EDF3 /* search_comments.json */,
+				DD94F86D2990816500A5EDF3 /* more.json */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
 		DDA36C4D2971375A0066FECC /* Public */ = {
 			isa = PBXGroup;
 			children = (
@@ -726,6 +745,7 @@
 				DDB02181283327B100099155 /* Enum.swift */,
 				DDB0215D2833272C00099155 /* Util.swift */,
 				DD1CF33328FA7988007156C5 /* Ad.swift */,
+				DD94F86629906C7C00A5EDF3 /* Source */,
 				DDB02190283327B200099155 /* Class */,
 				DDB02185283327B200099155 /* en.lproj */,
 				DDB02182283327B200099155 /* pt-BR.lproj */,
@@ -1098,14 +1118,18 @@
 				DDB021AE2833280800099155 /* NavigationBarFooterView.xib in Resources */,
 				DDB02197283327B200099155 /* Localizable.strings in Resources */,
 				DDB0210E2833180000099155 /* Assets.xcassets in Resources */,
+				DD94F86E2990816500A5EDF3 /* more.json in Resources */,
 				DD08A77F2951675200C62D59 /* SettingsAppStoryboard.storyboard in Resources */,
 				DDB0210C283317FF00099155 /* Main.storyboard in Resources */,
+				DD94F86529906C7500A5EDF3 /* loading_rcf.json in Resources */,
 				DDB022532833284A00099155 /* SearchStoryboard.storyboard in Resources */,
 				DDD2B3BE283D841B0087A113 /* xXxStoryboard.storyboard in Resources */,
 				DDB021AC2833280800099155 /* NavigationBarHeaderView.xib in Resources */,
+				DD94F86A29907BA900A5EDF3 /* bar_graph.json in Resources */,
 				DD08811D283FF741009B80A6 /* AboutAppStoryboard.storyboard in Resources */,
 				DDB0220E2833284A00099155 /* CommentsStoryboard.storyboard in Resources */,
 				DDB02155283326F400099155 /* HomeStoryboard.storyboard in Resources */,
+				DD94F86C29907D3900A5EDF3 /* search_comments.json in Resources */,
 				DDB0222B2833284A00099155 /* MoreOptionsStoryboard.storyboard in Resources */,
 				DDB0225A28333D5600099155 /* GoogleService-Info.plist in Resources */,
 				DDB0219B283327B200099155 /* ProgressBar.storyboard in Resources */,
