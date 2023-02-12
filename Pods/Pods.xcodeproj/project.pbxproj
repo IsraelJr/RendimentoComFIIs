@@ -14037,7 +14037,7 @@
 		0C425C08BB3A1BDD61979ACF285F68B2 /* KeyframeInterpolator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyframeInterpolator.swift; path = Sources/Private/Utility/Interpolatable/KeyframeInterpolator.swift; sourceTree = "<group>"; };
 		0C499BFA19E816F4FFD8B763CFD85BE6 /* GULNetworkInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GULNetworkInternal.h; path = GoogleUtilities/Network/GULNetworkInternal.h; sourceTree = "<group>"; };
 		0C5488802AA0B1472546F9C72A1FF8B2 /* FirebaseDatabase-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "FirebaseDatabase-Info.plist"; sourceTree = "<group>"; };
-		0C6A0A3D1B84C4A6D36B63B20748CDD4 /* Pods-RendimentoComFIIs */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-RendimentoComFIIs"; path = Pods_RendimentoComFIIs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C6A0A3D1B84C4A6D36B63B20748CDD4 /* Pods_RendimentoComFIIs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RendimentoComFIIs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C74A29FC46F58016CBBC34A182E1157 /* encrypted_client_hello.cc */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = encrypted_client_hello.cc; path = src/ssl/encrypted_client_hello.cc; sourceTree = "<group>"; };
 		0C8C732348BA24BD3B9DBA6381B21456 /* Partition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Partition.swift; path = Sources/Algorithms/Partition.swift; sourceTree = "<group>"; };
 		0C9463932A863249983DF1730A976EB2 /* compression_types.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = compression_types.h; path = include/grpc/impl/codegen/compression_types.h; sourceTree = "<group>"; };
@@ -15465,7 +15465,7 @@
 		5186FEAB792527A9DA34D536F352B14B /* Google-Mobile-Ads-SDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Google-Mobile-Ads-SDK.release.xcconfig"; sourceTree = "<group>"; };
 		51915C5E4B98CD2B79D41A0109A11494 /* GoogleSignIn-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "GoogleSignIn-Info.plist"; sourceTree = "<group>"; };
 		51B14F416B69A32319535A57C80C6A3E /* annotations.upb.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = annotations.upb.c; path = "src/core/ext/upb-generated/google/api/annotations.upb.c"; sourceTree = "<group>"; };
-		51BA97E8B5085EFFB47BC9C0B785CEA7 /* lottie-ios */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "lottie-ios"; path = Lottie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		51BA97E8B5085EFFB47BC9C0B785CEA7 /* Lottie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Lottie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51BC6FF9EB77C4D9102AF746CC725922 /* server_posix.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = server_posix.h; path = include/grpcpp/server_posix.h; sourceTree = "<group>"; };
 		51F6A889113E3BFF10F8A1CCBCD55BE0 /* cord.cc */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = cord.cc; path = absl/strings/cord.cc; sourceTree = "<group>"; };
 		522D2D7EF4795342D32C911E8CE48AF5 /* FBLPromise+Async.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "FBLPromise+Async.m"; path = "Sources/FBLPromises/FBLPromise+Async.m"; sourceTree = "<group>"; };
@@ -19596,9 +19596,9 @@
 				C1998E0D8085221AD87F89B614C10E52 /* GTMSessionFetcher */,
 				0A9F46A999C47653013D3AD854352507 /* leveldb-library */,
 				6BC54C3D03DEBF9C3A40965E69CAE039 /* Libuv-gRPC */,
-				51BA97E8B5085EFFB47BC9C0B785CEA7 /* lottie-ios */,
+				51BA97E8B5085EFFB47BC9C0B785CEA7 /* Lottie.framework */,
 				06FC5C9CF96D60C50FCD47D339C91951 /* nanopb */,
-				0C6A0A3D1B84C4A6D36B63B20748CDD4 /* Pods-RendimentoComFIIs */,
+				0C6A0A3D1B84C4A6D36B63B20748CDD4 /* Pods_RendimentoComFIIs.framework */,
 				3347A1AB6546F0A3977529B8F199DC41 /* PromisesObjC */,
 				AE9B884EBD08952D3197671321FAA308 /* SpreadsheetView */,
 				F3E7458F7D38C89A9DE4BBACD3450C88 /* SwiftAlgorithms */,
@@ -28892,7 +28892,7 @@
 			);
 			name = "lottie-ios";
 			productName = Lottie;
-			productReference = 51BA97E8B5085EFFB47BC9C0B785CEA7 /* lottie-ios */;
+			productReference = 51BA97E8B5085EFFB47BC9C0B785CEA7 /* Lottie.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		1C5E43B0A9555E7C2E43A6D7C8A23CF6 /* gRPC-C++ */ = {
@@ -29852,7 +29852,7 @@
 			);
 			name = "Pods-RendimentoComFIIs";
 			productName = Pods_RendimentoComFIIs;
-			productReference = 0C6A0A3D1B84C4A6D36B63B20748CDD4 /* Pods-RendimentoComFIIs */;
+			productReference = 0C6A0A3D1B84C4A6D36B63B20748CDD4 /* Pods_RendimentoComFIIs.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		CAD3534FC55B0333104E5117C0A9A324 /* GoogleSignIn */ = {
