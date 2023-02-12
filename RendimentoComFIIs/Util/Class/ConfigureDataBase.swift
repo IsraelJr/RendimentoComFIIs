@@ -23,7 +23,8 @@ class ConfigureDataBase {
     static let collectionLibrary = "Library"
     static let collectionUser = "User"
     static let collectionUserMessage = "Message"
-    static let schemeNewsletter = "Newsletter"
+    static let collectionNewsletter = "Newsletter"
+    static let collectionPublicWallet = "PublicWallet"
     
     static let documentBasicSalary = "basic_salary"
     static let documentMaintenance = "maintenance"
@@ -34,7 +35,6 @@ class ConfigureDataBase {
     static let fieldActiveDatabase = "active_database"
     static let fieldUserWallet = "wallet"
     static let fieldUserMessage = "message"
-    static let fieldWalletPublic = "wallet_public"
     static let fieldTypeMessage = "typeMessage"
     static let fieldTypeTitle = "typeTitle"
     static let fieldPatrimony = "patrimony"

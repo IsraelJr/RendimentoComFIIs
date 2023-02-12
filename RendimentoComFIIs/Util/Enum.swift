@@ -134,7 +134,7 @@ enum Month: Int, CaseIterable {
     }
 }
 
-enum CRUD {
+enum CRUD: String {
     case create
     case read
     case updtate
@@ -189,17 +189,18 @@ enum UserDefaultKeys: String {
     case accept_terms
     case vip
     case sentMessage
-    case wallet_public
+    case wallet_public_isVisible
+    case wallet_public_has
     case unread_message
     case lifetime
     
     func setValue(value: Any) {
         switch self {
-        case .totalNewsInArchive, .userCreatedIn, .accept_terms, .vip, .wallet_public, .unread_message, .lifetime:
+        case .totalNewsInArchive, .userCreatedIn, .accept_terms, .vip, .wallet_public_isVisible, .unread_message, .lifetime, .wallet_public_has:
             let key = (self == .lifetime || self == .vip) ? "\(DataUser.email!)\(self.rawValue)" : self.rawValue
             UserDefaults.standard.set(value, forKey: key)
             self == .lifetime && value as! Bool == true ? UserDefaultKeys.vip.setValue(value: true) : nil
-        
+            
         case .basicSalary:
             if let salary = (value as! [String:Int]).first(where: { $0.key.elementsEqual(Util.currentYear) }) {
                 UserDefaults.standard.setPersistentDomain([salary.key:salary.value], forName: "\(self.rawValue):\(salary.key)")
@@ -253,7 +254,7 @@ enum UserDefaultKeys: String {
         case .fiis, .suno, .euqueroinvestir, .valorinveste, .accept_terms:
             result = UserDefaults.standard.bool(forKey: self.rawValue)
             
-        case .vip, .wallet_public, .unread_message, .lifetime:
+        case .vip, .wallet_public_isVisible, .unread_message, .lifetime, .wallet_public_has:
             let key = (self == .lifetime || self == .vip) ? "\(DataUser.email!)\(self.rawValue)" : self.rawValue
             result = UserDefaults.standard.bool(forKey: key)
             
@@ -270,5 +271,28 @@ enum UserDefaultKeys: String {
             result = UserDefaults.standard.string(forKey: self.rawValue) ?? ""
         }
         return result!
+    }
+}
+
+enum WalletRating: String, CaseIterable {
+    case conservative
+    case moderate
+    case aggressive
+    
+    func description() -> String {
+        return NSLocalizedString(self.rawValue, comment: "")
+    }
+    
+    func getColor() -> CGColor {
+        switch self {
+        case .conservative:
+            return UIColor.systemGreen.cgColor
+            
+        case .moderate:
+            return UIColor.systemYellow.cgColor
+            
+        case .aggressive:
+            return UIColor.systemRed.cgColor
+        }
     }
 }

@@ -19,6 +19,7 @@ target 'RendimentoComFIIs' do
    pod 'Charts'
    pod 'TinyConstraints'
    pod 'Google-Mobile-Ads-SDK'
+   pod 'lottie-ios'
 
 
 

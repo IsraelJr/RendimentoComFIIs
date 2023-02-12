@@ -108,8 +108,8 @@ class SettingsAppViewController: UIViewController, SettingsAppDisplayLogic {
             didTapRadio(collectionRadio[1])
         }
         
-        switchWalletPublic.isOn = UserDefaultKeys.wallet_public.getValue() as! Bool
-        switchWalletPublic.isEnabled = false
+        switchWalletPublic.isOn = UserDefaultKeys.wallet_public_isVisible.getValue() as! Bool
+        switchWalletPublic.isEnabled = UserDefaultKeys.wallet_public_has.getValue() as! Bool
         collectionLabel.first?.isEnabled = switchWalletPublic.isEnabled
         btnSave.isEnabled = switchWalletPublic.isEnabled
         
@@ -119,8 +119,8 @@ class SettingsAppViewController: UIViewController, SettingsAppDisplayLogic {
     }
     
     private func checkChanges() {
+        hasChanged ? UserDefaultKeys.wallet_public_isVisible.setValue(value: switchWalletPublic.isOn) : nil
         hasChanged ? interactor?.saveSettings() : showMessage(NSLocalizedString("save_success", comment: ""), true)
-        hasChanged ? UserDefaultKeys.wallet_public.setValue(value: switchWalletPublic.isOn) : nil
     }
     
     private func isVip() {
@@ -136,7 +136,7 @@ class SettingsAppViewController: UIViewController, SettingsAppDisplayLogic {
     }
 
     @IBAction func didTapSwitch(_ sender: UISwitch) {
-        if sender.isEqual(switchWalletPublic), sender.isOn != UserDefaultKeys.wallet_public.getValue() as! Bool {
+        if sender.isEqual(switchWalletPublic), sender.isOn != UserDefaultKeys.wallet_public_isVisible.getValue() as! Bool {
             hasChanged = true
         }
         

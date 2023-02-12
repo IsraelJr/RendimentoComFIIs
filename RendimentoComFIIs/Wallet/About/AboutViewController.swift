@@ -18,10 +18,12 @@ class AboutViewController: UIViewController, AboutDisplayLogic {
     @IBOutlet weak var collectionAboutWallet: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
     
-    let list = [
+    let list =
+    [
         AboutWallet(image: UIImage(named: "about_first"), title: NSLocalizedString("about_first_title", comment: ""), description: NSLocalizedString("about_first_description", comment: ""))
         ,AboutWallet(image: UIImage(named: "add"), title: NSLocalizedString("about_add_title", comment: ""), description: NSLocalizedString("about_add_description", comment: ""))
         ,AboutWallet(image: UIImage(named: "delete"), title: NSLocalizedString("about_delete_title", comment: ""), description: NSLocalizedString("about_delete_description", comment: ""))
+        ,AboutWallet(image: UIImage(named: "public"), title: NSLocalizedString("public_title", comment: ""), description: NSLocalizedString("public_description", comment: ""))
         ,AboutWallet(image: UIImage(named: "about_last"), title: NSLocalizedString("about_last_title", comment: ""), description: NSLocalizedString("about_last_description", comment: ""))
     ]
     
@@ -86,7 +88,7 @@ class AboutViewController: UIViewController, AboutDisplayLogic {
     }
     
     private func setupLayout() {
-        viewHeader.setTitleHeader(name: NSLocalizedString("wallet", comment: ""))
+        viewHeader.setTitleHeader(name: NSLocalizedString("about_wallet", comment: ""))
         viewHeader.delegate = self
         
         collectionAboutWallet.delegate = self
@@ -97,7 +99,7 @@ class AboutViewController: UIViewController, AboutDisplayLogic {
         pageControl.numberOfPages = list.count
         pageControl.currentPageIndicatorTintColor = UIColor(named: "Font")
         pageControl.pageIndicatorTintColor = .systemGray5
-    
+        
     }
     
     func showData() {}

@@ -36,20 +36,20 @@ class ProportionViewController: UIViewController {
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        if let delegate = UIApplication.shared.delegate as? AppDelegate {
-            delegate.orientationLock = UIInterfaceOrientationMask.all
-        }
-        
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        if let delegate = UIApplication.shared.delegate as? AppDelegate {
-            delegate.orientationLock = UIInterfaceOrientationMask.portrait
-        }
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        if let delegate = UIApplication.shared.delegate as? AppDelegate {
+//            delegate.orientationLock = UIInterfaceOrientationMask.all
+//        }
+//        
+//    }
+//    
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        if let delegate = UIApplication.shared.delegate as? AppDelegate {
+//            delegate.orientationLock = UIInterfaceOrientationMask.portrait
+//        }
+//    }
     
     /*
      // MARK: - Navigation
@@ -66,7 +66,7 @@ class ProportionViewController: UIViewController {
         viewHeader.delegate = self
         
         segmentOptions.customizeAppearance()
-        segmentOptions.setTitleList(["FIIs", NSLocalizedString("Segment", comment: "")])
+        segmentOptions.setTitleList(["FIIs", NSLocalizedString("segment", comment: "")])
         
         viewTotalItems.backgroundColor = .systemBackground
         viewTotalItems.layer.cornerRadius = 14

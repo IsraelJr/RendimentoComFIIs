@@ -93,6 +93,22 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let delegate = UIApplication.shared.delegate as? AppDelegate {
+            delegate.orientationLock = UIInterfaceOrientationMask.all
+        }
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if let delegate = UIApplication.shared.delegate as? AppDelegate {
+            delegate.orientationLock = UIInterfaceOrientationMask.portrait
+        }
+    }
+    
+    
     private func setFii(_ fii: FIIModel.Fetch.FII) {
         interactor?.setFii(fii)
         router?.routeTosegueFIIWithSegue(segue: nil)

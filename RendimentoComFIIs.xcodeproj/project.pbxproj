@@ -22,6 +22,13 @@
 		DD0881282840044F009B80A6 /* AboutAppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0881272840044F009B80A6 /* AboutAppModel.swift */; };
 		DD08A77D2951429800C62D59 /* Calendar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD08A77C2951429800C62D59 /* Calendar+Extension.swift */; };
 		DD08A77F2951675200C62D59 /* SettingsAppStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD08A77E2951675200C62D59 /* SettingsAppStoryboard.storyboard */; };
+		DD0D582F2978E1BF001AB136 /* ListWalletPublicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0D582E2978E1BF001AB136 /* ListWalletPublicViewController.swift */; };
+		DD0D58312978E1CF001AB136 /* ListWalletPublicInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0D58302978E1CF001AB136 /* ListWalletPublicInteractor.swift */; };
+		DD0D58332978E1D9001AB136 /* ListWalletPublicPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0D58322978E1D9001AB136 /* ListWalletPublicPresenter.swift */; };
+		DD0D58352978E1E9001AB136 /* ListWalletPublicRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0D58342978E1E9001AB136 /* ListWalletPublicRouter.swift */; };
+		DD0D58372978E200001AB136 /* ListWalletPublicWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0D58362978E200001AB136 /* ListWalletPublicWorker.swift */; };
+		DD0D583A2978E6CE001AB136 /* ListWalletPublicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0D58392978E6CE001AB136 /* ListWalletPublicModel.swift */; };
+		DD0D583C297A4116001AB136 /* ListWalletPublicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0D583B297A4116001AB136 /* ListWalletPublicCollectionViewCell.swift */; };
 		DD146A6E2891068000770A9A /* WalletQuotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD146A6D2891068000770A9A /* WalletQuotesViewController.swift */; };
 		DD1CF33428FA7989007156C5 /* Ad.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1CF33328FA7988007156C5 /* Ad.swift */; };
 		DD1CF3362910DD75007156C5 /* UserInboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1CF3352910DD75007156C5 /* UserInboxViewController.swift */; };
@@ -51,6 +58,18 @@
 		DD87CEC62938243F00C3C70E /* SettingsAppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD87CEC52938243F00C3C70E /* SettingsAppRouter.swift */; };
 		DD87CEC82938244400C3C70E /* SettingsAppPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD87CEC72938244400C3C70E /* SettingsAppPresenter.swift */; };
 		DD87CECA2938247600C3C70E /* SettingsAppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD87CEC92938247600C3C70E /* SettingsAppModel.swift */; };
+		DD94F86529906C7500A5EDF3 /* loading_rcf.json in Resources */ = {isa = PBXBuildFile; fileRef = DD94F86429906C7500A5EDF3 /* loading_rcf.json */; };
+		DD94F86A29907BA900A5EDF3 /* bar_graph.json in Resources */ = {isa = PBXBuildFile; fileRef = DD94F86929907BA900A5EDF3 /* bar_graph.json */; };
+		DD94F86C29907D3900A5EDF3 /* search_comments.json in Resources */ = {isa = PBXBuildFile; fileRef = DD94F86B29907D3900A5EDF3 /* search_comments.json */; };
+		DD94F86E2990816500A5EDF3 /* more.json in Resources */ = {isa = PBXBuildFile; fileRef = DD94F86D2990816500A5EDF3 /* more.json */; };
+		DDA36C422971371F0066FECC /* PublicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA36C412971371F0066FECC /* PublicViewController.swift */; };
+		DDA36C44297137270066FECC /* PublicInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA36C43297137270066FECC /* PublicInteractor.swift */; };
+		DDA36C462971372C0066FECC /* PublicWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA36C452971372C0066FECC /* PublicWorker.swift */; };
+		DDA36C48297137320066FECC /* PublicRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA36C47297137320066FECC /* PublicRouter.swift */; };
+		DDA36C4A297137380066FECC /* PublicPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA36C49297137380066FECC /* PublicPresenter.swift */; };
+		DDA36C4C297137460066FECC /* PublicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA36C4B297137460066FECC /* PublicModel.swift */; };
+		DDA36C4F2971445C0066FECC /* UITextView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA36C4E2971445C0066FECC /* UITextView + Extension.swift */; };
+		DDA36C51297265CE0066FECC /* RatingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA36C50297265CE0066FECC /* RatingCollectionViewCell.swift */; };
 		DDB02105283317FF00099155 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB02104283317FF00099155 /* AppDelegate.swift */; };
 		DDB02107283317FF00099155 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB02106283317FF00099155 /* SceneDelegate.swift */; };
 		DDB02109283317FF00099155 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB02108283317FF00099155 /* ViewController.swift */; };
@@ -208,6 +227,7 @@
 		DDD2B3CB283D84420087A113 /* UserProfileStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDD2B3CA283D84420087A113 /* UserProfileStoryboard.storyboard */; };
 		DDD2B3CD283D84480087A113 /* UserProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD2B3CC283D84480087A113 /* UserProfileModel.swift */; };
 		DDDF1CDC287BF40400A8EE0F /* DetailDescriptionBrokersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDF1CDB287BF40300A8EE0F /* DetailDescriptionBrokersViewController.swift */; };
+		DDE218DD2973B395004B63F2 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE218DC2973B395004B63F2 /* PreviewViewController.swift */; };
 		DDE23F4228485F0D000AA17C /* WalletHistoricInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE23F4128485F0D000AA17C /* WalletHistoricInteractor.swift */; };
 		DDE23F4428485F12000AA17C /* WalletHistoricWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE23F4328485F12000AA17C /* WalletHistoricWorker.swift */; };
 		DDE23F4628485F16000AA17C /* WalletHistoricRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE23F4528485F16000AA17C /* WalletHistoricRouter.swift */; };
@@ -237,6 +257,13 @@
 		DD0881272840044F009B80A6 /* AboutAppModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutAppModel.swift; sourceTree = "<group>"; };
 		DD08A77C2951429800C62D59 /* Calendar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+Extension.swift"; sourceTree = "<group>"; };
 		DD08A77E2951675200C62D59 /* SettingsAppStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsAppStoryboard.storyboard; sourceTree = "<group>"; };
+		DD0D582E2978E1BF001AB136 /* ListWalletPublicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListWalletPublicViewController.swift; sourceTree = "<group>"; };
+		DD0D58302978E1CF001AB136 /* ListWalletPublicInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListWalletPublicInteractor.swift; sourceTree = "<group>"; };
+		DD0D58322978E1D9001AB136 /* ListWalletPublicPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListWalletPublicPresenter.swift; sourceTree = "<group>"; };
+		DD0D58342978E1E9001AB136 /* ListWalletPublicRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListWalletPublicRouter.swift; sourceTree = "<group>"; };
+		DD0D58362978E200001AB136 /* ListWalletPublicWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListWalletPublicWorker.swift; sourceTree = "<group>"; };
+		DD0D58392978E6CE001AB136 /* ListWalletPublicModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListWalletPublicModel.swift; sourceTree = "<group>"; };
+		DD0D583B297A4116001AB136 /* ListWalletPublicCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListWalletPublicCollectionViewCell.swift; sourceTree = "<group>"; };
 		DD146A6D2891068000770A9A /* WalletQuotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletQuotesViewController.swift; sourceTree = "<group>"; };
 		DD1CF33328FA7988007156C5 /* Ad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ad.swift; sourceTree = "<group>"; };
 		DD1CF3352910DD75007156C5 /* UserInboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInboxViewController.swift; sourceTree = "<group>"; };
@@ -267,6 +294,18 @@
 		DD87CEC52938243F00C3C70E /* SettingsAppRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsAppRouter.swift; sourceTree = "<group>"; };
 		DD87CEC72938244400C3C70E /* SettingsAppPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsAppPresenter.swift; sourceTree = "<group>"; };
 		DD87CEC92938247600C3C70E /* SettingsAppModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsAppModel.swift; sourceTree = "<group>"; };
+		DD94F86429906C7500A5EDF3 /* loading_rcf.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading_rcf.json; sourceTree = "<group>"; };
+		DD94F86929907BA900A5EDF3 /* bar_graph.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bar_graph.json; sourceTree = "<group>"; };
+		DD94F86B29907D3900A5EDF3 /* search_comments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = search_comments.json; sourceTree = "<group>"; };
+		DD94F86D2990816500A5EDF3 /* more.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = more.json; sourceTree = "<group>"; };
+		DDA36C412971371F0066FECC /* PublicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicViewController.swift; sourceTree = "<group>"; };
+		DDA36C43297137270066FECC /* PublicInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicInteractor.swift; sourceTree = "<group>"; };
+		DDA36C452971372C0066FECC /* PublicWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicWorker.swift; sourceTree = "<group>"; };
+		DDA36C47297137320066FECC /* PublicRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicRouter.swift; sourceTree = "<group>"; };
+		DDA36C49297137380066FECC /* PublicPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicPresenter.swift; sourceTree = "<group>"; };
+		DDA36C4B297137460066FECC /* PublicModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicModel.swift; sourceTree = "<group>"; };
+		DDA36C4E2971445C0066FECC /* UITextView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView + Extension.swift"; sourceTree = "<group>"; };
+		DDA36C50297265CE0066FECC /* RatingCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingCollectionViewCell.swift; sourceTree = "<group>"; };
 		DDB02101283317FF00099155 /* Rendimento com FIIs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rendimento com FIIs.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB02104283317FF00099155 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDB02106283317FF00099155 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -427,6 +466,7 @@
 		DDD2B3CA283D84420087A113 /* UserProfileStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserProfileStoryboard.storyboard; sourceTree = "<group>"; };
 		DDD2B3CC283D84480087A113 /* UserProfileModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileModel.swift; sourceTree = "<group>"; };
 		DDDF1CDB287BF40300A8EE0F /* DetailDescriptionBrokersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailDescriptionBrokersViewController.swift; sourceTree = "<group>"; };
+		DDE218DC2973B395004B63F2 /* PreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 		DDE23F4128485F0D000AA17C /* WalletHistoricInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletHistoricInteractor.swift; sourceTree = "<group>"; };
 		DDE23F4328485F12000AA17C /* WalletHistoricWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletHistoricWorker.swift; sourceTree = "<group>"; };
 		DDE23F4528485F16000AA17C /* WalletHistoricRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletHistoricRouter.swift; sourceTree = "<group>"; };
@@ -479,6 +519,20 @@
 				DD08811C283FF740009B80A6 /* AboutAppStoryboard.storyboard */,
 			);
 			path = AboutApp;
+			sourceTree = "<group>";
+		};
+		DD0D58382978E20D001AB136 /* ListWalletPublic */ = {
+			isa = PBXGroup;
+			children = (
+				DD0D58392978E6CE001AB136 /* ListWalletPublicModel.swift */,
+				DD0D58302978E1CF001AB136 /* ListWalletPublicInteractor.swift */,
+				DD0D58362978E200001AB136 /* ListWalletPublicWorker.swift */,
+				DD0D58342978E1E9001AB136 /* ListWalletPublicRouter.swift */,
+				DD0D58322978E1D9001AB136 /* ListWalletPublicPresenter.swift */,
+				DD0D582E2978E1BF001AB136 /* ListWalletPublicViewController.swift */,
+				DD0D583B297A4116001AB136 /* ListWalletPublicCollectionViewCell.swift */,
+			);
+			path = ListWalletPublic;
 			sourceTree = "<group>";
 		};
 		DD146A6F289106AC00770A9A /* Closure */ = {
@@ -595,6 +649,32 @@
 			path = MoreOptions;
 			sourceTree = "<group>";
 		};
+		DD94F86629906C7C00A5EDF3 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				DD94F86429906C7500A5EDF3 /* loading_rcf.json */,
+				DD94F86929907BA900A5EDF3 /* bar_graph.json */,
+				DD94F86B29907D3900A5EDF3 /* search_comments.json */,
+				DD94F86D2990816500A5EDF3 /* more.json */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		DDA36C4D2971375A0066FECC /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				DDA36C43297137270066FECC /* PublicInteractor.swift */,
+				DDA36C452971372C0066FECC /* PublicWorker.swift */,
+				DDA36C47297137320066FECC /* PublicRouter.swift */,
+				DDA36C49297137380066FECC /* PublicPresenter.swift */,
+				DDA36C412971371F0066FECC /* PublicViewController.swift */,
+				DDA36C4B297137460066FECC /* PublicModel.swift */,
+				DDA36C50297265CE0066FECC /* RatingCollectionViewCell.swift */,
+				DDE218DC2973B395004B63F2 /* PreviewViewController.swift */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
 		DDB020F8283317FF00099155 = {
 			isa = PBXGroup;
 			children = (
@@ -619,6 +699,7 @@
 				DD49026128827B17004448C9 /* RendimentoComFIIs.entitlements */,
 				DDD2B3B1283D841B0087A113 /* Template */,
 				DDB021A32833280800099155 /* XIB */,
+				DD94F86629906C7C00A5EDF3 /* Source */,
 				DDB0215F2833272F00099155 /* Util */,
 				DDB021D12833284A00099155 /* Login */,
 				DDB021F82833284A00099155 /* Initialization */,
@@ -689,6 +770,7 @@
 				DDB021762833278500099155 /* Array+Extension.swift */,
 				DD7C740729249F900025CA58 /* Date+Extension.swift */,
 				DDBE3EB6294810B500C0DB96 /* UISegmentedControl+Extension.swift */,
+				DDA36C4E2971445C0066FECC /* UITextView + Extension.swift */,
 				DDE3A78029498D5100937C10 /* NumberFormatter+Extension.swift */,
 				DD08A77C2951429800C62D59 /* Calendar+Extension.swift */,
 			);
@@ -794,6 +876,7 @@
 				DD7E2E74284292D70053D6EB /* Historic */,
 				DDFB4923292D6B2700C85F21 /* Report */,
 				DD87CEB92936978E00C3C70E /* About */,
+				DDA36C4D2971375A0066FECC /* Public */,
 			);
 			path = Wallet;
 			sourceTree = "<group>";
@@ -823,6 +906,7 @@
 				DDB021E12833284A00099155 /* Detail */,
 				DDB021ED2833284A00099155 /* ContactUs */,
 				DD87CEC02938109900C3C70E /* Settings */,
+				DD0D58382978E20D001AB136 /* ListWalletPublic */,
 			);
 			path = MoreOptions;
 			sourceTree = "<group>";
@@ -1034,14 +1118,18 @@
 				DDB021AE2833280800099155 /* NavigationBarFooterView.xib in Resources */,
 				DDB02197283327B200099155 /* Localizable.strings in Resources */,
 				DDB0210E2833180000099155 /* Assets.xcassets in Resources */,
+				DD94F86E2990816500A5EDF3 /* more.json in Resources */,
 				DD08A77F2951675200C62D59 /* SettingsAppStoryboard.storyboard in Resources */,
 				DDB0210C283317FF00099155 /* Main.storyboard in Resources */,
+				DD94F86529906C7500A5EDF3 /* loading_rcf.json in Resources */,
 				DDB022532833284A00099155 /* SearchStoryboard.storyboard in Resources */,
 				DDD2B3BE283D841B0087A113 /* xXxStoryboard.storyboard in Resources */,
 				DDB021AC2833280800099155 /* NavigationBarHeaderView.xib in Resources */,
+				DD94F86A29907BA900A5EDF3 /* bar_graph.json in Resources */,
 				DD08811D283FF741009B80A6 /* AboutAppStoryboard.storyboard in Resources */,
 				DDB0220E2833284A00099155 /* CommentsStoryboard.storyboard in Resources */,
 				DDB02155283326F400099155 /* HomeStoryboard.storyboard in Resources */,
+				DD94F86C29907D3900A5EDF3 /* search_comments.json in Resources */,
 				DDB0222B2833284A00099155 /* MoreOptionsStoryboard.storyboard in Resources */,
 				DDB0225A28333D5600099155 /* GoogleService-Info.plist in Resources */,
 				DDB0219B283327B200099155 /* ProgressBar.storyboard in Resources */,
@@ -1108,6 +1196,7 @@
 				DDE3A78129498D5100937C10 /* NumberFormatter+Extension.swift in Sources */,
 				DDD2B3BB283D841B0087A113 /* xXxRouter.swift in Sources */,
 				DDB0220A2833284A00099155 /* CommentsSitesCollectionViewCell.swift in Sources */,
+				DD0D58312978E1CF001AB136 /* ListWalletPublicInteractor.swift in Sources */,
 				DDB02198283327B200099155 /* PlainHorizontalProgressBar.swift in Sources */,
 				DDB022292833284A00099155 /* LoginWorker.swift in Sources */,
 				DDB021B12833280800099155 /* AlertView.swift in Sources */,
@@ -1121,6 +1210,8 @@
 				DD02AB7428E968410074A847 /* AttachViewController.swift in Sources */,
 				DDC25FC4287002B600E11CD4 /* NewsletterModel.swift in Sources */,
 				DDB0215A283326F400099155 /* HomeModel.swift in Sources */,
+				DDE218DD2973B395004B63F2 /* PreviewViewController.swift in Sources */,
+				DD0D583C297A4116001AB136 /* ListWalletPublicCollectionViewCell.swift in Sources */,
 				DDB0219D283327B200099155 /* PlainCircularProgressBar.swift in Sources */,
 				DDB021792833278500099155 /* UIButton+Extension.swift in Sources */,
 				DDB0224F2833284A00099155 /* SearchPresenter.swift in Sources */,
@@ -1132,6 +1223,7 @@
 				DDB021B22833280800099155 /* NavigationBarHeaderView.swift in Sources */,
 				DD87CEC42938243700C3C70E /* SettingsAppWorker.swift in Sources */,
 				DDB022162833284A00099155 /* FIIModel.swift in Sources */,
+				DD0D58352978E1E9001AB136 /* ListWalletPublicRouter.swift in Sources */,
 				DDB022462833284A00099155 /* InitializationModel.swift in Sources */,
 				DD46E02A284D52F800A7BD41 /* FIIHistoricTableViewCell.swift in Sources */,
 				DDB022322833284A00099155 /* DetailTableViewCell.swift in Sources */,
@@ -1142,6 +1234,7 @@
 				DDB02154283326F400099155 /* TopicCollectionViewCell.swift in Sources */,
 				DDB0219C283327B200099155 /* GradientCircularProgressBar.swift in Sources */,
 				DD87CEC62938243F00C3C70E /* SettingsAppRouter.swift in Sources */,
+				DDA36C462971372C0066FECC /* PublicWorker.swift in Sources */,
 				DDD2B3C9283D843D0087A113 /* UserProfileViewController.swift in Sources */,
 				DDB022522833284A00099155 /* SearchWorker.swift in Sources */,
 				DDB022102833284A00099155 /* CommentsViewController.swift in Sources */,
@@ -1178,10 +1271,12 @@
 				DDB0222A2833284A00099155 /* LoginRouter.swift in Sources */,
 				DDB0222D2833284A00099155 /* MoreOptionsWorker.swift in Sources */,
 				DD41D37B2944162F0025D963 /* ReportModel.swift in Sources */,
+				DD0D582F2978E1BF001AB136 /* ListWalletPublicViewController.swift in Sources */,
 				DDB022312833284A00099155 /* DetailDescriptionBooksViewController.swift in Sources */,
 				DDB02156283326F400099155 /* TopDYCollectionViewCell.swift in Sources */,
 				DDC25FC0287002A000E11CD4 /* NewsletterRouter.swift in Sources */,
 				DDB022092833284A00099155 /* FIIViewController.swift in Sources */,
+				DDA36C44297137270066FECC /* PublicInteractor.swift in Sources */,
 				DDB0221E2833284A00099155 /* WalletTableViewCell.swift in Sources */,
 				DD7C740829249F900025CA58 /* Date+Extension.swift in Sources */,
 				DDB022282833284A00099155 /* LoginPresenter.swift in Sources */,
@@ -1191,6 +1286,7 @@
 				DDB02147283326B700099155 /* HomeViewController.swift in Sources */,
 				DDC5691E284D5C1800069BCD /* FIIHistoricInteractor.swift in Sources */,
 				DD3397A42844FC4900BF1286 /* MoreOptionsWalletViewController.swift in Sources */,
+				DD0D58332978E1D9001AB136 /* ListWalletPublicPresenter.swift in Sources */,
 				DDB022152833284A00099155 /* FIIRouter.swift in Sources */,
 				DDB022182833284A00099155 /* FIIPresenter.swift in Sources */,
 				DDB0217E2833278500099155 /* String+Extension.swift in Sources */,
@@ -1198,7 +1294,9 @@
 				DD08812628400444009B80A6 /* AboutAppPresenter.swift in Sources */,
 				DDB021A2283327B200099155 /* ConfigureDataBase.swift in Sources */,
 				DD87CEB82936969700C3C70E /* AboutViewController.swift in Sources */,
+				DDA36C51297265CE0066FECC /* RatingCollectionViewCell.swift in Sources */,
 				DDC56924284D5C2600069BCD /* FIIHistoricPresenter.swift in Sources */,
+				DDA36C4A297137380066FECC /* PublicPresenter.swift in Sources */,
 				DDB022492833284A00099155 /* InitializationPresenter.swift in Sources */,
 				DD7C7400291F61660025CA58 /* UserInboxWorker.swift in Sources */,
 				DDC56920284D5C1D00069BCD /* FIIHistoricWorker.swift in Sources */,
@@ -1206,6 +1304,7 @@
 				DDB022422833284A00099155 /* ContactUsInteractor.swift in Sources */,
 				DDB021A0283327B200099155 /* ListFii.swift in Sources */,
 				DD41D375294416150025D963 /* ReportWorker.swift in Sources */,
+				DDA36C48297137320066FECC /* PublicRouter.swift in Sources */,
 				DD46E02C284D55C500A7BD41 /* FIIHistoricViewController.swift in Sources */,
 				DDB022472833284A00099155 /* InitializationInteractor.swift in Sources */,
 				DDB0217A2833278500099155 /* UIView+Extension.swift in Sources */,
@@ -1217,6 +1316,7 @@
 				DDB022502833284A00099155 /* SearchCollectionViewCell.swift in Sources */,
 				DDB022332833284A00099155 /* DetailViewController.swift in Sources */,
 				DDD2B3BD283D841B0087A113 /* xXxViewController.swift in Sources */,
+				DD0D583A2978E6CE001AB136 /* ListWalletPublicModel.swift in Sources */,
 				DDC56922284D5C2200069BCD /* FIIHistoricRouter.swift in Sources */,
 				DDB0221C2833284A00099155 /* WalletPresenter.swift in Sources */,
 				DDC25FB9287001FD00E11CD4 /* NewsletterViewController.swift in Sources */,
@@ -1243,16 +1343,20 @@
 				DDB022272833284A00099155 /* LoginViewController.swift in Sources */,
 				DD41D379294416250025D963 /* ReportPresenter.swift in Sources */,
 				DDB0223E2833284A00099155 /* ContactUsWorker.swift in Sources */,
+				DDA36C4F2971445C0066FECC /* UITextView + Extension.swift in Sources */,
 				DDB0222E2833284A00099155 /* MoreOptionsCollectionViewCell.swift in Sources */,
 				DDD2B3C1283D84260087A113 /* UserProfileInteractor.swift in Sources */,
 				DDED2EF029163F0F00BC2AB8 /* UserInboxModel.swift in Sources */,
 				DDB022352833284A00099155 /* DetailInteractor.swift in Sources */,
+				DDA36C4C297137460066FECC /* PublicModel.swift in Sources */,
 				DDB022432833284A00099155 /* MoreOptionsModel.swift in Sources */,
 				DD0881282840044F009B80A6 /* AboutAppModel.swift in Sources */,
 				DD1CF3362910DD75007156C5 /* UserInboxViewController.swift in Sources */,
 				DD5405D82929801700D0FFEC /* ProportionViewController.swift in Sources */,
 				DD7C73FE291F615F0025CA58 /* UserInboxInteractor.swift in Sources */,
 				DD08811B283FF739009B80A6 /* AboutAppViewController.swift in Sources */,
+				DDA36C422971371F0066FECC /* PublicViewController.swift in Sources */,
+				DD0D58372978E200001AB136 /* ListWalletPublicWorker.swift in Sources */,
 				DDB0217D2833278500099155 /* UIViewController+Extension.swift in Sources */,
 				DDB022372833284A00099155 /* DetailRouter.swift in Sources */,
 				DDB0217F2833278500099155 /* UITableViewCell+Extension.swift in Sources */,

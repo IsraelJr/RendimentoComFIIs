@@ -51,6 +51,7 @@
 "in" = "em";
 "days" = "dias";
 "dividend" = "Dividendos";
+"wallet" = "Carteira";
 
 /*Months*/
 "1"  = "January";
@@ -324,11 +325,12 @@
 "time" = "Histórico";
 "quotes" = "Cotações";
 "pie_chart" = "Proporção";
+"public_wallet" = "Carteira Pública";
 "report" = "Relatório";
 "logout_question" = "Deseja realmente sair e desconectar da sua conta?";
 "logout_yes" = "Sair e Desconectar";
 "see_quotes" = "Ver Cotações";
-"wallet" = "Sobre Carteira";
+"about_wallet" = "Sobre Carteira";
 
 /*NewsletterViewController*/
 "title_newsletter" = "Arquivo de Notícias";
@@ -378,6 +380,8 @@
 "about_add_description" = "Certifique-se de que os dividendos desse fundo será pago na sua corretora no mesmo mês em que está adicionando ele aqui na sua carteira. Se acontecer de você adquirir esse fundo após sua Data Com, adicione ele na sua carteira assim que iniciar o mês seguinte.";
 "about_delete_title" = "Excluir um FII";
 "about_delete_description" = "Não exclua um fundo da sua carteira se nesse mês você já recebeu os seus dividendos. Nesse caso, exclua o fundo assim que iniciar o mês seguinte.";
+"public_title" = "Carteira Pública";
+"public_description" = "Deseja demonstrar sua carteira e incentivar outros investidores? Torne sua carteira pública criando ela aqui nas opções da Carteira e configure a visibilidade dela nas definições do app.";
 "about_last_title" = "O céu é o limite";
 "about_last_description" = "Aqui buscamos formas de facilitar a análise de sua carteira, e esperamos contribuir de alguma forma para facilitar o seu dia-a-dia no controle dos seus dividendos. Siga firme nessa caminhada que você será recompensado!";
 
@@ -387,3 +391,17 @@
 "total_news_archive" = "Notícias no arquivo de até quantos dias";
 "save_success" = "As novas definições foram salvas com sucesso!";
 "save_error" = "Erro ao salvar as novas definições!\nTente mais tarde ou entre em contato conosco reportando essa falha.";
+
+/*PublicViewController*/
+"placeholder_publicwallet" = "Descreva sobre a estratégia da sua carteira";
+"title_rating" = "Como você classificaria sua carteira?";
+"conservative" = "Conservadora";
+"moderate" = "Moderada";
+"aggressive" = "Agressiva";
+"preview" = "Visualizar";
+"publish" = "Publicar";
+"owner" = "Dono";
+"create_success" = "Sua carteira foi publicada com sucesso e logo estará disponível para que outros usuários a vejam!";
+"create_error" = "Não foi possível publicar a sua carteira!\nTente novamente mais tarde ou entre em contato conosco informando o problema.";
+"read_success" = "Carteira lida com sucesso!";
+"read_error" = "Não foi possível identificar a carteira pública já criada!\nVocê pode tentar novamente mais tarde ou configurar uma nova carteira pública.";

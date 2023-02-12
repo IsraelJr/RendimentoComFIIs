@@ -17,21 +17,15 @@ class SettingsAppWorker {
     }
     
     func save(complete:@escaping(responseHandlerSettingsApp)) {
-        let doc = ConfigureDataBase.instance.collection(ConfigureDataBase.collectionUser).document(DataUser.email ?? "")
-        doc.getDocument { document, error in
+        ConfigureDataBase.instance.collection(ConfigureDataBase.collectionPublicWallet).document(DataUser.email!).setData(
+            [
+                "visible":UserDefaultKeys.wallet_public_isVisible.getValue() as! Bool
+            ], merge: true
+        ) { error in
             if error == nil {
-                doc.setData(
-                    [
-                        ConfigureDataBase.fieldWalletPublic:(UserDefaultKeys.wallet_public.getValue() as! Bool)
-                    ], merge: true) { error in
-                        if error == nil {
-                            complete(.init(object: nil, isError: false, message: NSLocalizedString("save_success", comment: "")))
-                        } else {
-                            complete(.init(object: nil, isError: true, message: NSLocalizedString("save_error", comment: "")))
-                        }
-                    }
+                complete(.init(object: nil, isError: false, message: NSLocalizedString("save_success", comment: "")))
             } else {
-                complete(.init(object: nil, isError: true, message: "\(NSLocalizedString("save_error", comment: ""))\n\(error?.localizedDescription ?? "")"))
+                complete(.init(object: nil, isError: true, message: NSLocalizedString("save_error", comment: "")))
             }
         }
     }
