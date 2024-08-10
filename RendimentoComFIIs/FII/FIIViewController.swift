@@ -238,7 +238,7 @@ class FIIViewController: UIViewController, FIIDisplayLogic {
         
         collectionLabelTitle[10].text = NSLocalizedString("pay_day", comment: "")
         
-        collectionLabelTitle[11].text = NSLocalizedString("objective", comment: "")
+        collectionLabelTitle[11].text = NSLocalizedString("phone", comment: "")
         
         collectionLabelTitle[12].text = NSLocalizedString("administrator", comment: "")
         
@@ -366,10 +366,8 @@ class FIIViewController: UIViewController, FIIDisplayLogic {
         collectionLabelValue[4].text = (calc.isNaN || calc.isInfinite) ? "0,0%" : "\(String(format: "%.3f", calc))%".replacingOccurrences(of: ".", with: ",")   //"\(String(calc).prefix(6).replacingOccurrences(of: ".", with: ","))%"
         collectionLabelValue[4].textColor = UIColor.variationColor(to: collectionLabelValue[4].text)
         
-//        collectionLabelValue[9].text = fii.phone ?? "(99) 9999-9999)"
-//        collectionLabelValue[9].text = collectionLabelValue[9].text!.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? "(99) 9999-9999)" : collectionLabelValue[9].text
-        collectionLabelValue[9].text = fii.objective ?? ""
-        collectionLabelValue[9].text = collectionLabelValue[9].text!.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? "N/A" : collectionLabelValue[9].text
+        collectionLabelValue[9].text = fii.phone ?? "(99) 9999-9999)"
+        collectionLabelValue[9].text = collectionLabelValue[9].text!.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? "(99) 9999-9999)" : collectionLabelValue[9].text
         
         let monthCurrent = obj?.earnings?.first(where: {$0.key.elementsEqual(Month.current.description().0)})
         collectionLabelValue[5].text = (monthCurrent?.value["earnings"] as? String)?.convertCurrencyToDouble().convertToCurrency(true) ?? NSLocalizedString("uninformed", comment: "")
