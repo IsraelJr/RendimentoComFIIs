@@ -86,7 +86,7 @@ class FIIViewController: UIViewController, FIIDisplayLogic {
         vc.insert = .fii
         vc.title = data.title
         vc.code = data.code
-        vc.quotas = data.quotas
+        vc.currentQuotas = data.quotas
         vc.btnInTheWallet = collectionButton[4]
         self.present(vc, animated: false)
     }
@@ -164,9 +164,21 @@ class FIIViewController: UIViewController, FIIDisplayLogic {
         
         var earnings = collectionLabelValue[5].text?.convertCurrencyToDouble() ?? 0.0
         
-        if earnings == 0.0 {
-            let temp = obj?.earnings?.first(where: { $0.key.elementsEqual(Month.current.description().1) })
-            earnings = (temp?.value["earnings"] as? String)?.convertCurrencyToDouble() ?? 0.0
+        if earnings == .zero {
+            var i = 12
+            while i > .zero {
+                if let temp = obj?.earnings?.first(where: { $0.key.elementsEqual(Month(rawValue: i)!.description().0) }),
+                   let value = (temp.value["earnings"] as? String)?.convertCurrencyToDouble() {
+                    if value > .zero {
+                        earnings = value
+                        i = .zero
+                    } else {
+                        i -= 1
+                    }
+                } else {
+                    i -= 1
+                }
+            }
         }
         
         let salary = Double((UserDefaultKeys.basicSalary.getValue() as! [String:Int]).first?.value ?? 0)
@@ -174,7 +186,7 @@ class FIIViewController: UIViewController, FIIDisplayLogic {
         
         let magicNumber = Util.calculationToReceiveEarnings(to: .init(targetValue: collectionLabelValue[3].text?.convertCurrencyToDouble()
                                                                       , priceCurrent: collectionLabelValue[3].text!.convertCurrencyToDouble()
-                                                                      , currentMonthEarnings: earnings
+                                                                      , currentMonthEarnings: earnings == .zero ? 0.01 : earnings
                                                                       , valueWithSymbol: true))
         
         collectionLabelSimulator.forEach({
@@ -226,7 +238,7 @@ class FIIViewController: UIViewController, FIIDisplayLogic {
         
         collectionLabelTitle[10].text = NSLocalizedString("pay_day", comment: "")
         
-        collectionLabelTitle[11].text = NSLocalizedString("phone", comment: "")
+        collectionLabelTitle[11].text = NSLocalizedString("objective", comment: "")
         
         collectionLabelTitle[12].text = NSLocalizedString("administrator", comment: "")
         
@@ -265,7 +277,8 @@ class FIIViewController: UIViewController, FIIDisplayLogic {
         lbSelicTitle.numberOfLines = collectionLabelDaily.first!.numberOfLines
         lbSelicTitle.adjustsFontSizeToFitWidth = collectionLabelDaily.first!.adjustsFontSizeToFitWidth
         lbSelicTitle.minimumScaleFactor = collectionLabelDaily.first!.minimumScaleFactor
-        lbSelicTitle.text = "\(NSLocalizedString("selic_title", comment: "")) \(InitializationModel.dataIndexes.selic?.annualGoal.year ?? "0,0%")"
+        lbSelicTitle.text = NSLocalizedString("selic_title", comment: "")
+        //"\(NSLocalizedString("selic_title", comment: "")) \(InitializationModel.dataIndexes.selic?.annualGoal.year ?? "0,0%")"
         
         lbSelicValue.textAlignment = collectionLabelDaily.first!.textAlignment
         lbSelicValue.font = collectionLabelDaily.first!.font
@@ -345,19 +358,23 @@ class FIIViewController: UIViewController, FIIDisplayLogic {
         collectionLabelValue[1].text = fii.dividendYield ?? "0,00%"
         
         collectionLabelValue[2].text = String(fii.pvp ?? 0.0).prefix(5).replacingOccurrences(of: ".", with: ",")
-        collectionLabelValue[2].text = fii.pvp?.isNaN ?? true ? "0,0" : collectionLabelValue[2].text
+        collectionLabelValue[2].text = (fii.pvp?.isNaN ?? true || fii.pvp?.isInfinite ?? true) ? "0,0" : collectionLabelValue[2].text
         
         collectionLabelValue[3].text = fii.price ?? "R$ 0,0"
         
         let calc = (fii.calcAgio(atual: Double(fii.price?.replacingOccurrences(of: "R$ ", with: "").replacingOccurrences(of: ".", with: "").replacingOccurrences(of: ",", with: ".") ?? "0.0") ?? 0.0, patrimo: fii.equityValuePerShare ?? 0.0))
-        collectionLabelValue[4].text = calc.isNaN ? "0,0%" : "\(String(format: "%.3f", calc))%".replacingOccurrences(of: ".", with: ",")   //"\(String(calc).prefix(6).replacingOccurrences(of: ".", with: ","))%"
+        collectionLabelValue[4].text = (calc.isNaN || calc.isInfinite) ? "0,0%" : "\(String(format: "%.3f", calc))%".replacingOccurrences(of: ".", with: ",")   //"\(String(calc).prefix(6).replacingOccurrences(of: ".", with: ","))%"
         collectionLabelValue[4].textColor = UIColor.variationColor(to: collectionLabelValue[4].text)
         
-        collectionLabelValue[9].text = fii.phone ?? "(99) 9999-9999)"
-        collectionLabelValue[9].text = collectionLabelValue[9].text!.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? "(99) 9999-9999)" : collectionLabelValue[9].text
+//        collectionLabelValue[9].text = fii.phone ?? "(99) 9999-9999)"
+//        collectionLabelValue[9].text = collectionLabelValue[9].text!.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? "(99) 9999-9999)" : collectionLabelValue[9].text
+        collectionLabelValue[9].text = fii.objective ?? ""
+        collectionLabelValue[9].text = collectionLabelValue[9].text!.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? "N/A" : collectionLabelValue[9].text
         
         let monthCurrent = obj?.earnings?.first(where: {$0.key.elementsEqual(Month.current.description().0)})
         collectionLabelValue[5].text = (monthCurrent?.value["earnings"] as? String)?.convertCurrencyToDouble().convertToCurrency(true) ?? NSLocalizedString("uninformed", comment: "")
+        
+        collectionLabelValue[5].text = "R$ \(String(format: "%.4f", (monthCurrent?.value["earnings"] as? String ?? "").convertCurrencyToDouble()).replacingOccurrences(of: ".", with: ","))"
         
         let value = Double((obj?.getIncome(earnings: collectionLabelValue[5].text, price: monthCurrent?.value["price_date_with"] as? String)) ?? "0.0")
         var f: Double?
@@ -421,6 +438,8 @@ class FIIViewController: UIViewController, FIIDisplayLogic {
                 collectionLabelDaily[6].text = $0.minimum
                 collectionLabelDaily[7].text = $0.maximum
                 collectionLabelValue[3].text = $0.currentPrice
+                
+                $0.closing.forEach {c in print(c) }
             }
         })
         

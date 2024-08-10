@@ -29,9 +29,13 @@ class WalletHistoricInteractor: WalletHistoricBusinessLogic, WalletHistoricDataS
             })
         case .read:
             break
+        case .readFuture:
+            break
         case .updtate:
             break
         case .delete:
+            break
+        case .deleteFuture:
             break
         }
     }

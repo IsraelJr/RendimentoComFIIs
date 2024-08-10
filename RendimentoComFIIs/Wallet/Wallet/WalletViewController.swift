@@ -66,7 +66,6 @@ class WalletViewController: UIViewController, WalletDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         readWalletLocal()
-        listTemp = list
         setupLayout()
         WalletViewController.wallet == nil ? interactor?.accessWalletBD(action: .read, nil) : nil
     }
@@ -78,8 +77,14 @@ class WalletViewController: UIViewController, WalletDisplayLogic {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
+        readWalletLocal()
         interactor?.accessWalletBD(action: .create, list)
         interactor?.setMonthlyEarnings(totalEarnings)
+        
+        listTemp.forEach({
+            _ = Util.userDefaultForWallet(action: .deleteFuture, code: $0.0)
+            _ = Util.userDefaultForWallet(action: .create, code: $0.0, quotas: $0.1.description)
+        })
         
     }
     
@@ -115,7 +120,7 @@ class WalletViewController: UIViewController, WalletDisplayLogic {
         vc.insert = .fii
         vc.title = dataEdit?.title
         vc.code = dataEdit?.code ?? ""
-        vc.quotas = dataEdit?.quotas ?? ""
+        vc.currentQuotas = dataEdit?.quotas ?? ""
         vc.vcWallet = self
         present(vc, animated: false)
     }
@@ -124,8 +129,8 @@ class WalletViewController: UIViewController, WalletDisplayLogic {
         list.removeAll()
         totalEarnings = 0.0
         ListFii.listFiis.forEach({
-            let data = Util.userDefaultForWallet(action: .read, code: $0.code)
-            if data.code.isEmpty == false /*, data.quotas > 0*/ {
+            var data = Util.userDefaultForWallet(action: .read, code: $0.code)
+            if !data.code.isEmpty,  Util.userDefaultForWallet(action: .readFuture, code: $0.code).month != Calendar.current.component(.month, from: Date()) {
                 if !list.contains(where: {$0.0.contains(data.code)}) {
                     list.append((data.code, data.quotas))
                     let monthCurrent = $0.earnings?.first(where: {$0.key.elementsEqual(Month.current.description().0)})
@@ -133,6 +138,20 @@ class WalletViewController: UIViewController, WalletDisplayLogic {
                     totalEarnings += (y * Double(data.quotas))
                 }
             }
+            
+            data = Util.userDefaultForWallet(action: .readFuture, code: $0.code)
+            if !data.code.isEmpty {
+                print("\(data.code) e \(data.quotas) e \(data.month)")
+                if data.month == Calendar.current.component(.month, from: Date()) {
+                    listTemp.append((data.code, data.quotas))
+                    list.append((data.code, data.quotas))
+                    let monthCurrent = $0.earnings?.first(where: {$0.key.elementsEqual(Month.current.description().0)})
+                    let y = String((monthCurrent?.value["earnings"] as? String ?? "R$ 0,0").split(separator: " ")[1]).convertCurrencyToDouble()
+                    totalEarnings += (y * Double(data.quotas))
+                }
+                
+            }
+            
         })
         DispatchQueue.main.async {
             self.tableMyFiis.reloadData()

@@ -110,7 +110,7 @@ class WalletHistoricViewController: UIViewController, WalletHistoricDisplayLogic
         vc.insert = .month
         vc.title = dataEdit?.title
         vc.code = dataEdit?.code ?? ""
-        vc.quotas = dataEdit?.quotas ?? ""
+        vc.currentQuotas = dataEdit?.quotas ?? ""
         vc.vcWallet = self
         present(vc, animated: false)
     }

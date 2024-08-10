@@ -22,7 +22,7 @@ class InitializationWorker {
         UserDefaults.standard.removeObject(forKey: "listFiis")
         ListFii.getListLocal()
         if ListFii.listFiis.isEmpty {
-            ConfigureDataBase.instance.collection(ConfigureDataBase.collectionFiis).getDocuments { querySnapshot, error in
+            ConfigureDataBase.instance.collection(ConfigureDataBase.collectionFiis).whereField("active", in: [true]).getDocuments { querySnapshot, error in
                 if error == nil {
                     for document in querySnapshot!.documents {
                         let obj = document.data()
@@ -40,6 +40,7 @@ class InitializationWorker {
                                                       , social_network: obj["social_network"] as? ([String:String])
                                                       , hrefReport: obj["hrefReport"] as? String
                                                       , isIFIX: obj["isIFIX"] as? Bool
+                                                      , objective: obj["objective"] as? String
                                                      ))
                     }
                     if !ListFii.listFiis.isEmpty {
@@ -73,6 +74,12 @@ class InitializationWorker {
                     let x = try tr[i].select("td")[1].text()
                     let y = Double(try tr[i].select("td")[1].text().replacingOccurrences(of: "R$ ", with: "").replacingOccurrences(of: ".", with: "").replacingOccurrences(of: ",", with: ".")) ?? 0.0
                     if  (x == "#N/D" || y <= 0.0) ? false : true {
+                        
+                        var closings: [(month: Int, price:String)] = .init()
+                        for x in 8...19 {
+                            closings.append((month: x-7, price: try tr[i].select("td")[x].text()))
+                        }
+                        
                         quoteList.append(.init(code: try tr[i].select("td").first()!.text()
                                                , currentPrice: try tr[i].select("td")[1].text()
                                                , opening: try tr[i].select("td")[2].text().replacingOccurrences(of: "R$", with: "")
@@ -81,6 +88,7 @@ class InitializationWorker {
                                                , maximum: try tr[i].select("td")[5].text().replacingOccurrences(of: "R$", with: "")
                                                , closingPrevious: try tr[i].select("td")[6].text().replacingOccurrences(of: "R$", with: "")
                                                , numberShares: Int(try tr[i].select("td")[7].text()) ?? 0
+                                               , closing: closings
                                               ))
                     }
                 }
@@ -142,35 +150,38 @@ class InitializationWorker {
                     let doc: Document = try SwiftSoup.parse(html)
                     
                     if item == .selic {
-                        let rows = try doc.getElementsByClass("small-6 large-centered columns holder-valor").first()
-                        let today = try doc.getElementsByClass("small-6 large-centered columns holder-valor").select("input").attr("value")
-                        let currentMonth = try rows!.getElementById("select-selic-mes")?.select("option").first()?.attr("value") ?? "0,0%"
-                        let yearCurrently = try rows!.getElementById("select-selic-ano")?.select("option").first()?.attr("value") ?? "0,0%"
-                        let year = try rows!.getElementById("select-selic-ano")?.select("option").first()?.text() ?? "9999"
-                        let annualGoal = (try rows!.getElementById("selic-ano-meta")?.attr("value") ?? "0,0%").replacingOccurrences(of: " ", with: "")
-                        obj.selic = (today: today.isEmpty ? "0,0%" : today, currentMonth: currentMonth, yearCurrently: yearCurrently, annualGoal: (year: year, value: annualGoal))
+                        if let rows = try doc.getElementsByClass("small-6 large-centered columns holder-valor").first() {
+                            let today = try doc.getElementsByClass("small-6 large-centered columns holder-valor").select("input").attr("value")
+                            let currentMonth = try rows.getElementById("select-selic-mes")?.select("option").first()?.attr("value") ?? "0,0%"
+                            let yearCurrently = try rows.getElementById("select-selic-ano")?.select("option").first()?.attr("value") ?? "0,0%"
+                            let year = try rows.getElementById("select-selic-ano")?.select("option").first()?.text() ?? "9999"
+                            let annualGoal = (try rows.getElementById("selic-ano-meta")?.attr("value") ?? "0,0%").replacingOccurrences(of: " ", with: "")
+                            obj.selic = (today: today.isEmpty ? "0,0%" : today, currentMonth: currentMonth, yearCurrently: yearCurrently, annualGoal: (year: year, value: annualGoal))
+                        }
                     } else {
                         let rows = try doc.getElementsByClass("small-6 large-centered columns").first()?.getElementsByClass("row")
-                        let x = try rows![1].getElementById("select-mes")?.select("option")
-                        var months = [[String:String]]()
-                        for i in 0..<12 {
-                            months.append([try x?[i].attr("aria-label") ?? "": try x?[i].attr("value") ?? ""])
-                        }
-                        let result = (twelveMonths: try rows![0].select("input").attr("value")
-                                      ,months: months
-                                      ,currentYear: try rows![2].getElementById("inp-ano")?.attr("value") ?? "")
-                        
-                        switch item {
-                        case .ipca:
-                            obj.ipca = result
-                        case .igpm:
-                            obj.igpm = result
-                        case .inpc:
-                            obj.inpc = result
-                        case .cdi:
-                            obj.cdi  = result
-                        default:
-                            break
+                        if let lines = rows {
+                            let x = try lines[1].getElementById("select-mes")?.select("option")
+                            var months = [[String:String]]()
+                            for i in 0..<12 {
+                                months.append([try x?[i].attr("aria-label") ?? "": try x?[i].attr("value") ?? ""])
+                            }
+                            let result = (twelveMonths: try lines[0].select("input").attr("value")
+                                          ,months: months
+                                          ,currentYear: try lines[2].getElementById("inp-ano")?.attr("value") ?? "")
+                            
+                            switch item {
+                            case .ipca:
+                                obj.ipca = result
+                            case .igpm:
+                                obj.igpm = result
+                            case .inpc:
+                                obj.inpc = result
+                            case .cdi:
+                                obj.cdi  = result
+                            default:
+                                break
+                            }
                         }
                         
                     }
@@ -360,6 +371,16 @@ class InitializationWorker {
             }
         }
         
+    }
+    
+    func fetchAlert(complete:@escaping(responseHandlerMap)) {
+        ConfigureDataBase.instance.collection(ConfigureDataBase.collectionParameters).document(ConfigureDataBase.documentAlert).getDocument { documentSnapshot, error in
+            if let document = documentSnapshot, document.exists {
+                complete(document.data())
+            } else {
+                complete(.init())
+            }
+        }
     }
     
 }

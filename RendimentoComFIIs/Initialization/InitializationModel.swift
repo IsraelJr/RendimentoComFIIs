@@ -24,7 +24,6 @@ struct InitializationModel: Decodable {
     static var arrayFlagNewOrUpdatedItem = [(ItemsLibrary, Bool)]()
     static var listMessagesReceived = [UserInboxModel.Fetch.Message]()
     
-    
     struct Fetch {
         struct Request {
             var object: Initialization!

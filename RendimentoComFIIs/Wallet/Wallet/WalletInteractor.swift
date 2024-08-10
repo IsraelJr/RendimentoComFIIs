@@ -35,10 +35,14 @@ class WalletInteractor: WalletBusinessLogic, WalletDataStore {
             worker?.read(complete: { response in
                 self.presenter?.presentWallet(response)
             })
+        case .readFuture:
+            break
         case .updtate:
             worker?.update(request: list!)
         case .delete:
             worker?.delete()
+        case .deleteFuture:
+            break
         }
     }
     

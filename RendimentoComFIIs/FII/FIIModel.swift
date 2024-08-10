@@ -39,6 +39,7 @@ struct FIIModel: Decodable {
             var pvp: Double?
             var hrefReport: String?
             var isIFIX: Bool?
+            var objective: String?
         }
     }
 }
@@ -52,17 +53,23 @@ struct FIIQuotationSheet {
     var maximum: String
     var closingPrevious: String
     var numberShares: Int
+    var closing: [(month: Int, price: String)]
 }
 
 extension FIIModel.Fetch.FII {
     mutating func calcEquityValuePerShare() {
-        let x = Double(self.equityValue?.replacingOccurrences(of: "R$ ", with: "").replacingOccurrences(of: ".", with: "").replacingOccurrences(of: ",", with: "") ?? "0.0") ?? 0.0
-        self.equityValuePerShare = x / Double(self.numberShares ?? 0)
+        let vp = Double(self.equityValue?.replacingOccurrences(of: "R$ ", with: "").replacingOccurrences(of: ".", with: "").replacingOccurrences(of: ",", with: "") ?? "0.0") ?? 0.0
+        self.equityValuePerShare = (vp / Double(self.numberShares ?? 0))
     }
     
     mutating func calcPVP() {
-        let x = Double(self.price?.replacingOccurrences(of: "R$ ", with: "").replacingOccurrences(of: ".", with: "").replacingOccurrences(of: ",", with: ".") ?? "0.0") ?? 0.0
-        self.pvp = x / Double(self.equityValuePerShare ?? 0.0)
+        let price = Double(self.price?.replacingOccurrences(of: "R$ ", with: "").replacingOccurrences(of: ".", with: "").replacingOccurrences(of: ",", with: ".") ?? "0.0") ?? 0.0
+        self.pvp = price / Double(self.equityValuePerShare ?? 0.0)
+        if self.pvp?.description.contains("0.0") ?? false {
+            let newValue = self.pvp?.description.replacingOccurrences(of: "0.0", with: "") ?? "0.0"
+            let valueDouble = (Double(newValue.prefix(4)) ?? 0) / 1000
+            self.pvp = valueDouble
+        }
     }
     
     func calcAgio(atual: Double, patrimo: Double) -> Double {

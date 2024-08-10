@@ -35,10 +35,10 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
         switch item {
         case ItemsLibrary.glossary.description():
             itemLibrary = .glossary
-        
+            
         case ItemsLibrary.books.description():
             itemLibrary = .books
-        
+            
         case ItemsLibrary.courses.description():
             itemLibrary = .courses
             
@@ -55,17 +55,18 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     
     func getPublications(_ sites: [Sites]) {
         worker = HomeWorker()
-        worker?.fetchPublications(request: sites, result: { response in
-            self.presenter?.presentPublications(response)
-        })
-        
+        DispatchQueue.main.async {
+            self.worker?.fetchPublications(request: sites, result: { response in
+                self.presenter?.presentPublications(response)
+            })
+        }
     }
     
     func getTallAndShort() {
-//        worker = HomeWorker()
-//        worker?.fetchTallAndShort(complete: { complete in
-//            self.presenter?.presenterTallAndShort(complete)
-//        })
+        //        worker = HomeWorker()
+        //        worker?.fetchTallAndShort(complete: { complete in
+        //            self.presenter?.presenterTallAndShort(complete)
+        //        })
         HomeWorker().fetchTallAndShort()
     }
     
@@ -84,6 +85,5 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
             self.presenter?.presentItemsLibrary(response)
         })
     }
-    
     
 }

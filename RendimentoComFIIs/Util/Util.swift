@@ -14,6 +14,7 @@ typealias responseDone = (_ response: Bool) ->()
 typealias responseHandlerArrayOfArrayOfTuple = (_ response: [[(String,String)]]) ->()
 typealias responseHandlerArrayOfTuple = (_ response: [(Any,Any)]) ->()
 typealias responseHandlerArray = (_ response: [Any]) ->()
+typealias responseHandlerMap = (_ response: [String:Any]?) ->()
 
 class Util {
     static var locale = Locale.current.languageCode?.elementsEqual("pt") ?? true ? "localePtBr" : "otherLocale"
@@ -62,8 +63,8 @@ class Util {
         return (quotas, value.convertToCurrency(to.valueWithSymbol!))
     }
     
-    static func userDefaultForWallet(action: CRUD, code: String!, quotas: String? = "0") -> (code: String, quotas: Int64) {
-        var result = (code: "", quotas: Int64(0))
+    static func userDefaultForWallet(action: CRUD, code: String!, quotas: String? = "0") -> (code: String, quotas: Int64, month: Int8) {
+        var result = (code: "", quotas: Int64(0), month: Int8())
         let codeUpper = code.uppercased()
         let user = DataUser.email ?? ""
         switch action {
@@ -75,12 +76,25 @@ class Util {
             UserDefaults.standard.removeObject(forKey: "\(user)\(NSLocalizedString("inthewallet", comment: "").replacingOccurrences(of: "code", with: codeUpper))")
             UserDefaults.standard.removeObject(forKey: "\(user)\(NSLocalizedString("totalquotas", comment: "").replacingOccurrences(of: "code", with: codeUpper))")
             
+        case .deleteFuture:
+            UserDefaults.standard.removeObject(forKey: "\(user)\(NSLocalizedString("futureinthewallet", comment: "").replacingOccurrences(of: "code", with: codeUpper))")
+            UserDefaults.standard.removeObject(forKey: "\(user)\(NSLocalizedString("futuretotalquotas", comment: "").replacingOccurrences(of: "code", with: codeUpper))")
+            UserDefaults.standard.removeObject(forKey: "\(user)\(NSLocalizedString("futuredatequotas", comment: "").replacingOccurrences(of: "code", with: codeUpper))")
+            
         case .read:
             result.code = UserDefaults.standard.string(forKey: "\(user)\(NSLocalizedString("inthewallet", comment: "").replacingOccurrences(of: "code", with: codeUpper))") ?? ""
             result.quotas = Int64(UserDefaults.standard.integer(forKey: "\(user)\(NSLocalizedString("totalquotas", comment: "").replacingOccurrences(of: "code", with: codeUpper))"))
             
+        case .readFuture:
+            result.code = UserDefaults.standard.string(forKey: "\(user)\(NSLocalizedString("futureinthewallet", comment: "").replacingOccurrences(of: "code", with: codeUpper))") ?? ""
+            result.quotas = Int64(UserDefaults.standard.integer(forKey: "\(user)\(NSLocalizedString("futuretotalquotas", comment: "").replacingOccurrences(of: "code", with: codeUpper))"))
+            result.month = Int8(UserDefaults.standard.integer(forKey: "\(user)\(NSLocalizedString("futuredatequotas", comment: "").replacingOccurrences(of: "code", with: codeUpper))"))
+            
         case .updtate:
-            break
+            UserDefaults.standard.set(codeUpper, forKey: "\(user)\(NSLocalizedString("futureinthewallet", comment: "").replacingOccurrences(of: "code", with: codeUpper))")
+            UserDefaults.standard.set(Int64(quotas ?? "0"), forKey: "\(user)\(NSLocalizedString("futuretotalquotas", comment: "").replacingOccurrences(of: "code", with: codeUpper))")
+            let monthCurrent = Calendar.current.component(.month, from: Date())
+            UserDefaults.standard.set(monthCurrent == 12 ? 1 : monthCurrent + 1, forKey: "\(user)\(NSLocalizedString("futuredatequotas", comment: "").replacingOccurrences(of: "code", with: codeUpper))")
         }
         return result
     }
@@ -98,8 +112,14 @@ class Util {
                 UserDefaults.standard.removeObject(forKey: "\(user)\(NSLocalizedString($0.description().0, comment: ""))")
             })
             
+        case .deleteFuture:
+            break
+            
         case .read:
             result = (NSLocalizedString(result.month, comment: ""), UserDefaults.standard.double(forKey: "\(user)\(NSLocalizedString(result.month, comment: ""))"))
+            
+        case .readFuture:
+            break
             
         case .updtate:
             break
@@ -190,4 +210,5 @@ class Util {
         
         return listTemp.map( { ($0.0.rawValue, numberFormatter.string(from: NSNumber(value: $0.1 / Double(listSegments.count)))!) } ).sorted(by: { $0.1 > $1.1 } )
     }
+    
 }

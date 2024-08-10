@@ -12,6 +12,9 @@
 /*KeysUserDefault*/
 "inthewallet" = "codeinthewallet";
 "totalquotas" = "codetotalquotas";
+"futureinthewallet" = "futurecodeinthewallet";
+"futuretotalquotas" = "futurecodetotalquotas";
+"futuredatequotas" = "futurecodedatequotas";
 
 /*UTIL*/
 "save" = "Salvar";
@@ -174,6 +177,10 @@
 "enter_total_earnings" = "Digite o total de proventos";
 "note1" = "* Campo Total de Cotas com valor vazio ou igual a zero, somente será válido com o campo abaixo selecionado.";  //"* Somente valor maior que zero será efetivado";
 "month_invalid" = "O mês informado é inválido!";
+"ask_about_date_with" = "A atualização no número de Cotas, na sua corretora, ocorreu antes ou depois da Data Com ([date])?";
+"ask_about_date_with_opt_yes" = "Antes da Data Com";
+"ask_about_date_with_opt_no" = "Depois da Data Com";
+"response_about_date_with_opt_no" = "Para não impactar nos proventos já pagos esse mês, a atualização de Cotas na sua carteira será realizada no mês seguinte.";
 
 /*FIIViewController*/
 "opening" = "Abertura";
@@ -219,7 +226,8 @@
 "awaiting_payment" = "Aguardando Pagamento";
 "add_wallet" = "Adicionar à Carteira  ";
 "remove_wallet" = "Retirar da Carteira  ";
-"selic_title" = "Selic para";
+"selic_title" = "Selic Atual";
+"objective" = "Objetivo";
 
 /*SimulatorViewController*/
 "simulator" = "Simulador";

@@ -16,6 +16,7 @@ protocol InitializationBusinessLogic {
     func getMessages(type: TypeMessage)
     func getBasicSalary()
     func getNewsletter()
+    func getAlert()
 }
 
 protocol InitializationDataStore {
@@ -64,7 +65,7 @@ class InitializationInteractor: InitializationBusinessLogic, InitializationDataS
             
         case .received:
             worker.fetchInBaseDataInboxMessages(complete: { response in
-//                self.presenter?.presentMessages(response: response)
+                //                self.presenter?.presentMessages(response: response)
                 InitializationModel.listMessagesReceived = response
             })
         }
@@ -78,6 +79,14 @@ class InitializationInteractor: InitializationBusinessLogic, InitializationDataS
     
     func getNewsletter() {
         worker.fetchNewsletter()
+    }
+    
+    func getAlert() {
+        worker.fetchAlert(complete: { response in
+            let message = (response?.first?.value as? [String : Any])?.first(where: {
+                $0.key.elementsEqual(Util.locale)})?.value as? String ?? String()
+            message.addLineBreak().trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? nil : self.presenter?.presentAlertMessage(message)
+        })
     }
     
 }

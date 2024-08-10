@@ -35,6 +35,9 @@ class PublicInteractor: PublicBusinessLogic, PublicDataStore {
                     response ? self.presenter?.presentWalletPublic(self.worker?.getWalletPublic()) : self.presenter?.presentResult(action, response)
                 })
             }
+        case .readFuture:
+            break
+            
         case .updtate:
             worker?.update(complete: { response in
                 self.presenter?.presentResult(action, response)
@@ -43,6 +46,8 @@ class PublicInteractor: PublicBusinessLogic, PublicDataStore {
             worker?.delete(complete: { response in
                 self.presenter?.presentResult(action, response)
             })
+        case .deleteFuture:
+            break
         }
     }
     

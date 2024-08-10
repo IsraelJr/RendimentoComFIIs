@@ -440,6 +440,7 @@ class ListFii {
                 UserDefaults.standard.set($0.profitabilityMonth, forKey: "\($0.code!)_profitabilityMonth")
                 UserDefaults.standard.set($0.phone, forKey: "\($0.code!)_phone")
                 UserDefaults.standard.set($0.site, forKey: "\($0.code!)_site")
+                UserDefaults.standard.set($0.objective, forKey: "\($0.code!)_objective")
             }
             
         })
@@ -471,6 +472,7 @@ class ListFii {
                                     , profitabilityMonth:   UserDefaults.standard.string(forKey: "\($0)_profitabilityMonth")
                                     , phone:                UserDefaults.standard.string(forKey: "\($0)_phone")
                                     , site:                 UserDefaults.standard.string(forKey: "\($0)_site")
+                                    , objective:            UserDefaults.standard.string(forKey: "\($0)_sobjective")
                                    ))
             })
             

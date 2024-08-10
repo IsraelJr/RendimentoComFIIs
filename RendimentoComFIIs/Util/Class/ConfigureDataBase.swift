@@ -30,6 +30,7 @@ class ConfigureDataBase {
     static let documentMaintenance = "maintenance"
     static let documentTerms = "terms"
     static let documentAboutApp = "about_app"
+    static let documentAlert = "alert"
     
     static let fieldValueSalary = "value_salary"
     static let fieldActiveDatabase = "active_database"

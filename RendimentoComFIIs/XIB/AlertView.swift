@@ -94,7 +94,7 @@ class AlertView: UIView {
         viewAlert.backgroundColor = UIColor(named: type.rawValue)
         image.tintColor = UIColor(named: type.rawValue)
         title.text = type.description()
-        self.message.text = message
+        self.message.text = message.addLineBreak()
         yes.backgroundColor = viewAlert.backgroundColor
     }
     

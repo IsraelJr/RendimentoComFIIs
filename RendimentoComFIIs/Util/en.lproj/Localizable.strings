@@ -9,6 +9,9 @@
 /*KeysUserDefault*/
 "inthewallet" = "codeinthewallet";
 "totalquotas" = "codetotalquotas";
+"futureinthewallet" = "futurecodeinthewallet";
+"futuretotalquotas" = "futurecodetotalquotas";
+"futuredatequotas" = "futurecodedatequotas";
 
 /*UTIL*/
 "save" = "Save";
@@ -158,6 +161,10 @@
 "enter_total_earnings" = "Enter the total earnings";
 "note1" = "* Total Quotas field with an empty value or equal to zero, it will only be valid with the field below selected.";  //"* Only value greater than zero will be effective";
 "month_invalid" = "The month entered is invalid!";
+"ask_about_date_with" = "Did the update in the number of Shares at your brokerage occur before or after the Com Date ([date])?";
+"ask_about_date_with_opt_yes" = "Before Date With";
+"ask_about_date_with_opt_no" = "After Date With";
+"response_about_date_with_opt_no" = "In order not to impact the proceeds already paid this month, the Quotas update in your portfolio will be carried out in the following month.";
 
 /*FIIViewController*/
 "opening" = "Opening";
@@ -211,7 +218,8 @@
 "awaiting_payment" = "Awaiting Payment";
 "add_wallet" = "Add to Wallet  ";
 "remove_wallet" = "Remove from Wallet  ";
-"selic_title" = "Selic for";
+"selic_title" = "Current Selic";
+"objective" = "Objective";
 
 /*SimulatorViewController*/
 "simulator" = "Simulador";

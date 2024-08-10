@@ -12,7 +12,6 @@ protocol HomePresentationLogic {
 //    func presenterTallAndShort(_ list: [[(String,String)]])
     func presentPhrase(_ response: HomeModel.FetchPhrase.Response)
     func presentItemsLibrary(_ response: Bool)
-    
 }
 
 class HomePresenter: HomePresentationLogic {
@@ -35,6 +34,5 @@ class HomePresenter: HomePresentationLogic {
     func presentItemsLibrary(_ response: Bool) {
         viewController?.showTopics(response)
     }
-    
 }
 

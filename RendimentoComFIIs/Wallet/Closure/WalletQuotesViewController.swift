@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SwiftSoup
 import Lottie
 
 protocol WalletQuotesDisplayLogic {
@@ -134,36 +133,49 @@ class WalletQuotesViewController: UIViewController, WalletQuotesDisplayLogic {
             complete(false)
         } else {
             fiis.forEach({ item in
-                let site = "https://finance.yahoo.com/quote/\(item).SA?p=\(item).SA&.tsrc=fin-srch"
+                let site = "https://brapi.dev/api/quote/\(item)\(Bundle.main.infoDictionary!["TokenBrapi"]!)"
                 let url = URL(string: site)
-                let taskUm = URLSession.shared.dataTask(with: url!) {(data, response, error) in
+                let request = URLSession.shared.dataTask(with: url!) {(data, response, error) in
                     if error != nil {
-                        return
+                        complete(false)
                     }
-                    let html = String(data: data!, encoding: .utf8)!
                     do {
-                        let doc: Document = try SwiftSoup.parse(html)
-                        let features = try doc.getElementById("quote-header-info")
-                        let one = try features?.getElementsByClass("Whs(nw)").first()?.getElementsByClass("Trsdu(0.3s) Fw(b) Fz(36px) Mb(-4px) D(b)").text() ?? "0"
-                        let two = try features?.select("span")
-                        let news1 = try two?[3].text() ?? "+0.00"
-                        let news2 = try two?[4].text() ?? "(+0.00%)"
-                        let date = try features?.getElementById("quote-market-notice")?.select("span").text().split(separator: " ")[2].description ?? ""
-                        self.result.append(.init(code: item, price: Double(one)?.convertToCurrency(true) ?? "R$ 0,0", variacao: news1.description, percent: news2.description, dateLastUpdate: date))
                         
-                        if self.result.count == fiis.count {
-                            self.result.sort(by: {$0.code < $1.code})
-                            complete(true)
+                        if let json = try JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any] {
+                            if let results = json.first(where: {$0.key.elementsEqual("results")})?.value.self,
+                                let fii = ((results as! [Any]).first as? [String:Any]) {
+                                
+                                let code = fii["symbol"] as? String ?? ""
+                                var price = fii["regularMarketPrice"] as? Double ?? 0
+                                var variacao = fii["regularMarketChange"] as? Double ?? 0
+                                var percent = fii["regularMarketChangePercent"] as? Double ?? 0
+                                let dateLastUpdate = fii["regularMarketTime"] as? String ?? ""
+                                
+                                let divisor = pow(10.0, Double(2))
+                                
+                                price = round(price * divisor) / divisor
+                                variacao = round(variacao * divisor) / divisor
+                                percent = round(percent * divisor) / divisor
+                                
+                                print(dateLastUpdate.dateTextWithYYYY())
+                                
+                                self.result.append(.init(code: code, price: price.convertToCurrency(true), variacao: variacao.description, percent: "\(percent)%", dateLastUpdate: dateLastUpdate.dateTextWithYYYY()))
+
+                                if self.result.count == fiis.count {
+                                    self.result.sort(by: {$0.code < $1.code})
+                                    complete(true)
+                                }
+                            } else {
+                                complete(false)
+                            }
+                        } else {
+                            complete(false)
                         }
-                        
-                    } catch Exception.Error(type: let type, Message: let message) {
-                        print("Erro aqui: \(type) / \(message)")
-                        
                     } catch {
-                        print("erro")
+                        complete(false)
                     }
                 }
-                taskUm.resume()
+                request.resume()
             })
         }
     }
@@ -180,7 +192,7 @@ extension WalletQuotesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellQuotes", for: indexPath) as! WalletTableViewCell
-        let value = "\(result[indexPath.row].price)    \(result[indexPath.row].variacao) \(result[indexPath.row].percent)"
+        let value = "\(result[indexPath.row].price)    \(result[indexPath.row].variacao)    \(result[indexPath.row].percent)"
         cell.setDataQuotes((result[indexPath.row].code, value, result[indexPath.row].dateLastUpdate))
         return cell
     }

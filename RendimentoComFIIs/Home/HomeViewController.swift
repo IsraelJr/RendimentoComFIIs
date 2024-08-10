@@ -49,9 +49,7 @@ class HomeViewController: UIViewController, HomeDisplayLogic, GADFullScreenConte
     var typeSort: ListFii.SortFiis?
     var timer: Timer?
     var currentSlide = 0
-    var countIFIX: Double = 0.0
     var arrayTemp = [Any]()
-    var isExit = false
     
     var interactor: HomeBusinessLogic?
     var router: (NSObjectProtocol & HomeRoutingLogic & HomeDataPassing)?

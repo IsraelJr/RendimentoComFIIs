@@ -86,7 +86,7 @@ class PublicationSites {
                     let styleFeatured = try featured?.getElementsByClass("img-wrapper").first()?.attr("style").replacingOccurrences(of: "background-image: url(\'", with: "").replacingOccurrences(of: "')", with: "") ?? "https://www.google.com"
                     let urlImageFeatured = URL(string: styleFeatured.isEmpty ? "https://www.google.com" : styleFeatured)
                     self.listNews.append(FiisNews(siteName: Sites.fiis.rawValue.uppercased()
-                                                  , image: UIImage(data: try! Data(contentsOf: urlImageFeatured!)) ?? UIImage(named: "imovel")
+                                                  , image: /*UIImage(data: try! Data(contentsOf: urlImageFeatured!)) ??*/ UIImage(named: "imovel")
                                                   , date: try titleFeatured!.getElementsByClass("date").first()?.text().dateTextWithYYYY()
                                                   , href: try titleFeatured!.select("a").attr("href")
                                                   , title: try titleFeatured!.getElementsByClass("title").first()?.text()
@@ -142,7 +142,7 @@ class PublicationSites {
                         do {
                             let doc: Document = try SwiftSoup.parse(html)
                             self.listNews.append(FiisNews(siteName: Sites.suno.rawValue.uppercased()
-                                                          , image: UIImage(data: try! Data(contentsOf: urlImage!)) ?? UIImage(named: "imovel")
+                                                          , image: /*UIImage(data: try! Data(contentsOf: urlImage!)) ?? */UIImage(named: "imovel")
                                                           , date: try doc.getElementsByClass("authorBox__name").select("time").text().dateTextWithYYYY()
                                                           , href: href
                                                           , title: try item.getElementsByClass("categoryHeader__highlight__link__title").first()?.text()
@@ -175,7 +175,7 @@ class PublicationSites {
                         do {
                             let doc: Document = try SwiftSoup.parse(html)
                             self.listNews.append(FiisNews(siteName: Sites.suno.rawValue.uppercased()
-                                                          , image: UIImage(data: try! Data(contentsOf: urlImage!)) ?? UIImage(named: "imovel")
+                                                          , image: /*UIImage(data: try! Data(contentsOf: urlImage!)) ?? */UIImage(named: "imovel")
                                                           , date: try doc.getElementsByClass("authorBox__name").select("time").text().dateTextWithYYYY()
                                                           , href: href
                                                           , title: try itemB.getElementsByClass("categoryHeader__4box__box__title").first()?.text()
@@ -225,7 +225,7 @@ class PublicationSites {
                     let urlImage = URL(string: src.isEmpty ? "https://www.google.com" : src)
                     let href = try $0.getElementsByClass("article-teaser-title").select("a").attr("href")
                     self.listNews.append(FiisNews(siteName: Sites.euqueroinvestir.rawValue.uppercased()
-                                                  , image: UIImage(data: try! Data(contentsOf: urlImage!)) ?? UIImage(named: "imovel")
+                                                  , image: /*UIImage(data: try! Data(contentsOf: urlImage!)) ??*/ UIImage(named: "imovel")
                                                   , date: try $0.getElementsByClass("article-teaser-author").select("span")[2].attr("content").dateTextWithYYYY()
                                                   , href: href
                                                   , title: try $0.getElementsByClass("article-teaser-title").select("a").text()

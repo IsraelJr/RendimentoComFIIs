@@ -10,6 +10,8 @@ import FirebaseCore
 import GoogleSignIn
 import FirebaseAuth
 import AuthenticationServices
+import LocalAuthentication
+
 
 protocol LoginDisplayLogic {
     func setTerms(_ object: LoginModel.FetchTerms.Terms)
@@ -275,6 +277,61 @@ class LoginViewController: UIViewController, LoginDisplayLogic {
         LoginViewController.terms = object
     }
     
+    private func checkFaceID(complete:@escaping(responseDone)) {
+        let context = LAContext()
+        var error: NSError?
+        
+        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+            if context.biometryType == .faceID {
+                
+                context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Identifique-se para acessar suas configurações") { success, evaluateError in
+                    DispatchQueue.main.async {
+                        if success {
+                            complete(true)
+                        } else {
+                            // Autenticação falhou
+                            // Tratar erro, por exemplo, usando evaluateError
+                            guard let error = evaluateError as? LAError else { return }
+
+                            switch error.code {
+                            case .authenticationFailed:
+                                // Autenticação falhou após várias tentativas
+                                complete(false)
+                            case .userCancel:
+                                // Usuário cancelou a solicitação de autenticação
+                                complete(false)
+                            case .userFallback:
+                                // Usuário escolheu usar uma senha
+                                complete(false)
+                            default:
+                                // Outros tipos de erro
+                                complete(false)
+                            }
+
+                        }
+                    }
+                }
+
+                
+            } else {
+                // Dispositivo não suporta Face ID
+                complete(false)
+            }
+        } else {
+            // Não é possível usar autenticação biométrica
+            // Tratar erro
+            complete(false)
+        }
+        
+    }
+    
+    private func successfullyValidated(_ name: String, _ email: String) {
+        DataUser.name = name
+        DataUser.email = email
+        segueTo(destination: storyboard?.instantiateViewController(withIdentifier: "init") as! InitializationViewController)
+    }
+    
+    
     @IBAction func didTapCheckbox(_ sender: UIButton) {
         btnEntry.tag = btnEntry.tag == 0 ? 1 : 0
         btnEntry.tintColor = btnEntry.tag == 0 ? UIColor().colorRadioDisabled : UIColor(named: "Border")
@@ -284,60 +341,6 @@ class LoginViewController: UIViewController, LoginDisplayLogic {
         signInButton.backgroundColor = btnEntry.tag == 0 ? UIColor().colorRadioDisabled : UIColor.clear
     }
     
-    //    private func create() {
-    //        Auth.auth().createUser(withEmail: "israel.junior2111@gmail.com", password: "Jr2612%$") { authResult, error in
-    //            let x = authResult
-    //            let y = error
-    //            print()
-    //        }
-    //    }
-    
-    //    private func signIn() {
-    //        Auth.auth().signIn(withEmail: "israel.junior2111@gmail.com", password: "Jr2612%$") { [weak self] authResult, error in
-    //            guard let strongSelf = self else { return }
-    //            print(strongSelf)
-    //        }
-    //    }
-    //
-    //    private func x () {
-    //        if GIDSignIn.sharedInstance.hasPreviousSignIn() {
-    //            GIDSignIn.sharedInstance.restorePreviousSignIn { [unowned self] user, error in
-    //                authenticateUser(for: user, with: error)
-    //                print()
-    //            }
-    //        } else {
-    //
-    //            guard let clientID = FirebaseApp.app()?.options.clientID else { return }
-    //
-    //            // Create Google Sign In configuration object.
-    //            let config = GIDConfiguration(clientID: clientID)
-    //
-    //            guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
-    //
-    //            guard let rootViewController = windowScene.windows.first?.rootViewController else { return }
-    //
-    //            // Start the sign in flow!
-    //            GIDSignIn.sharedInstance.signIn(with: config, presenting: self) { [unowned self] user, error in
-    //
-    //                if let error = error {
-    //                    // ...
-    //                    return
-    //                }
-    //
-    //                guard
-    //                    let authentication = user?.authentication,
-    //                    let idToken = authentication.idToken
-    //                else {
-    //                    return
-    //                }
-    //
-    //                let credential = GoogleAuthProvider.credential(withIDToken: idToken,
-    //                                                               accessToken: authentication.accessToken)
-    //
-    //                // ...
-    //            }
-    //        }
-    //    }
 }
 
 

@@ -10,6 +10,7 @@ import UIKit
 protocol InitializationDisplayLogic {
     func flagNewOrUpdatedItem(_ list: [(ItemsLibrary, Bool)])
     func callHomeViewController()
+    func showAlertMessage(_ message: String)
 }
 
 
@@ -29,6 +30,7 @@ class InitializationViewController: UIViewController, InitializationDisplayLogic
         super.init(coder: aDecoder)
         setup()
         //getQuotes()
+        interactor?.getAlert()
         getIFIX()
         interactor?.getMessages(type: .received)
         interactor?.getIndexes()
@@ -69,6 +71,7 @@ class InitializationViewController: UIViewController, InitializationDisplayLogic
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        interactor?.getAlert()
         _ = view.loadingLottie()
         setupLayout()
         //        DispatchQueue.main.async {
@@ -111,6 +114,26 @@ class InitializationViewController: UIViewController, InitializationDisplayLogic
         Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
             self.segueTo(destination: self.storyboard?.instantiateViewController(withIdentifier: "home") as! HomeViewController)
         }
+//        if InitializationModel.alertMessage.isEmpty {
+//            HomeViewController().showTopics(.init())
+//            Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
+//                self.segueTo(destination: self.storyboard?.instantiateViewController(withIdentifier: "home") as! HomeViewController)
+//            }
+//        } else {
+//            _ = alertView(type: .warning, message: InitializationModel.alertMessage).delegate = self
+//        }
+    }
+    
+    func showAlertMessage(_ message: String) {
+        _ = alertView(type: .warning, message: message).delegate = self
     }
 }
 
+
+extension InitializationViewController: ActionButtonAlertDelegate {
+    func close() {
+        dismiss(animated: true)
+    }
+    
+    
+}

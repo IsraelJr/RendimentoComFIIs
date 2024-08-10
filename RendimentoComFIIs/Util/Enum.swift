@@ -137,8 +137,10 @@ enum Month: Int, CaseIterable {
 enum CRUD: String {
     case create
     case read
+    case readFuture
     case updtate
     case delete
+    case deleteFuture
 }
 
 

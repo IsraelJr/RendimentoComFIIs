@@ -10,6 +10,7 @@ import UIKit
 protocol InitializationPresentationLogic {
     func presentNewOrUpdatedItem(_ response: [(ItemsLibrary, Bool)])
     func presentHomeViewController()
+    func presentAlertMessage(_ message: String)
 }
 
 class InitializationPresenter: InitializationPresentationLogic {
@@ -24,5 +25,8 @@ class InitializationPresenter: InitializationPresentationLogic {
         viewController?.callHomeViewController()
     }
 
+    func presentAlertMessage(_ message: String) {
+        viewController?.showAlertMessage(message)
+    }
 }
 

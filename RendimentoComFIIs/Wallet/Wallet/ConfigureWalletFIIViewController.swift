@@ -20,11 +20,12 @@ class ConfigureWalletFIIViewController: UIViewController {
     @IBOutlet weak var viewMain: UIView!
     
     var code = ""
-    var quotas = ""
+    var currentQuotas = ""
     var btnInTheWallet: UIButton?
     var vcWallet: UIViewController?
     var insert: InsertObject?
     var comeBack = false
+    var validatedDataCom: Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,7 +71,7 @@ class ConfigureWalletFIIViewController: UIViewController {
             $0.placeholder = $0 == collectionTextField.first ? NSLocalizedString(insert == .fii ? "enter_fii_code" : "enter_month", comment: "") : NSLocalizedString(insert == .fii ? "enter_total_quotas" : "enter_total_earnings", comment: "")
             $0.keyboardType = $0 == collectionTextField.first ? .alphabet : (insert == .fii ? .numberPad : .decimalPad)
             $0.returnKeyType = .next
-            $0.text = $0 == collectionTextField.first ? code.trimmingCharacters(in: .whitespacesAndNewlines) : "\(quotas)".trimmingCharacters(in: .whitespacesAndNewlines)
+            $0.text = $0 == collectionTextField.first ? code.trimmingCharacters(in: .whitespacesAndNewlines) : "\(currentQuotas)".trimmingCharacters(in: .whitespacesAndNewlines)
             $0.isEnabled = ($0 == collectionTextField.first && $0.text?.isEmpty == false) ? false : true
             $0.textColor = $0.isEnabled ? .label : .lightGray
         })
@@ -82,6 +83,8 @@ class ConfigureWalletFIIViewController: UIViewController {
             insert != .fii ? collectionButton.last?.isHidden = true : nil
             
         })
+        currentQuotas = collectionTextField.last?.text ?? Int().description
+        
     }
     
     private func addDoneButtonOnKeyboard() {
@@ -102,13 +105,28 @@ class ConfigureWalletFIIViewController: UIViewController {
     
     private func insertFii() {
         if let nameFii = collectionTextField.first?.text, nameFii.isEmpty == false, let quotas = collectionTextField.last?.text, Int64(quotas) ?? 0 > 0 {
+            
+            let month = NSLocalizedString(String(Util.currentDate().split(separator: "/")[1]), comment: "")
+            let dataWith = ListFii.listFiis.first(where: {$0.code.elementsEqual(nameFii)})?.earnings?.first(where: {$0.key.elementsEqual(month)})?.value.first(where: {$0.key.elementsEqual("date_with")})?.value as? String
+            
+            if let result = dataWith?.isGreaterCurrentDate(), !result, Int(quotas) ?? .zero != Int(currentQuotas) {
+                comeBack = true
+                validatedDataCom = true
+                let ask = NSLocalizedString("ask_about_date_with", comment: "").replacingOccurrences(of: "[date]", with: dataWith!)
+                let alert = alertView(type: .warning, message: ask)
+                alert.setupBtnYes(titleYes: NSLocalizedString("ask_about_date_with_opt_yes", comment: ""),
+                                  titleNo: NSLocalizedString("ask_about_date_with_opt_no", comment: ""))
+                alert.delegate = self
+            } else {
             _ = Util.userDefaultForWallet(action: .create, code: nameFii, quotas: quotas)
-            dismissWith(.fade)
+                dismissWith(.fade)
+            }
+            
         } else {
             if collectionButton.last?.tag == 0 {
                 btnInTheWallet?.didTapAddToWallet(codeFii: collectionTextField.first!.text!, action: .delete)
             } else {
-                _ = Util.userDefaultForWallet(action: .create, code: collectionTextField.first!.text!, quotas: quotas)
+                _ = Util.userDefaultForWallet(action: .create, code: collectionTextField.first!.text!, quotas: currentQuotas)
             }
             dismissWith(.fade)
         }
@@ -129,6 +147,15 @@ class ConfigureWalletFIIViewController: UIViewController {
             alertView(type: .warning, message: NSLocalizedString("invalid_data", comment: "")).delegate = self
             comeBack = true
         }
+    }
+    
+    private func updateQuotas() {
+        var action = CRUD.create
+        if let result = validatedDataCom, !result {
+            action = .updtate
+        }
+        _ = Util.userDefaultForWallet(action: action, code: collectionTextField.first!.text, quotas: collectionTextField.last!.text)
+
     }
     
     @objc func doneKeyboardNumber() {
@@ -176,11 +203,22 @@ extension ConfigureWalletFIIViewController: UITextFieldDelegate {
 
 extension ConfigureWalletFIIViewController: ActionButtonAlertDelegate {
     func close() {
-        dismiss(animated: true) {
-            self.comeBack ? self.dismiss(animated: true) : nil
+        dismiss(animated: true) { [self] in
+            if let result = validatedDataCom, result {
+                validatedDataCom = false
+                alertView(type: .info, message: NSLocalizedString("response_about_date_with_opt_no", comment: "")).delegate = self
+            } else {
+                validatedDataCom ?? true ? nil : updateQuotas()
+                self.comeBack ? self.dismiss(animated: true) : nil
+            }
         }
-        
     }
-    
-    
+
+    func yes() {
+        updateQuotas()
+        dismiss(animated: true) {
+            self.comeBack ? self.dismissWith(.fade) : nil
+        }
+    }
 }
+
