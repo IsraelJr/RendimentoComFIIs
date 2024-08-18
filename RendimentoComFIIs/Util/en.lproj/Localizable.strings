@@ -219,7 +219,10 @@
 "add_wallet" = "Add to Wallet  ";
 "remove_wallet" = "Remove from Wallet  ";
 "selic_title" = "Current Selic";
-"objective" = "Objective";
+"distribution" = "Income Distribution";
+"income_disclosure" = "Income Disclosure";
+"ex_income" = "Ex-Income Date";
+"income_payment" = "Income Payment";
 
 /*SimulatorViewController*/
 "simulator" = "Simulador";
@@ -407,3 +410,8 @@
 "create_error" = "We were unable to publish your wallet!\nTry again later or contact us with the problem.";
 "read_success" = "Wallet read successfully!";
 "read_error" = "Could not identify public wallet already created!\nYou can try again later or set up a new public wallet.";
+
+/*SummaryViewController*/
+"title_summary_fii" = "Summary";
+"objective" = "Objective";
+"target_audience" = "Target Audience";

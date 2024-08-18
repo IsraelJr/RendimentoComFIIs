@@ -41,6 +41,7 @@ class InitializationWorker {
                                                       , hrefReport: obj["hrefReport"] as? String
                                                       , isIFIX: obj["isIFIX"] as? Bool
                                                       , objective: obj["objective"] as? String
+                                                      , incomeDistribution: obj["incomeDistribution"] as? ([String:String])
                                                      ))
                     }
                     if !ListFii.listFiis.isEmpty {

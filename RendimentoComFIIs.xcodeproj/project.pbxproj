@@ -32,6 +32,13 @@
 		DD146A6E2891068000770A9A /* WalletQuotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD146A6D2891068000770A9A /* WalletQuotesViewController.swift */; };
 		DD1CF33428FA7989007156C5 /* Ad.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1CF33328FA7988007156C5 /* Ad.swift */; };
 		DD1CF3362910DD75007156C5 /* UserInboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1CF3352910DD75007156C5 /* UserInboxViewController.swift */; };
+		DD2038572BB918CC0036D455 /* QuizInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2038562BB918CC0036D455 /* QuizInteractor.swift */; };
+		DD2038592BB918D60036D455 /* QuizWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2038582BB918D60036D455 /* QuizWorker.swift */; };
+		DD20385B2BB918DE0036D455 /* QuizRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD20385A2BB918DE0036D455 /* QuizRouter.swift */; };
+		DD20385D2BB918E60036D455 /* QuizPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD20385C2BB918E60036D455 /* QuizPresenter.swift */; };
+		DD20385F2BB918EE0036D455 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD20385E2BB918EE0036D455 /* QuizViewController.swift */; };
+		DD2038612BB918FB0036D455 /* QuizStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD2038602BB918FB0036D455 /* QuizStoryboard.storyboard */; };
+		DD2038632BB919010036D455 /* QuizModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2038622BB919010036D455 /* QuizModel.swift */; };
 		DD3397A22844FB3A00BF1286 /* MoreOptionsWalletCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3397A12844FB3900BF1286 /* MoreOptionsWalletCollectionViewCell.swift */; };
 		DD3397A42844FC4900BF1286 /* MoreOptionsWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3397A32844FC4900BF1286 /* MoreOptionsWalletViewController.swift */; };
 		DD344F7C287237130076A7C0 /* InternetConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD344F7B287237130076A7C0 /* InternetConnectionManager.swift */; };
@@ -43,6 +50,10 @@
 		DD46E02A284D52F800A7BD41 /* FIIHistoricTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD46E029284D52F800A7BD41 /* FIIHistoricTableViewCell.swift */; };
 		DD46E02C284D55C500A7BD41 /* FIIHistoricViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD46E02B284D55C500A7BD41 /* FIIHistoricViewController.swift */; };
 		DD5405D82929801700D0FFEC /* ProportionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5405D72929801700D0FFEC /* ProportionViewController.swift */; };
+		DD58349D2BA69A4B0016094D /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = DD58349C2BA69A4B0016094D /* FirebaseDatabase */; };
+		DD58349F2BA69A9B0016094D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = DD58349E2BA69A9B0016094D /* FirebaseAuth */; };
+		DD5834A12BA69A9B0016094D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = DD5834A02BA69A9B0016094D /* FirebaseFirestore */; };
+		DD5834A32BA69A9B0016094D /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DD5834A22BA69A9B0016094D /* FirebaseFirestoreSwift */; };
 		DD7C73FE291F615F0025CA58 /* UserInboxInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7C73FD291F615F0025CA58 /* UserInboxInteractor.swift */; };
 		DD7C7400291F61660025CA58 /* UserInboxWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7C73FF291F61660025CA58 /* UserInboxWorker.swift */; };
 		DD7C7402291F616E0025CA58 /* UserInboxRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7C7401291F616E0025CA58 /* UserInboxRouter.swift */; };
@@ -50,6 +61,17 @@
 		DD7C74062920B2720025CA58 /* UserInboxMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7C74052920B2720025CA58 /* UserInboxMessageViewController.swift */; };
 		DD7C740829249F900025CA58 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7C740729249F900025CA58 /* Date+Extension.swift */; };
 		DD7E2E73284292D10053D6EB /* WalletHistoricViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E2E72284292D10053D6EB /* WalletHistoricViewController.swift */; };
+		DD80BB992BC249D100C2883E /* MonthlyClosingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD80BB982BC249D100C2883E /* MonthlyClosingViewController.swift */; };
+		DD83FCFD2C71A64700648DBA /* SummaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD83FCFC2C71A64700648DBA /* SummaryModel.swift */; };
+		DD83FCFF2C71A65E00648DBA /* SummaryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD83FCFE2C71A65E00648DBA /* SummaryInteractor.swift */; };
+		DD83FD012C71A66600648DBA /* SummaryWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD83FD002C71A66600648DBA /* SummaryWorker.swift */; };
+		DD83FD032C71A66D00648DBA /* SummaryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD83FD022C71A66D00648DBA /* SummaryRouter.swift */; };
+		DD83FD052C71A67200648DBA /* SummaryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD83FD042C71A67200648DBA /* SummaryPresenter.swift */; };
+		DD83FD072C71A67900648DBA /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD83FD062C71A67900648DBA /* SummaryViewController.swift */; };
+		DD83FD0B2C71B1B800648DBA /* SummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD83FD092C71B1B800648DBA /* SummaryCell.swift */; };
+		DD83FD0C2C71B1B800648DBA /* SummaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD83FD0A2C71B1B800648DBA /* SummaryCell.xib */; };
+		DD83FD0F2C71B2A800648DBA /* SummaryMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD83FD0D2C71B2A800648DBA /* SummaryMainCell.swift */; };
+		DD83FD102C71B2A800648DBA /* SummaryMainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD83FD0E2C71B2A800648DBA /* SummaryMainCell.xib */; };
 		DD87CEB82936969700C3C70E /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD87CEB72936969700C3C70E /* AboutViewController.swift */; };
 		DD87CEBD2936E8BD00C3C70E /* AboutCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD87CEBC2936E8BD00C3C70E /* AboutCollectionViewCell.swift */; };
 		DD87CEBF29380AE200C3C70E /* SettingsAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD87CEBE29380AE200C3C70E /* SettingsAppViewController.swift */; };
@@ -267,6 +289,13 @@
 		DD146A6D2891068000770A9A /* WalletQuotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletQuotesViewController.swift; sourceTree = "<group>"; };
 		DD1CF33328FA7988007156C5 /* Ad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ad.swift; sourceTree = "<group>"; };
 		DD1CF3352910DD75007156C5 /* UserInboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInboxViewController.swift; sourceTree = "<group>"; };
+		DD2038562BB918CC0036D455 /* QuizInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizInteractor.swift; sourceTree = "<group>"; };
+		DD2038582BB918D60036D455 /* QuizWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizWorker.swift; sourceTree = "<group>"; };
+		DD20385A2BB918DE0036D455 /* QuizRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizRouter.swift; sourceTree = "<group>"; };
+		DD20385C2BB918E60036D455 /* QuizPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizPresenter.swift; sourceTree = "<group>"; };
+		DD20385E2BB918EE0036D455 /* QuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		DD2038602BB918FB0036D455 /* QuizStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QuizStoryboard.storyboard; sourceTree = "<group>"; };
+		DD2038622BB919010036D455 /* QuizModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizModel.swift; sourceTree = "<group>"; };
 		DD3397A12844FB3900BF1286 /* MoreOptionsWalletCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreOptionsWalletCollectionViewCell.swift; sourceTree = "<group>"; };
 		DD3397A32844FC4900BF1286 /* MoreOptionsWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreOptionsWalletViewController.swift; sourceTree = "<group>"; };
 		DD344F7B287237130076A7C0 /* InternetConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetConnectionManager.swift; sourceTree = "<group>"; };
@@ -286,6 +315,17 @@
 		DD7C74052920B2720025CA58 /* UserInboxMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInboxMessageViewController.swift; sourceTree = "<group>"; };
 		DD7C740729249F900025CA58 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		DD7E2E72284292D10053D6EB /* WalletHistoricViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletHistoricViewController.swift; sourceTree = "<group>"; };
+		DD80BB982BC249D100C2883E /* MonthlyClosingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthlyClosingViewController.swift; sourceTree = "<group>"; };
+		DD83FCFC2C71A64700648DBA /* SummaryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryModel.swift; sourceTree = "<group>"; };
+		DD83FCFE2C71A65E00648DBA /* SummaryInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryInteractor.swift; sourceTree = "<group>"; };
+		DD83FD002C71A66600648DBA /* SummaryWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryWorker.swift; sourceTree = "<group>"; };
+		DD83FD022C71A66D00648DBA /* SummaryRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryRouter.swift; sourceTree = "<group>"; };
+		DD83FD042C71A67200648DBA /* SummaryPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryPresenter.swift; sourceTree = "<group>"; };
+		DD83FD062C71A67900648DBA /* SummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
+		DD83FD092C71B1B800648DBA /* SummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryCell.swift; sourceTree = "<group>"; };
+		DD83FD0A2C71B1B800648DBA /* SummaryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SummaryCell.xib; sourceTree = "<group>"; };
+		DD83FD0D2C71B2A800648DBA /* SummaryMainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryMainCell.swift; sourceTree = "<group>"; };
+		DD83FD0E2C71B2A800648DBA /* SummaryMainCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SummaryMainCell.xib; sourceTree = "<group>"; };
 		DD87CEB72936969700C3C70E /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		DD87CEBC2936E8BD00C3C70E /* AboutCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCollectionViewCell.swift; sourceTree = "<group>"; };
 		DD87CEBE29380AE200C3C70E /* SettingsAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAppViewController.swift; sourceTree = "<group>"; };
@@ -483,7 +523,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD58349D2BA69A4B0016094D /* FirebaseDatabase in Frameworks */,
 				3B2E8AD3CBF0E57DB082B1DD /* Pods_RendimentoComFIIs.framework in Frameworks */,
+				DD5834A12BA69A9B0016094D /* FirebaseFirestore in Frameworks */,
+				DD58349F2BA69A9B0016094D /* FirebaseAuth in Frameworks */,
+				DD5834A32BA69A9B0016094D /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,6 +602,20 @@
 			path = Inbox;
 			sourceTree = "<group>";
 		};
+		DD2038642BB919110036D455 /* Quiz */ = {
+			isa = PBXGroup;
+			children = (
+				DD2038562BB918CC0036D455 /* QuizInteractor.swift */,
+				DD2038582BB918D60036D455 /* QuizWorker.swift */,
+				DD20385A2BB918DE0036D455 /* QuizRouter.swift */,
+				DD20385C2BB918E60036D455 /* QuizPresenter.swift */,
+				DD20385E2BB918EE0036D455 /* QuizViewController.swift */,
+				DD2038602BB918FB0036D455 /* QuizStoryboard.storyboard */,
+				DD2038622BB919010036D455 /* QuizModel.swift */,
+			);
+			path = Quiz;
+			sourceTree = "<group>";
+		};
 		DD46E02D284D5ACA00A7BD41 /* Historic */ = {
 			isa = PBXGroup;
 			children = (
@@ -583,6 +641,23 @@
 				DDE23F4928485F24000AA17C /* WalletHistoricModel.swift */,
 			);
 			path = Historic;
+			sourceTree = "<group>";
+		};
+		DD83FD082C71A68C00648DBA /* Summary */ = {
+			isa = PBXGroup;
+			children = (
+				DD83FCFE2C71A65E00648DBA /* SummaryInteractor.swift */,
+				DD83FD002C71A66600648DBA /* SummaryWorker.swift */,
+				DD83FD022C71A66D00648DBA /* SummaryRouter.swift */,
+				DD83FD042C71A67200648DBA /* SummaryPresenter.swift */,
+				DD83FD062C71A67900648DBA /* SummaryViewController.swift */,
+				DD83FCFC2C71A64700648DBA /* SummaryModel.swift */,
+				DD83FD092C71B1B800648DBA /* SummaryCell.swift */,
+				DD83FD0A2C71B1B800648DBA /* SummaryCell.xib */,
+				DD83FD0D2C71B2A800648DBA /* SummaryMainCell.swift */,
+				DD83FD0E2C71B2A800648DBA /* SummaryMainCell.xib */,
+			);
+			path = Summary;
 			sourceTree = "<group>";
 		};
 		DD87CEB92936978E00C3C70E /* About */ = {
@@ -844,6 +919,7 @@
 				DDB021C42833284A00099155 /* FIIInteractor.swift */,
 				DDB021C52833284A00099155 /* FIIPresenter.swift */,
 				DDB021C62833284A00099155 /* SimulatorViewController.swift */,
+				DD83FD082C71A68C00648DBA /* Summary */,
 				DD46E02D284D5ACA00A7BD41 /* Historic */,
 				DDB021B62833284900099155 /* Comments */,
 			);
@@ -906,6 +982,7 @@
 				DDB021E12833284A00099155 /* Detail */,
 				DDB021ED2833284A00099155 /* ContactUs */,
 				DD87CEC02938109900C3C70E /* Settings */,
+				DD2038642BB919110036D455 /* Quiz */,
 				DD0D58382978E20D001AB136 /* ListWalletPublic */,
 			);
 			path = MoreOptions;
@@ -980,6 +1057,7 @@
 			isa = PBXGroup;
 			children = (
 				DDC125A92846905C00118960 /* ChartViewController.swift */,
+				DD80BB982BC249D100C2883E /* MonthlyClosingViewController.swift */,
 				DDC125AC2846AD7700118960 /* YearCollectionViewCell.swift */,
 				DD5405D72929801700D0FFEC /* ProportionViewController.swift */,
 			);
@@ -1054,13 +1132,19 @@
 				DDB020FD283317FF00099155 /* Sources */,
 				DDB020FE283317FF00099155 /* Frameworks */,
 				DDB020FF283317FF00099155 /* Resources */,
-				BD1D54B20FD79C1ABB51DD7A /* [CP] Embed Pods Frameworks */,
+				430019201FF6C01B70D4D819 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = RendimentoComFIIs;
+			packageProductDependencies = (
+				DD58349C2BA69A4B0016094D /* FirebaseDatabase */,
+				DD58349E2BA69A9B0016094D /* FirebaseAuth */,
+				DD5834A02BA69A9B0016094D /* FirebaseFirestore */,
+				DD5834A22BA69A9B0016094D /* FirebaseFirestoreSwift */,
+			);
 			productName = RendimentoComFIIs;
 			productReference = DDB02101283317FF00099155 /* Rendimento com FIIs.app */;
 			productType = "com.apple.product-type.application";
@@ -1090,6 +1174,9 @@
 				"pt-BR",
 			);
 			mainGroup = DDB020F8283317FF00099155;
+			packageReferences = (
+				DD58349A2BA699D10016094D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = DDB02102283317FF00099155 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1114,9 +1201,12 @@
 				DDB02196283327B200099155 /* Localizable.strings in Resources */,
 				DDB021112833180000099155 /* LaunchScreen.storyboard in Resources */,
 				DDB022132833284A00099155 /* FIIStoryboard.storyboard in Resources */,
+				DD2038612BB918FB0036D455 /* QuizStoryboard.storyboard in Resources */,
 				DDB022412833284A00099155 /* ContactUsStoryboard.storyboard in Resources */,
+				DD83FD102C71B2A800648DBA /* SummaryMainCell.xib in Resources */,
 				DDB021AE2833280800099155 /* NavigationBarFooterView.xib in Resources */,
 				DDB02197283327B200099155 /* Localizable.strings in Resources */,
+				DD83FD0C2C71B1B800648DBA /* SummaryCell.xib in Resources */,
 				DDB0210E2833180000099155 /* Assets.xcassets in Resources */,
 				DD94F86E2990816500A5EDF3 /* more.json in Resources */,
 				DD08A77F2951675200C62D59 /* SettingsAppStoryboard.storyboard in Resources */,
@@ -1140,7 +1230,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		BD1D54B20FD79C1ABB51DD7A /* [CP] Embed Pods Frameworks */ = {
+		430019201FF6C01B70D4D819 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1194,8 +1284,10 @@
 				DDD2B3BF283D841B0087A113 /* xXxModel.swift in Sources */,
 				DDC25FBC2870029600E11CD4 /* NewsletterInteractor.swift in Sources */,
 				DDE3A78129498D5100937C10 /* NumberFormatter+Extension.swift in Sources */,
+				DD83FCFD2C71A64700648DBA /* SummaryModel.swift in Sources */,
 				DDD2B3BB283D841B0087A113 /* xXxRouter.swift in Sources */,
 				DDB0220A2833284A00099155 /* CommentsSitesCollectionViewCell.swift in Sources */,
+				DD83FCFF2C71A65E00648DBA /* SummaryInteractor.swift in Sources */,
 				DD0D58312978E1CF001AB136 /* ListWalletPublicInteractor.swift in Sources */,
 				DDB02198283327B200099155 /* PlainHorizontalProgressBar.swift in Sources */,
 				DDB022292833284A00099155 /* LoginWorker.swift in Sources */,
@@ -1249,6 +1341,7 @@
 				DDB022252833284A00099155 /* LoginInteractor.swift in Sources */,
 				DD87CEC22938242B00C3C70E /* SettingsAppInteractor.swift in Sources */,
 				DDB0221B2833284A00099155 /* WalletModel.swift in Sources */,
+				DD83FD0F2C71B2A800648DBA /* SummaryMainCell.swift in Sources */,
 				DDB022222833284A00099155 /* WalletInteractor.swift in Sources */,
 				DDD2B3BC283D841B0087A113 /* xXxPresenter.swift in Sources */,
 				DDB0221D2833284A00099155 /* WalletViewController.swift in Sources */,
@@ -1263,6 +1356,7 @@
 				DDB022452833284A00099155 /* PROViewController.swift in Sources */,
 				DDB0220F2833284A00099155 /* CommentsInteractor.swift in Sources */,
 				DDC25FBE2870029A00E11CD4 /* NewsletterWorker.swift in Sources */,
+				DD83FD032C71A66D00648DBA /* SummaryRouter.swift in Sources */,
 				DDC56926284D5C3300069BCD /* FIIHistoricModel.swift in Sources */,
 				DDD2B3B9283D841B0087A113 /* xXxInteractor.swift in Sources */,
 				DDC25FC2287002AC00E11CD4 /* NewsletterPresenter.swift in Sources */,
@@ -1281,6 +1375,7 @@
 				DD7C740829249F900025CA58 /* Date+Extension.swift in Sources */,
 				DDB022282833284A00099155 /* LoginPresenter.swift in Sources */,
 				DDB021782833278500099155 /* UILabel+Extension.swift in Sources */,
+				DD20385B2BB918DE0036D455 /* QuizRouter.swift in Sources */,
 				DD02AB6A28D5993A0074A847 /* SplashViewController.swift in Sources */,
 				DDE23F4228485F0D000AA17C /* WalletHistoricInteractor.swift in Sources */,
 				DDB02147283326B700099155 /* HomeViewController.swift in Sources */,
@@ -1297,6 +1392,7 @@
 				DDA36C51297265CE0066FECC /* RatingCollectionViewCell.swift in Sources */,
 				DDC56924284D5C2600069BCD /* FIIHistoricPresenter.swift in Sources */,
 				DDA36C4A297137380066FECC /* PublicPresenter.swift in Sources */,
+				DD83FD0B2C71B1B800648DBA /* SummaryCell.swift in Sources */,
 				DDB022492833284A00099155 /* InitializationPresenter.swift in Sources */,
 				DD7C7400291F61660025CA58 /* UserInboxWorker.swift in Sources */,
 				DDC56920284D5C1D00069BCD /* FIIHistoricWorker.swift in Sources */,
@@ -1319,12 +1415,16 @@
 				DD0D583A2978E6CE001AB136 /* ListWalletPublicModel.swift in Sources */,
 				DDC56922284D5C2200069BCD /* FIIHistoricRouter.swift in Sources */,
 				DDB0221C2833284A00099155 /* WalletPresenter.swift in Sources */,
+				DD80BB992BC249D100C2883E /* MonthlyClosingViewController.swift in Sources */,
 				DDC25FB9287001FD00E11CD4 /* NewsletterViewController.swift in Sources */,
+				DD83FD072C71A67900648DBA /* SummaryViewController.swift in Sources */,
 				DDB022172833284A00099155 /* FIIInteractor.swift in Sources */,
 				DDD2B3CD283D84480087A113 /* UserProfileModel.swift in Sources */,
+				DD83FD052C71A67200648DBA /* SummaryPresenter.swift in Sources */,
 				DD3397A22844FB3A00BF1286 /* MoreOptionsWalletCollectionViewCell.swift in Sources */,
 				DDDF1CDC287BF40400A8EE0F /* DetailDescriptionBrokersViewController.swift in Sources */,
 				DDD2B3C7283D84380087A113 /* UserProfilePresenter.swift in Sources */,
+				DD20385D2BB918E60036D455 /* QuizPresenter.swift in Sources */,
 				DDB02158283326F400099155 /* HomeInteractor.swift in Sources */,
 				DD87CEBD2936E8BD00C3C70E /* AboutCollectionViewCell.swift in Sources */,
 				DDB0224C2833284A00099155 /* InitializationWorker.swift in Sources */,
@@ -1339,6 +1439,7 @@
 				DDB0224A2833284A00099155 /* InitializationViewController.swift in Sources */,
 				DDD2B3BA283D841B0087A113 /* xXxWorker.swift in Sources */,
 				DDB0219E283327B200099155 /* LoadingViewController.swift in Sources */,
+				DD83FD012C71A66600648DBA /* SummaryWorker.swift in Sources */,
 				DDE23F4628485F16000AA17C /* WalletHistoricRouter.swift in Sources */,
 				DDB022272833284A00099155 /* LoginViewController.swift in Sources */,
 				DD41D379294416250025D963 /* ReportPresenter.swift in Sources */,
@@ -1355,6 +1456,7 @@
 				DD5405D82929801700D0FFEC /* ProportionViewController.swift in Sources */,
 				DD7C73FE291F615F0025CA58 /* UserInboxInteractor.swift in Sources */,
 				DD08811B283FF739009B80A6 /* AboutAppViewController.swift in Sources */,
+				DD20385F2BB918EE0036D455 /* QuizViewController.swift in Sources */,
 				DDA36C422971371F0066FECC /* PublicViewController.swift in Sources */,
 				DD0D58372978E200001AB136 /* ListWalletPublicWorker.swift in Sources */,
 				DDB0217D2833278500099155 /* UIViewController+Extension.swift in Sources */,
@@ -1362,6 +1464,7 @@
 				DDB0217F2833278500099155 /* UITableViewCell+Extension.swift in Sources */,
 				DDB0223B2833284A00099155 /* DetailModel.swift in Sources */,
 				DDB022402833284A00099155 /* ContactUsPresenter.swift in Sources */,
+				DD2038632BB919010036D455 /* QuizModel.swift in Sources */,
 				DD87CEC82938244400C3C70E /* SettingsAppPresenter.swift in Sources */,
 				DDB021B02833280800099155 /* IndexIFIXView.swift in Sources */,
 				DDB02199283327B200099155 /* RotatingCircularGradientProgressBar.swift in Sources */,
@@ -1373,8 +1476,10 @@
 				DDD2B3C5283D84320087A113 /* UserProfileRouter.swift in Sources */,
 				DDB022542833284A00099155 /* SearchRouter.swift in Sources */,
 				DDB022362833284A00099155 /* DetailWorker.swift in Sources */,
+				DD2038572BB918CC0036D455 /* QuizInteractor.swift in Sources */,
 				DDB0224B2833284A00099155 /* InitializationRouter.swift in Sources */,
 				DDB0220B2833284A00099155 /* CommentsWorker.swift in Sources */,
+				DD2038592BB918D60036D455 /* QuizWorker.swift in Sources */,
 				DDB022212833284A00099155 /* WalletWorker.swift in Sources */,
 				DD146A6E2891068000770A9A /* WalletQuotesViewController.swift in Sources */,
 				DD02AB7228E966F20074A847 /* ImagePicker.swift in Sources */,
@@ -1573,14 +1678,24 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}\"",
+					/usr/lib/swift,
+				);
 				MARKETING_VERSION = "1.0 beta";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.br.israeljr.RendimentoComFIIs;
 				PRODUCT_NAME = "Rendimento com FIIs";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TOOLCHAIN_DIR = "$(DEVELOPER_DIR)/Toolchains/XcodeDefault.xctoolchain";
 			};
 			name = Debug;
 		};
@@ -1612,14 +1727,24 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}\"",
+					/usr/lib/swift,
+				);
 				MARKETING_VERSION = "1.0 beta";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.br.israeljr.RendimentoComFIIs;
 				PRODUCT_NAME = "Rendimento com FIIs";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TOOLCHAIN_DIR = "$(DEVELOPER_DIR)/Toolchains/XcodeDefault.xctoolchain";
 			};
 			name = Release;
 		};
@@ -1645,6 +1770,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DD58349A2BA699D10016094D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.22.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DD58349C2BA69A4B0016094D /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD58349A2BA699D10016094D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		DD58349E2BA69A9B0016094D /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD58349A2BA699D10016094D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		DD5834A02BA69A9B0016094D /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD58349A2BA699D10016094D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		DD5834A22BA69A9B0016094D /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD58349A2BA699D10016094D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DDB020F9283317FF00099155 /* Project object */;
 }

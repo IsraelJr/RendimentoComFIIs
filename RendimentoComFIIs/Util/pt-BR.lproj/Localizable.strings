@@ -227,7 +227,10 @@
 "add_wallet" = "Adicionar à Carteira  ";
 "remove_wallet" = "Retirar da Carteira  ";
 "selic_title" = "Selic Atual";
-"objective" = "Objetivo";
+"distribution" = "Distribuição de Rendimentos";
+"income_disclosure" = "Divulgação de rendimentos";
+"ex_income" = "Data ex-rendimentos";
+"income_payment" = "Pagamento de rendimentos";
 
 /*SimulatorViewController*/
 "simulator" = "Simulador";
@@ -413,3 +416,8 @@
 "create_error" = "Não foi possível publicar a sua carteira!\nTente novamente mais tarde ou entre em contato conosco informando o problema.";
 "read_success" = "Carteira lida com sucesso!";
 "read_error" = "Não foi possível identificar a carteira pública já criada!\nVocê pode tentar novamente mais tarde ou configurar uma nova carteira pública.";
+
+/*SummaryViewController*/
+"title_summary_fii" = "Resumo";
+"objective" = "Objetivo";
+"target_audience" = "Público Alvo";

@@ -40,6 +40,7 @@ struct FIIModel: Decodable {
             var hrefReport: String?
             var isIFIX: Bool?
             var objective: String?
+            var incomeDistribution: ([String:String])?
         }
     }
 }

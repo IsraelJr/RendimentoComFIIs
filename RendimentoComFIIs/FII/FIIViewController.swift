@@ -238,15 +238,15 @@ class FIIViewController: UIViewController, FIIDisplayLogic {
         
         collectionLabelTitle[10].text = NSLocalizedString("pay_day", comment: "")
         
-        collectionLabelTitle[11].text = NSLocalizedString("phone", comment: "")
+        collectionLabelTitle[11].text = NSLocalizedString("income_disclosure", comment: "")
         
-        collectionLabelTitle[12].text = NSLocalizedString("administrator", comment: "")
+        collectionLabelTitle[12].text = NSLocalizedString("ex_income", comment: "")
         
         collectionLabelTitle[13].text = collectionLabelValue[8].text!.isGreaterCurrentDate() ? !collectionLabelValue[5].text!.elementsEqual(NSLocalizedString("uninformed", comment: "")) ? NSLocalizedString("awaiting_payment", comment: "") : NSLocalizedString("waiting_announcement", comment: "") : NSLocalizedString("paid", comment: "")
         
         collectionLabelTitle[13].textColor = collectionLabelValue[8].text!.isGreaterCurrentDate() ? .gray : .systemGreen
         
-        collectionLabelTitle.last?.text = NSLocalizedString("report", comment: "")
+        collectionLabelTitle.last?.text = NSLocalizedString("income_payment", comment: "")
         
         collectionLabelValue.forEach({
             $0.textAlignment = .right
@@ -366,8 +366,11 @@ class FIIViewController: UIViewController, FIIDisplayLogic {
         collectionLabelValue[4].text = (calc.isNaN || calc.isInfinite) ? "0,0%" : "\(String(format: "%.3f", calc))%".replacingOccurrences(of: ".", with: ",")   //"\(String(calc).prefix(6).replacingOccurrences(of: ".", with: ","))%"
         collectionLabelValue[4].textColor = UIColor.variationColor(to: collectionLabelValue[4].text)
         
-        collectionLabelValue[9].text = fii.phone ?? "(99) 9999-9999)"
-        collectionLabelValue[9].text = collectionLabelValue[9].text!.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? "(99) 9999-9999)" : collectionLabelValue[9].text
+        collectionLabelValue[9].text = fii.incomeDistribution?.first(where: {$0.key.elementsEqual("disclosure")})?.value ?? NSLocalizedString("uninformed", comment: "")
+        
+        collectionLabelValue[10].text = fii.incomeDistribution?.first(where: {$0.key.elementsEqual("exDate")})?.value ?? NSLocalizedString("uninformed", comment: "")
+        
+        collectionLabelValue[11].text = fii.incomeDistribution?.first(where: {$0.key.elementsEqual("payment")})?.value ?? NSLocalizedString("uninformed", comment: "")
         
         let monthCurrent = obj?.earnings?.first(where: {$0.key.elementsEqual(Month.current.description().0)})
         collectionLabelValue[5].text = (monthCurrent?.value["earnings"] as? String)?.convertCurrencyToDouble().convertToCurrency(true) ?? NSLocalizedString("uninformed", comment: "")
@@ -403,6 +406,10 @@ class FIIViewController: UIViewController, FIIDisplayLogic {
         collectionButton[5].isEnabled = false
         collectionButton[5].setTitle(NSLocalizedString("searching", comment: ""), for: .normal)
         collectionButton[5].tintColor = .gray
+        
+        collectionButton[6].layer.cornerRadius = collectionButton[6].frame.width / 2
+        collectionButton[6].backgroundColor = contentView.backgroundColor
+        collectionButton[6].tintColor = collectionButton[0].tintColor
         
         if Util.userDefaultForWallet(action: .read, code: fii.code!).code.isEmpty {
             collectionButton[4].setTitle(NSLocalizedString("add_wallet", comment: ""), for: .normal)
@@ -511,6 +518,11 @@ class FIIViewController: UIViewController, FIIDisplayLogic {
                 }
             }
         }
+    }
+    
+    @IBAction func showSummary(_ sender: Any) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "summary") as! SummaryViewController
+        present(vc, animated: true)
     }
     
 }
